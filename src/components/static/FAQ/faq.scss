@@ -1,0 +1,92 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+@import 'src/styles/universal/responsive';
+
+.faq--page {
+  @include breakpoint(md) {
+    padding-top: 5rem;
+  }
+
+}
+
+.faq--intro {
+  background-color: $midnight-color;
+  color: white;
+  border-radius: $border-radius;
+  padding: 15px;
+
+  @include breakpoint(md) {
+    padding: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  [class*="header"] {
+    color: white;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+
+    @include breakpoint(md) {
+      font-size: 18px;
+    }
+  }
+
+  a {
+    color: white !important;
+    font-weight: 400;
+    text-decoration: underline;
+
+    &:hover {
+      color: $highlight-color !important;
+    }
+  }
+}
+
+.faq--section {
+  padding-top: 3rem;
+  [class*="header"] {
+    padding-bottom: 1rem;
+  }
+}
+
+.faq--item {
+  padding: 15px;
+  border: $border;
+  border-radius: $border-radius;
+  margin-bottom: 15px;
+
+  &:hover {
+    cursor: pointer;
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.faq--question {
+  @include flex(flex-start, space-between);
+  font-size: 16px;
+  font-weight: 500;
+  color: $primary-color;
+  padding-right: 15px;
+}
+
+.faq--answer {
+  padding-top: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 15px;
+  color: $font-color;
+
+
+  a {
+    color: $font-color !important;
+    font-weight: 500;
+    text-decoration: underline;
+
+    &:hover {
+      color: $highlight-color !important;
+    }
+  }
+}

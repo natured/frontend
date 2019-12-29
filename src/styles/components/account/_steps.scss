@@ -1,0 +1,29 @@
+.account-completion-steps {
+  .ant-steps-item {
+
+    // Makes sure that step icon is display centered to text
+    display: flex;
+    align-items: center;
+
+    // Makes active icons green
+    &.ant-steps-item-finish, &.ant-steps-item-process {
+      .ant-steps-icon {
+        color: $color-success;
+      }
+    }
+
+    // Makes tail after completed step greeen
+    &.ant-steps-item-finish .ant-steps-item-title:after {
+      background-color: $color-success;
+    }
+
+  }
+
+
+}
+
+.steps {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}

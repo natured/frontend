@@ -1,0 +1,27 @@
+/**
+ *  Styles for the following containers:
+ *
+ *   Centered Form (container__centered-form):
+ *     - Used as a center
+ *
+ */
+
+@mixin standard-container() {
+  background-color: white;
+  border-radius: $border-radius;
+}
+
+.container__inner {
+  @include inner-padding();
+}
+
+$centered-form-max-width: 370px;
+.container__centered-form {
+  @include standard-container();
+  width: 100%;
+
+  @media (min-width: 767px) {
+    max-width: $centered-form-max-width;
+    margin: 30px;
+  }
+}

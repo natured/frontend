@@ -1,0 +1,43 @@
+$pricing-default-padding: 15px;
+
+.pricing-totals {
+
+  .line-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    padding: 7.5px 0;
+    font-size: 15px;
+
+    &.multi-line-item {
+      padding: 4.5px 0px;
+    }
+
+    &.big-line-item {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    &:first-child {
+      padding-top: 15px;
+    }
+
+    &:last-child {
+      padding-bottom: 15px;
+    }
+  }
+
+  .subdued {
+    font-size: 12px;
+    color: $color-font-lightest;
+    font-weight: 400;
+  }
+
+  .amount {
+    text-align: right;
+    font-weight: 600;
+  }
+
+}

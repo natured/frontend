@@ -1,0 +1,149 @@
+// Component-specific variables
+$overlay-outer-spacing: 10px;
+$overlay-section-spacing: 15px;
+$overlay-section-extra-padding: 3px;
+
+.overlay-menu {
+  position: fixed;
+  z-index: 10;
+  background-color: white;
+  width: calc(100% - 40px);
+  max-height: calc(100% - 40px); // Styles for overflow
+  overflow: auto;
+  opacity: 0;
+  box-shadow:
+    0 50px 100px rgba(50,50,93,.1),
+    0 15px 35px rgba(50,50,93,.15),
+    0 5px 15px rgba(0,0,0,.1);
+
+  color: $color-font;
+  border-radius: $border-radius;
+  top: $overlay-outer-spacing;
+  left: $overlay-outer-spacing;
+  right: $overlay-outer-spacing;
+  padding: $overlay-outer-spacing;
+  padding-bottom: 0; // For bottom button to be right along edge
+  margin: auto;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transition: $transition;
+  }
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition;
+  }
+
+  .overlay-menu-close {
+    z-index: 11;
+    position: absolute;
+    right: $overlay-outer-spacing;
+    padding: $overlay-outer-spacing;
+    margin: -1 * $overlay-outer-spacing;
+    .anticon { font-size: 1.2rem; }
+  }
+}
+
+
+.overlay-menu-section {
+  padding: $overlay-section-spacing 0;
+  border-top: $border;
+
+  // Account for outer padding on first section
+  &:first-of-type {
+    border-top: none;
+    padding-top: $overlay-section-spacing - $overlay-outer-spacing;
+  }
+
+  .overlay-menu-section-header {
+    @extend .uppercase-header;
+    padding: 0 $overlay-section-spacing;
+  }
+
+  .overlay-menu-section-links {
+    padding: ($overlay-outer-spacing + $overlay-section-extra-padding) $overlay-section-spacing;
+    padding-bottom: 0;
+
+    .overlay-menu-section-link {
+      padding: 7.5px 0; // 15px / 2
+
+      &:first-of-type { padding-top: 5px; }
+      &:last-of-type { padding-bottom: 5px; }
+    }
+  }
+
+  .overlay-menu-emph-link {
+    a { @extend .uppercase-header-emph };
+    padding: $overlay-section-extra-padding $overlay-section-spacing;
+    padding-top: ($overlay-outer-spacing + $overlay-section-extra-padding);
+  }
+}
+
+.overlay-menu-full-link {
+  margin: 0 -10px;
+  padding: 15px 25px;
+  border-top: $border;
+
+  &.emph-bottom {
+    border-top: none;
+    font-weight: 600;
+    background-color: $color-subdued;
+    border-radius: 0 0 3px 3px;
+  }
+}
+
+
+
+
+
+
+// Admin overlay quick Add
+.overlay-quick-add {
+  border: $border;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: 10px;
+  background-color: white;
+
+  ul {
+    list-style-type: none;
+    padding: 5px 0;
+    margin: 0;
+
+
+    li {
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: $border-radius;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.3s ease;
+      border: 1px solid transparent;
+
+      .anticon {
+        font-size: 10px;
+        color: $color-black;
+        font-weight: bold;
+      }
+
+      &:hover {
+        cursor: pointer;
+        transition: 0.3s ease;
+        border-color: $color-secondary;
+        box-shadow:
+          rgba(50, 50, 93, 0.109804) 0px 4px 6px,
+          rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
+      }
+    }
+  }
+}
+
+.admin-navigation .overlay-menu {
+  width: 315px;
+  right: 10px;
+  margin-right: 0;
+}

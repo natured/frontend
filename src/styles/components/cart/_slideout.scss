@@ -1,0 +1,143 @@
+// Cart Variables
+
+$cart-width: 400px;
+$cart-bg: $gray-bg;
+$cart-outer-padding: 30px;
+
+.cart-slideout {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  right: 0;
+
+  width: $cart-width;
+  height: 100vh;
+  background-color: $cart-bg;
+
+  &.hide {
+    transform: translateX(400px);
+    transition: 250ms ease;
+  }
+
+  &.show {
+    transform: translateX(0px);
+    transition: 250ms ease;
+  }
+}
+
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 4;
+  transition: opacity .15s ease-in;
+  overflow-y: hidden;
+
+  &.hide {
+    transition: opacity 250ms ease, z-index 0s ease 250ms;
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
+.cart-fixed-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: calc(#{$cart-width} - (2 * #{$cart-outer-padding}));
+  padding: 20px 30px;
+  background-color: $color-success;
+  color: white;
+  z-index: 6;
+}
+
+.cart-header {
+  padding: 15px;
+  text-align: center;
+  display: block;
+}
+
+.cart-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 16px;
+  color: rgba(0,0,0,0.3);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+body.body-has-overlay {
+  overflow: hidden;
+}
+
+.cart-slideout-inner {
+  width: 100%;
+  @media (max-width: 767px) {
+    height: 100%;
+    top: 0;
+    z-index: 201;
+    background-color: white;
+    width: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+}
+
+.increment-icon {
+  &.disabled {
+    opacity: .3;
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+.cart-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+
+  border-radius: $border-radius;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
+  background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%,  rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.25) 100%);
+}
+
+
+.cart {
+  .grid {
+    @media (max-width: 767px) {
+      padding: 0 15px 15px 15px;
+    }
+  }
+}
+
+.cart-badge {
+  margin: 5px;
+  &:hover { cursor: pointer; }
+}

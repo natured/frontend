@@ -1,0 +1,85 @@
+// Standard Tab Bar
+.am-tab-bar-tab {
+    .am-tab-bar-tab-icon {
+      font-size: 1.3rem;
+    }
+}
+
+.am-tab-bar {
+  height: 0;
+}
+
+$tabs-bar-tabs-height: 40px;
+.ant-tabs-bar {
+  height: 40px !important;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+// Tabs for navigating subcategories
+$subcategory-tabs-height: 40px;
+.subcategory-tabs {
+  display: none;
+  @media only screen and (max-width: 767px) {
+    display: block;
+  }
+
+  z-index: 15;
+  background-color: white;
+
+  .ant-tabs-bar {
+    // position: fixed;
+    height: $subcategory-tabs-height;
+  }
+
+  // Removes side arrows
+  .ant-tabs-nav-container-scrolling {
+    padding: 0;
+    .ant-tabs-tab-arrow-show { display: none; }
+  }
+  .ant-tabs-nav-scroll {
+    overflow-x: scroll;
+
+    .ant-tabs-nav {
+      padding-bottom: 2px; // Pushes ink bar down to meet border
+    }
+  }
+
+
+  // Spacing on tabs
+  .ant-tabs-tab {
+    margin: 0;
+    padding: 7.5px 10px 7.5px 10px;
+  }
+
+  .ant-tabs-content {
+    // padding-top: $subcategory-tabs-height + 15px;
+  }
+
+
+  // Coloring for active tab
+  .ant-tabs-tab:focus, .ant-tabs-tab:hover {
+    color: $color-highlight;
+  }
+
+  .ant-tabs-tab-active {
+    color: $color-highlight;
+  }
+  .ant-tabs-ink-bar {
+    background-color: $color-highlight;
+  }
+}
+
+
+
+.full-screen-modal {
+  .am-tabs-tab-bar-wrap {
+    top: 45px;
+    bottom: auto;
+    width: calc(100% - 30px);
+  }
+
+  .am-tabs-content-wrap {
+    padding-top: 105px;
+  }
+}

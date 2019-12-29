@@ -1,0 +1,46 @@
+@import "categories";
+
+// Market Top Bar
+.nav__market-bottom-bar {
+  position: fixed;
+  width: 100%;
+  z-index: $bottom-bar-z-index;
+  height: $bottom-bar-mobile-height;
+  background-color: $bottom-bar-bg-color;
+  border: $border;
+}
+
+.bottom-bar__outer {
+  height: 100%;
+  @include outer-padding();
+  @include space-between();
+}
+
+.bottom-bar__left {
+  @include flex-start();
+}
+
+.bottom-bar__right {
+  @include flex-end();
+}
+
+
+
+
+
+
+
+// Desktop styles
+@media (min-width: 767px) {
+  .nav__market-bottom-bar {
+    height: $bottom-bar-height;
+  }
+
+  .bottom-bar__categories {
+    display: flex;
+  }
+
+  .nav__toggle {
+    display: none;
+  }
+}

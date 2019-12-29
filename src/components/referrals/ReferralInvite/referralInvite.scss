@@ -1,0 +1,100 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+@import 'src/styles/universal/responsive';
+
+.referral-vertical-spacing {
+  padding: 2rem 0;
+  @include breakpoint(md) {
+    padding: 6rem 0;
+  }
+}
+
+.referral-invite-grid {
+  display: block;
+
+  .referral-invite-share {
+    width: 100%;
+  }
+
+  .referral-invite-history {
+    padding-top: 2rem;
+    width: 100%;
+  }
+
+  @include breakpoint(md) {
+    @include flex(flex-start, space-between);
+
+    .referral-invite-share {
+      width: 66.66666666%;
+      padding-right: 45px;
+    }
+
+    .referral-invite-history {
+      padding-top: 0;
+      padding-left: 45px;
+      width: 33.33333333%;
+    }
+  }
+}
+
+.referral-how-it-works {
+  width: 100%;
+  padding-top: 2rem;
+  @include breakpoint(md) {
+    padding-top: 6rem;
+  }
+  h5 {
+    font-weight: 300;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+
+  .grid {
+    @include flex(center, space-between);
+    div {
+      @include flex(center, space-between);
+      width: 100%;
+      border-radius: 0;
+      border-bottom: $border;
+      padding: 30px;
+      letter-spacing: .05em;
+      font-weight: 300;
+      line-height: 1.5;
+      background-color: $bg-gray;
+
+      @include breakpoint(md) {
+        width: calc(33.3333% - 100px);
+        margin: 0 10px;
+        border-radius: $border-radius;
+        border: none;
+      }
+
+      &:first-child { margin-left: 0px; }
+
+      &:last-child {
+        margin-right: 0px;
+        border-bottom: none;
+      }
+
+      .icon {
+        padding: 15px 30px 15px 15px;
+        font-size: 32px;
+      }
+    }
+  }
+}
+
+.referral-invite-share {
+  h1.header--3 { font-size: 2.5rem; }
+
+  @include breakpoint(md) {
+    max-width: 625px;
+  }
+
+  .referral-invitation {
+    padding-top: 15px;
+    font-weight: 300;
+    letter-spacing: .03em;
+    line-height: 1.5;
+  }
+}

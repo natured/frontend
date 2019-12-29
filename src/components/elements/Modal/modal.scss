@@ -1,0 +1,62 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+@import 'src/styles/helpers/animations';
+
+$modal-trans-length: .3s;
+$modal-z-index: 300;
+$modal-width: 400px;
+
+.modal {
+  @include fixed(0, 0, 0, 0);
+  @include flex(center, center);
+  z-index: -1;
+  opacity: 0;
+
+  // basic overlay styles
+  .modal-overlay {
+    @include fixed(0, 0, 0, 0);
+    opacity: 0;
+    background-color: rgba($black, .7);
+    z-index: -1;
+  }
+
+  .modal-content {
+    z-index: -1;
+    background-color: white;
+    border-radius: $border-radius;
+    width: $modal-width;
+    padding: 30px;
+    max-height: calc(100vh - 120px);
+    max-width: calc(100vw - 100px);
+    overflow-y: scroll;
+  }
+
+  &.show {
+    z-index: $modal-z-index;
+    opacity: 1;
+
+    .modal-overlay {
+      opacity: 1;
+      transition: 0s z-index, $modal-trans-length opacity;
+    }
+
+    .modal-content {
+      animation: slideInDown $modal-trans-length;
+      z-index: calc(#{$modal-z-index} + 1);
+      transition: 0s z-index;
+    }
+  }
+
+  // when hiding, fade out first, then switch zindex
+  &.hide {
+    transition: 0s z-index $modal-trans-length;
+    .modal-overlay {
+      transition: 0s z-index $modal-trans-length, $modal-trans-length opacity;
+    }
+    .modal-content {
+      opacity: 0;
+      animation: fadeOut $modal-trans-length;
+      transition: 0s z-index $modal-trans-length, $modal-trans-length opacity;
+    }
+  }
+}

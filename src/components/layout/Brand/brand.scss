@@ -1,0 +1,18 @@
+@import 'src/styles/universal/variables';
+
+.natured-brand {
+  font-family: $serif-font;
+  font-weight: 800;
+  color: $font-color;
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -1px;
+}
+
+// differen versions
+
+
+.footer--logo .natured-brand{
+  color: white;
+  font-size: 2rem;
+}

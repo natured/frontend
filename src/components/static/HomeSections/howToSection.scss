@@ -1,0 +1,14 @@
+@import 'src/styles/universal/variables';
+
+.how-to-section {
+  .segment .subtitle {
+    font-weight: 300;
+    font-size: 16px;
+    color: $gray-color;
+
+    .yellow--emphasis {
+      font-weight: 400;
+      color: $gray-color;
+    }
+  }
+}

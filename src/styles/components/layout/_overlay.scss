@@ -1,0 +1,92 @@
+.overlay {
+  position: fixed;
+  z-index: 10;
+  background-color: white;
+  max-height: calc(100% - 40px); // Styles for overflow
+  overflow: auto;
+  opacity: 0;
+  box-shadow:
+    0 50px 100px rgba(50,50,93,.1),
+    0 15px 35px rgba(50,50,93,.15),
+    0 5px 15px rgba(0,0,0,.1);
+
+  color: $color-font;
+  border-radius: $border-radius;
+  top: 4vw;
+  left: 4vw;
+  right: 4vw;
+  padding: 4vw;
+  padding-bottom: 0; // For bottom button to be right along edge
+  margin: auto;
+
+  .close {
+    z-index: 11;
+    position: absolute;
+    top: 4vw;
+    right: 4vw;
+    padding-top: 4px; // to align center with next header
+    .anticon { font-size: 1.2rem; }
+  }
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transition: $transition;
+    z-index: 1001;
+  }
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition;
+    z-index: -1;
+  }
+}
+
+.overlay-section {
+  display: flex;
+  div { width: 50%; }
+  margin-left: -4vw;
+  margin-right: -4vw;
+  padding: 10px 30px;
+  border-bottom: $border;
+  margin-bottom: 15px;
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0px;
+  }
+}
+
+
+.overlay-section-link {
+  color: $color-font-light;
+  font-size: 14px;
+  display: block;
+  padding: 7.5px 0;
+  transition: $transition;
+  &:hover {
+    transition: $transition;
+    color: $color-success;
+  }
+}
+
+.overlay-section-header {
+  font-size: 16px;
+  font-weight: 500;
+  color: $color-font;
+  padding: 0 15px;
+}
+
+.overlay-full-link {
+  margin: 0 -4vw;
+  padding: 4vw 8vw;
+  border-top: $border;
+  color: $color-font;
+  font-weight: 500;
+
+  &.emph-bottom {
+    border-top: none;
+    background-color: $color-highlight;
+    border-radius: 0 0 3px 3px;
+    color: white;
+  }
+}

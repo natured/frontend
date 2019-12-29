@@ -1,0 +1,13 @@
+$navbar-logo-width: 85px;
+$navbar-logo-mobile-width: 75px;
+
+.nav__logo {
+  svg {
+    width: $navbar-logo-mobile-width;
+
+    @media (min-width: 900px) {
+      width: $navbar-logo-width;
+    }
+
+  }
+}

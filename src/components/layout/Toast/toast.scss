@@ -1,0 +1,26 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+
+$spacing: 10px;
+
+.toast {
+  .toast-container {
+    z-index: 200;
+    padding: $spacing;
+    transition: all 0.2s ease-in-out;
+  }
+
+  @include breakpoint(md) {
+    right: 1em;
+
+
+    .toast-container {
+      top: $main-nav-height !important;
+      width: 370px !important;
+    }
+
+    &.has--skinny .toast-container {
+      top: calc(#{$skinny-nav-height} + #{$main-nav-height}) !important;
+    }
+  }
+}

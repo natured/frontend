@@ -1,0 +1,17 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+
+.product-alert-banner {
+  width: calc(100% - 60px);
+  border-radius: $border-radius;
+  background-color: $highlight-color;
+  font-weight: 300;
+  padding: 7.5px 15px;
+  margin: 15px;
+  text-align: center;
+
+  @include breakpoint(sm) {
+    width: calc(100% - 30px);
+    margin: 0 0 30px 0;
+  }
+}

@@ -1,0 +1,87 @@
+$drawer-container-top: $navbar-small-height;
+$drawer-bottom-height: 65px;
+
+@import "screens";
+
+.nav__drawer {
+  @extend .drawer;
+
+  .drawer-container {
+    padding-top: $drawer-container-top;
+    padding-bottom: $drawer-bottom-height;
+  }
+
+  button, .button {
+    @include flex-center();
+    width: auto;
+    height: 35px;
+  }
+}
+
+.nav__drawer-scroll {
+  @extend .drawer-scroll;
+  height: calc(100vh - #{$drawer-container-top} - #{$drawer-bottom-height});
+}
+
+.nav__drawer-content {
+  @extend .drawer-content;
+}
+
+.nav__drawer-outer {
+  @include outer-padding();
+}
+
+.nav__drawer-bottom {
+  @extend .drawer-bottom;
+  height: $drawer-bottom-height;
+
+  > * {
+    padding: 15px;
+    display: flex;
+    border-top: $border;
+  }
+}
+
+.nav__drawer-account-link {
+  padding: 0 15px;
+  width: -webkit-fill-available;
+}
+
+.nav__drawer .nav__menu {
+  margin: 0;
+  padding: 0;
+}
+
+.nav__drawer .nav__market-link {
+  @extend .button;
+  @extend .primary;
+  @extend .inverse;
+  @include space-between();
+  font-weight: 800;
+  padding: 0 15px;
+  .anticon { font-size: 10px; }
+}
+
+
+.nav__drawer-links {
+  padding: 15px;
+
+  .nav__drawer-link, .nav__drawer-help {
+    @include space-between();
+    padding: 7.5px 0;
+    .anticon { font-size: 10px; }
+  }
+
+  .link__help {
+    display: flex;
+    align-items: center;
+    width: 160px;
+  }
+}
+
+
+.circled {
+  @include transition();
+  background-color: $primary-bg;
+  margin-right: 15px;
+}

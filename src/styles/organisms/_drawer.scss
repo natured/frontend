@@ -1,0 +1,74 @@
+$drawer-animation-length: 500ms;
+$drawer-overlay-opacity: .75;
+$drawer-overlay-color: black;
+
+@mixin create-drawer($name, $width, $side) {
+  .#{$name}--opened, .#{$name}--closed {
+    @include fixedAt(0, 0, 0, 0);
+  }
+
+  // styles for opened drawer
+  .#{$name}--opened {
+    z-index: 100;
+  }
+
+  // styles for closed drawer
+  .#{$name}--closed {
+    display: block;
+    z-index: -100;
+
+    // Delays putting to back until after everything finishes animating
+    transition: z-index 0s ease-in-out $drawer-animation-length;
+  }
+
+  // Drawer overlay
+  .#{$name}--overlay {
+    @include fixedAt(0, 0, 0, 0);
+    display: block;
+    opacity: 0;
+    background-color: $drawer-overlay-color;
+    transition: opacity $drawer-animation-length ease-in-out;
+  }
+
+  // Drawer overlay when open
+  .#{$name}--opened .#{$name}--overlay {
+    opacity: $drawer-overlay-opacity;
+  }
+
+  .#{$name}--container {
+    height: 100%;
+    width: 100%;
+    max-width: #{$width};
+    transition: transform $drawer-animation-length ease-in-out;
+    background-color: white;
+
+    @if($side == 'left') {
+      @include fixedAt(0, false, false, 0);
+      transform: translateX(-100%);
+    }
+
+    @if($side == 'right') {
+      @include fixedAt(0, 0, false, false);
+      transform: translateX(100%);
+    }
+  }
+
+  // Drawer contaiener when open
+  .#{$name}--opened .#{$name}--container {
+    transform: translateX(0);
+    transition: transform $drawer-animation-length ease-in-out;
+  }
+
+}
+
+@include create-drawer('nav', '450px', 'left');
+@include create-drawer('cart', '420px', 'right');
+
+
+.cart--opened {
+  z-index: 201; // above the mobile nav
+}
+
+.nav--opened {
+  z-index: 199; // under the mobile nav
+}

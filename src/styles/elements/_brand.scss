@@ -1,0 +1,10 @@
+$logo-width: 100px;
+$logo-width-small: 75px;
+
+.logo svg, [class*="--logo"] svg {
+  width: $logo-width;
+}
+
+.logo svg, [class*="--logo--small"] svg {
+  width: $logo-width-small;
+}

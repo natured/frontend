@@ -1,0 +1,416 @@
+
+.inventory-order-layout {
+  height: calc(100vh - 76px); // Fill possible height
+  margin: -30px; // Go back over the admin-content padding
+  display: flex;
+  background-color: white;
+
+  .inventory-order-navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    border-right: $border;
+    box-shadow: $box-shadow-aggressive;
+  }
+
+  .inventory-order-view {
+    width: 70%;
+    padding: 30px;
+    background-color: rgba(0,0,0,0.04);
+    overflow-y: scroll;
+  }
+}
+
+.inventory-order-header {
+  width: calc(60% - 30px);
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+.inventory-order-tabs {
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+  padding: 15px 0;
+  border-bottom: $border;
+
+  a {
+    color: $color-font-lightest;
+    transition: $transition;
+    font-weight: 500;
+
+    &.active {
+      transition: $transition;
+      color: $color-success;
+    }
+  }
+}
+
+.inventory-order-list {
+  height: 100%;
+  overflow-y: scroll;
+
+  .inventory-order-item {
+    padding: 30px 15px;
+    border-bottom: $border;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-font;
+    border-left: 7.5px solid transparent;
+
+    &.active {
+      border-left: 7.5px solid $color-success;
+      box-shadow: $box-shadow-aggressive;
+    }
+
+    .left {
+      .foodmaker {
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .preview {
+        color: $color-font-lightest;
+        font-size: 12px;
+      }
+    }
+
+    .empty-tag {
+      background-color: $color-bg-gray;
+      border-radius: $border-radius;
+      display: inline;
+      padding: 3px 5px;
+      color: white;
+      border-radius: 5px;
+      font-weight: 300;
+      background-color: lighten($color-font-lightest, 10%);
+      font-size: 10px;
+      margin: 0 10px;
+    }
+  }
+}
+
+.inventory-order-add {
+  padding: 15px;
+  border-top: $border;
+  text-align: center;
+  transition: $transition;
+
+  &:hover {
+    transition: $transition;
+    color: $color-success;
+  }
+}
+
+.inventory-order-ref {
+  color: $color-font-lightest;
+  font-weight: 400;
+}
+
+.inventory-order-status {
+  :not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.inventory-order-timing {
+  width: 40%;
+  background-color: white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 13px;
+
+  .timing-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+
+    &:not(:last-child) {
+      border-bottom: $border;
+    }
+
+    .timing {
+      display: flex;
+      flex-direction: column;
+      .timestamp {
+        font-size: 12px;
+        color: $color-font-lightest;
+        font-weight: inherit;
+
+        &.with-picker {
+          height: 37px; // set height to same height without picker
+          font-weight: 200;
+          font-size: 19px;
+          line-height: 24px;
+          display: flex;
+
+          .text {
+            padding: 7.5px;
+            display: inline;
+            color: $color-black;
+          }
+        }
+      }
+    }
+
+    // Styling for react dates
+    .DateInput {
+      .DateInput_input {
+        color: $color-black;
+        padding: 7.5px 0;
+        text-align: center;
+        border-bottom: $border;
+      }
+      .DateInput_input__focused {
+        border-bottom: 2px solid $color-success;
+      }
+    }
+
+    .ant-select {
+      border-bottom: $border;
+
+      &.ant-select-open {
+        border-bottom: 2px solid $color-success;
+      }
+    }
+
+
+    .ant-select-selection {
+      min-width: 70px;
+      border: none;
+      border-radius: 0px;
+      font-weight: 200;
+      font-size: 19px;
+      line-height: 24px;
+      color: #1e1d02;
+      padding: 7.5px 0;
+      text-align: center;
+      &:focus {
+        box-shadow: none;
+      }
+
+      .ant-select-selection__rendered {
+        margin: 0;
+        line-height: inherit;
+      }
+      .ant-select-selection-selected-value {
+        padding-right: 0;
+        float: inherit;
+      }
+    }
+  }
+}
+
+.inventory-order-items-table {
+  @extend .table-white;
+  padding-top: 30px;
+
+  tr > td {
+    padding: 10px;
+  }
+
+  .product-ish {
+    display: flex;
+    align-items: center;
+  }
+
+  .product-image {
+    padding-right: 15px;
+    .img {
+      height: 45px;
+      border-radius: 3px;
+      margin-top: -16px;
+      margin-bottom: -16px;
+    }
+  }
+
+  .product-details {
+    display: flex;
+    flex-direction: column;
+
+    .product-link {
+      border-bottom: 1px solid transparent;
+      margin-bottom: 0px;
+      &:hover {
+        border-bottom: 1px solid $color-black;
+      }
+    }
+
+    .product-unit {
+      color: $color-font-lightest;
+      font-size: 12px;
+    }
+  }
+
+  .product-expiration {
+    display: flex;
+    flex-direction: column;
+    .from-arrival {
+      margin-bottom: 5px;
+    }
+    .formatted {
+      color: $color-font-lightest;
+      font-size: 12px;
+    }
+  }
+}
+
+.ant-select-dropdown-menu-item-active,
+.ant-select-dropdown-menu-item:hover {
+  background-color: $color-bg-gray;
+}
+
+
+.inventory-time-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .details-or-form {
+    display: flex;
+    flex-direction: column;
+
+    .bottom-detail {
+      font-size: 12px;
+      color: $color-font-lightest;
+      font-weight: inherit;
+    }
+
+
+  }
+  .order-date-form {
+    height: 37px; // set height to same height without picker
+    font-weight: 200;
+    font-size: 19px;
+    line-height: 24px;
+    display: flex;
+
+    .text {
+      padding: 7.5px;
+      display: inline;
+      color: $color-black;
+    }
+
+    .DateInput {
+      .DateInput_input {
+        color: $color-black;
+        padding: 7.5px 0;
+        text-align: center;
+        border-bottom: $border;
+      }
+      .DateInput_input__focused {
+        border-bottom: 2px solid $color-success;
+      }
+    }
+    .ant-select {
+      border-bottom: $border;
+
+      &.ant-select-open {
+        border-bottom: 2px solid $color-success;
+      }
+    }
+    .ant-select-selection {
+      min-width: 70px;
+      border: none;
+      border-radius: 0px;
+      font-weight: 200;
+      font-size: 19px;
+      line-height: 24px;
+      color: #1e1d02;
+      padding: 7.5px 0;
+      text-align: center;
+      background-color: transparent;
+
+      &:focus { box-shadow: none; }
+
+      .ant-select-selection__rendered {
+        margin: 0;
+        line-height: inherit;
+      }
+      .ant-select-selection-selected-value {
+        padding-right: 0;
+        float: inherit;
+      }
+    }
+  }
+
+  .edit-icon {
+    @extend .circle-icon;
+    @extend .white-with-border;
+  }
+
+  .submit-icon {
+    color: white;
+  }
+}
+
+.inventory-increments {
+  display: flex;
+  align-items: center;
+
+  div, a {
+    color: $color-black;
+    font-weight: 500;
+    font-size: 16px;
+
+    margin: 0 7.5px;
+    &:first-child { margin-left: 0px; }
+    &:last-child { margin-right: 0px; }
+
+    &.circle-icon {
+      border: $border;
+      font-size: 12px;
+    }
+  }
+}
+
+.timeslot-title {
+  .times {
+    font-size: 12px;
+    color: $color-font-lightest;
+  }
+}
+
+.subtle {
+  font-size: 12px;
+  color: $color-font-lightest;
+}
+.qty-circle {
+  padding: 0 15px;
+}
+
+.transparent-table {
+  .ant-badge-status {
+    width: 6px;
+  }
+}
+
+.create-inventory-order {
+
+  .ant-select-selection {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: $border;
+  }
+}
+
+
+
+.add-order-form {
+  width: 40%;
+  padding-top: 30px;
+}

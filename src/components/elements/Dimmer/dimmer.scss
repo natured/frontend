@@ -1,0 +1,54 @@
+@import 'src/styles/helpers/animations';
+@import 'src/styles/universal/variables';
+
+.ui.dimmer .loading-icon {
+  animation: spin 2s infinite linear;
+  color: $pastel-color;
+  font-size: 2rem;
+}
+
+.ui.dimmer {
+  display: none;
+  top: 0em !important;
+  left: 0em !important;
+  position: absolute;
+  opacity: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: inherit !important;
+  text-align: center;
+  vertical-align: middle;
+
+  background-color: rgba(255, 255, 255, 0.9);
+  animation-fill-mode: both;
+  animation-duration: 0.6s;
+  transition: background-color 0.6s linear;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  user-select: none;
+  will-change: opacity;
+  z-index: 1;
+
+  &.active {
+    display: flex;
+    opacity: 1;
+  }
+}
+
+.dimmable:not(body) {
+  position:relative;
+}
+
+.blurring.dimmable > :not(.dimmer) {
+  filter: blur(0px) grayscale(0);
+  transition: 800ms filter ease;
+}
+
+.blurring.dimmed.dimmable > :not(.dimmer) {
+  filter: blur(5px) grayscale(0.7);
+}

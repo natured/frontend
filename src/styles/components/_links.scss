@@ -1,0 +1,93 @@
+.link {
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.centered {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+a.success {
+  color: $green;
+  &:hover {
+    color: darken($green, 7%);
+  }
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+.bright-link {
+  @extend .link;
+  font-weight: 700;
+  color: $slate-gray;
+  &:hover {
+    color: darken($slate-gray, 20%);
+  }
+}
+
+.bright-green {
+  @extend .link;
+
+  color: $color-success;
+  &:hover {
+    color: darken($color-success, 5%);
+  }
+}
+
+.underlined {
+  @extend .link;
+
+  &.has-underline {
+    border-bottom: 1px solid rgba($color-font, .6);
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  color: $color-font;
+  &:hover {
+    border-color: darken($color-font, 20%);
+    color: darken($color-font, 20%);
+    .anticon {
+      padding-left: 2px;
+      transition: $transition;
+    }
+  }
+  .anticon { transition: $transition; }
+}
+
+a:hover {
+  color: $color-black;
+}
+
+.bottom-links {
+  font-size: 12px;
+  padding-top: 15px;
+  margin-top: 30px;
+  border-top: $border;
+}
+
+
+.emph-link {
+
+}
+
+.underline {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.underlined {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: underline;
+    color: $color-success;
+  }
+}

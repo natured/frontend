@@ -1,0 +1,35 @@
+@mixin flex($align: flex-start, $justify: flex-start, $direction: row) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+.flex-out {
+  @include flex(center, space-between);
+}
+.flex-center {
+  @include flex(center, center);
+}
+
+@mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
+
+@mixin fixed($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: fixed;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
+
+@mixin ellipsis-overflow() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

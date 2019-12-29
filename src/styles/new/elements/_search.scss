@@ -1,0 +1,58 @@
+$search-transition-length: .4s;
+
+.search__container {
+  @include flex-end();
+  background-color: white;
+  position: absolute;
+  right: 45px; // TODO: calculate this...
+  transition: right $search-transition-length;
+
+  .search__icon {
+    line-height: 24px;
+    font-size: 18px;
+  }
+
+  .search__field {
+    border: none;
+    padding-left: 0px;
+    width: 0px;
+    opacity: 0;
+    transition: width .4s,padding .4s;
+    cursor: pointer;
+    line-height: 24px;
+    height: 24px;
+    outline: none;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  &.is-opened {
+    width: 100%;
+    right: 20px; // calculate this to be RHS padding
+    transition: right $search-transition-length;
+
+    .search__field {
+      opacity: 1;
+      padding-left: 10px;
+      width: calc(100vw - 18px - 40px); // 18px -> width of cart icon, 40px -> padding on outer
+      transition: width $search-transition-length, padding $search-transition-length;
+    }
+  }
+}
+
+.search-results__container {
+  @include positioned(0, 0, 0, 0);
+  position: fixed;
+  z-index: -10;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity .4s;
+
+  &.is-opened {
+    z-index: 101;
+    opacity: 1;
+    transition: opacity .4s;
+  }
+}

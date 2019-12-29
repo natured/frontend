@@ -1,0 +1,16 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+
+.cart--details {
+  padding: 0;
+  border-radius: $border-radius;
+  background-color: white;
+  padding-bottom: 2rem;
+
+  @include breakpoint(md) {
+    position: relative;
+    width: auto;
+    padding: 15px;
+    padding-top: 0;
+  }
+}

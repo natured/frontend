@@ -1,0 +1,65 @@
+.screen-1, .screen-2 {
+  transition: $transition;
+  transform: translateX(0);
+  width: 100%;
+  position: absolute;
+}
+
+.screen-1 {
+  &.is-closed {
+    transition: $transition;
+    transform: translateX(-100%);
+  }
+}
+
+.screen-2 {
+  &.is-closed {
+    opacity: 0;
+    z-index: -1;
+    transition: $transition;
+    transform: translateX(100%);
+  }
+}
+
+// Styles specific to second screen
+.nav__category-image {
+  width: 100%;
+  background-color: $gray-bg;
+  position: relative;
+
+  img { width: 100%; }
+
+  .nav__category-image-overlay {
+    position: absolute;
+    @include positioned(0, 0, 0, 0);
+    width: 100%;
+    background-image: linear-gradient(to right, rgba($black, .3), rgba($black, .15));
+
+    h1, .back {
+      position: absolute;
+      color: white;
+      margin: 0;
+      left: 20px;
+      text-shadow: rgba($black, .4) 5px 5px 45px;
+    }
+
+    h1 {
+      bottom: 20px;
+      font-size: 3rem;
+      line-height: 1;
+      font-family: $font-family-serif !important;
+    }
+
+    .back {
+      display: flex;
+      align-items: center;
+      top: 20px;
+      font-weight: 900;
+      .anticon { padding-right: 10px; }
+      text-shadow: rgba($black, .8) 5px 5px 45px;
+    }
+
+
+  }
+
+}

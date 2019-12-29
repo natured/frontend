@@ -1,0 +1,37 @@
+.market-nav {
+  width: 100%;
+  display: flex;
+  z-index: 3; //needs to be above top bar
+  height: 70px;
+  position: fixed;
+  justify-content: space-between;
+  background-color: white;
+  border: 1px solid #ebebeb;
+
+  .brand-header {
+    padding: 0 30px;
+  }
+
+  .navigation-left {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+  }
+
+  .navigation-right {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .dropdown-with-arrow {
+    @media screen and (max-width: 1020px) {
+      .down-arrow { display: none; }
+    }
+  }
+
+  .toolbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,51 @@
+$navbar-width: 50px;
+$bar-width: 20px;
+$bar-height: 2px;
+
+@mixin bar() {
+  @include positioned(0, 0, 0, 0);
+  margin: auto;
+  margin-left: 0;
+  position: absolute;
+  height: $bar-height;
+  width: $bar-width;
+  background-color: $font-color;
+  transition: $transition;
+}
+
+.nav__toggle {
+  .toggle {
+    display: block;
+    position: relative;
+    width: $navbar-width;
+    height: $navbar-width;
+
+    span, span::before, span::after {
+      @include bar();
+    }
+
+    span::before {
+      transform: translateY(-7px);
+      content: " ";
+    }
+
+    span::after {
+      transform: translateY(7px);
+      content: " ";
+    }
+
+    &.is-x {
+      span::before {
+        opacity: 0;
+      }
+
+      span::after {
+        transform: translateY(0) rotate(90deg);
+      }
+
+      span {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.underneath-alert {
+  margin-top: -25px;
+  margin-bottom: 25px;
+  font-size: 12px;
+
+  &.error {
+    color: $color-highlight;
+  }
+
+  .verify-button {
+    @extend .button;
+    @extend .button-dark;
+    min-width: 250px;
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+}

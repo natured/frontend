@@ -1,0 +1,11 @@
+.form-on-bg {
+  label {
+    color: $white;
+  }
+
+  input {
+    &:hover {
+      box-shadow: $light-box-shadow;
+    }
+  }
+}

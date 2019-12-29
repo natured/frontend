@@ -1,0 +1,12 @@
+@import 'src/styles/atoms/tags';
+
+.order-reference {
+  @include yellow-tag();
+  font-size: 12px;
+  font-weight: 300;
+  padding: 2px 4px;
+}
+
+.order-status {
+  text-transform: capitalize;
+}

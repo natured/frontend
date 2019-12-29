@@ -1,0 +1,94 @@
+button, .button {
+  @include transition();
+  background-color: white;
+  display: inline-block;
+  border-radius: $border-radius;
+  border: 1px solid transparent;
+  font-size: 14.08px;
+  font-size: .88rem;
+  font-weight: 500;
+  line-height: 1.1;
+  text-align: center;
+  width: 100%;
+  outline: none;
+
+  > *:first-child {
+    padding-right: 1em;
+  }
+
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+
+  // Largest sized button
+  &.supersized {
+    max-width: 200px;
+    width: 100%;
+    padding: 1.6rem 3rem 1.5rem;
+  }
+
+  // Standard sized button
+  &.medium {
+    min-width: 200px;
+    width: auto;
+    height: 40px;
+  }
+
+  &.fill {
+    width: 100%;
+  }
+}
+
+button, .button {
+  &.primary {
+    color: white;
+    background-color: $primary;
+    border-color: $primary;
+  }
+
+  &.primary.inverse {
+    border-color: $primary;
+    color: $primary;
+    background-color: white;
+  }
+
+  &.white {
+    color: $font-color;
+    background-color: $white;
+    border-color: $white;
+    border: $border;
+  }
+
+  &.dark {
+    color: white;
+    background-color: $primary-emph;
+    border-color: $primary-emph;
+  }
+
+  &.secondary {
+    color: white;
+    background-color: $secondary;
+    border-color: $secondary;
+  }
+
+  &.secondary.inverse {
+    border-color: $secondary;
+    color: $secondary;
+    background-color: white;
+  }
+
+  &.accent {
+    color: white;
+    font-weight: bold;
+    background-color: $accent;
+    border-color: $accent;
+  }
+
+  &.accent.inverse {
+    color: white;
+    font-weight: bold;
+    border-color: $accent;
+    color: $accent;
+    background-color: white;
+  }
+}

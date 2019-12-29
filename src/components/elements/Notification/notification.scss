@@ -1,0 +1,60 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+
+$outside-padding: 15px;
+$icon-padding: 20px;
+$close-width: 20px;
+$close-spacing: $outside-padding + 5px;
+
+// toastify styles
+.toast-container {
+  .toasty {
+    .toast-body { margin: 0; }
+    border-radius: $border-radius;
+    box-shadow: 0 1px 20px rgba($font-lighter, .5);
+    padding: 0;
+    margin-bottom: 20px;
+
+    .notification {
+      @include flex(center, flex-start);
+      min-height: 0;
+      margin: $outside-padding;
+      padding-right: 10px;
+      margin-right: calc(2 * #{$close-spacing} + #{$close-width});
+      border-right: $border;
+
+      .icon {
+        @include flex(center, center);
+        margin: 0;
+        padding: 0;
+        font-size: 1.5rem;
+        padding-left: calc(#{$icon-padding} - #{$outside-padding});
+        padding-right: $icon-padding;
+        &.error { color: $red; }
+        &.success { color: $green; }
+      }
+
+      .title {
+        font-weight: 600;
+        font-size: 16px;
+        color: $font-color;
+        margin: 0;
+        padding: 0;
+      }
+
+      .content {
+        font-size: 13px;
+      }
+
+      .close-toast {
+        @include flex(center, center);
+        position: absolute;
+        color: $font-lightest;
+        width: $close-width;
+        height: $close-width;
+        font-size: 16px;
+        right: $close-spacing;
+      }
+    }
+  }
+}

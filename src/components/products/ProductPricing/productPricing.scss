@@ -1,0 +1,57 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+@import 'src/styles/universal/responsive';
+@import 'src/styles/atoms/tags';
+
+.product-tile-pricing, .product-page-pricing {
+  color: $font-color;
+
+  .price {
+    padding: 0;
+    font-weight: 500;
+  }
+
+  .dollar-sign {
+    padding-right: 5px;
+  }
+
+  .product-size {
+    font-weight: 300;
+  }
+}
+
+.product-tile-pricing {
+  @include flex(flex-end);
+  flex-direction: column-reverse;
+
+  .price {
+    font-size: 15px;
+    padding-bottom: 1px;
+  }
+
+  .product-size {
+    font-size: 12px;
+    padding-top: 1px;
+  }
+
+}
+
+.product-page-pricing {
+  text-align: right;
+  padding: 30px 15px 0 15px;
+  @include breakpoint(md) {
+    padding: 30px 30px 0 30px;
+    border-top: $border-light;
+  }
+
+  @include flex(center, space-between);
+  flex-direction: row-reverse;
+
+  .price { font-size: 16px; }
+  .product-size { font-size: 15px; }
+
+  @include breakpoint(md) {
+    .price { font-size: 18px; }
+    .product-size { font-size: 16px; }
+  }
+}

@@ -1,0 +1,89 @@
+// General admin styles
+
+.admin-page-section {
+
+  .main-header {
+    @extend .bold-header;
+    margin-bottom: 10px;
+  }
+}
+
+@import "../components/admin/foodmakers";
+@import "../components/admin/capacities";
+@import "../components/admin/users";
+
+.item-name {
+  @include ellipsis-overflow(2);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.item-foodmaker {
+  @include ellipsis-overflow(1);
+}
+
+.admin-display {
+  background-color: white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+
+  .admin-item {
+    padding: 7.5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &.multi-line-item { padding: 4.5px 15px; }
+    &:first-child { padding-top: 15px; }
+    &:last-child { padding-bottom: 15px; }
+
+    &.big-line-item {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .subdued {
+      font-size: 12px;
+      color: $color-font-lightest;
+      font-weight: 400;
+    }
+
+    .right {
+      text-align: right;
+      font-weight: 600;
+    }
+  }
+}
+
+
+.admin-section {
+  background-color: white;
+  border-radius: $border-radius;
+  border: $border;
+  box-shadow: $box-shadow;
+  margin-top: 30px;
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+
+  &:first-child { margin-left: 0px; }
+  &:last-child { margin-right: 0px; }
+
+
+
+  &.span-6 { width: 50%; }
+  &.span-3 { width: 25%; }
+  &.span-4 { width: 33.33%; }
+}
+
+
+.admin-container {
+  background-color: white;
+  border-radius: $border-radius;
+  border: $border;
+  box-shadow: $box-shadow;
+  padding: 15px;
+
+  &:not(:first-child) {
+    margin-top: 30px;
+  }
+}

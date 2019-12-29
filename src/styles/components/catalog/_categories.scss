@@ -1,0 +1,45 @@
+// A snippet for foodmakers img, name and location
+@import "./categories/browse";
+
+
+
+// On mobile, the styling for previewing subcategories
+.subcategory-preview {
+  padding: 30px 15px;
+  &:not(:last-child) {
+    border-bottom: $border;
+  }
+
+  .subcategory-header {
+    @extend .flex-out;
+
+    .subcategory-name {
+      @extend .uppercase-and-spaced-text;
+      text-transform: none;
+      font-size: 16px;
+    }
+
+    .subcategory-link {
+      @extend .uppercase-header-emph;
+      font-weight: 400;
+      display: flex;
+    }
+  }
+}
+
+
+
+// SUbcategory Tabs
+.subcategory-tabs {
+  .ant-tabs-bar {
+    position: fixed;
+    overflow-x: scroll;
+    width: 100%;
+    z-index: 50;
+    background-color: white;
+  }
+
+  .ant-tabs-content {
+    padding-top: 40px;
+  }
+}

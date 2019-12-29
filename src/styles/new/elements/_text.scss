@@ -1,0 +1,7 @@
+.header-and-subheader {
+  h1 {
+    @extend .bold-green;
+    margin-bottom: 0;
+  }
+  p { @extend .standard-paragraph;}
+}

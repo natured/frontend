@@ -1,0 +1,18 @@
+.button__primary {
+  background-color: #FF8552;
+  color: white;
+  font-weight: bold;
+
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .anticon { padding: none; }
+  .icon-left { padding-right: 30px; }
+  .icon-right { padding-left: 30px; }
+
+  @media screen and (max-width: 767px) {
+    min-width: 100%;
+  }
+}

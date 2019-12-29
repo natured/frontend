@@ -1,0 +1,64 @@
+$item-size: 127px;
+
+
+.logos {
+  padding: 0 0 32px;
+  @media (min-width: 56.25em) {
+    padding: 48px 0 38px;
+  }
+
+  .logos__items {
+    display: inline;
+    @media (min-width: 767px) {
+      @include space-between();
+    }
+  }
+
+  .logo__item {
+    padding: 1em 0;
+    text-align: center;
+
+    svg {
+      transition: $transition;
+      fill: $font-color;
+      width: auto;
+      max-height: 35px;
+      @media (min-width: 25em) { max-height: 40px; }
+      @media (min-width: 56.25em) { max-height: 50px; }
+    }
+
+    &:hover svg {
+      transition: $transition;
+      fill: $primary-emph;
+    }
+  }
+
+  .logo__cta {
+    @extend .caps;
+
+    a {
+      @include flex-center();
+
+      &:hover {
+        .circled {
+          transition: $transition;
+          background-color: darken($primary-bg, 10%);
+        }
+      }
+    }
+
+    .circled {
+      transition: $transition;
+      margin-left: 15px;
+      background-color: darken($primary-bg, 5%);
+      .anticon { padding: 1px 0 0 3px; }
+    }
+
+    .arrow {
+      top: -2px;
+      margin-left: 1em;
+      height: 34px;
+      width: 34px;
+    }
+  }
+}

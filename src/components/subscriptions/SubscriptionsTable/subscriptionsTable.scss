@@ -1,0 +1,31 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+@import 'src/styles/universal/responsive';
+
+.product-subscriptions {
+  .subscription {
+    @include flex(center, space-between);
+    flex-direction: row;
+    max-width: 500px;
+    padding-bottom: 10px;
+
+    .subscription-actions {
+      @include flex(flex-end, center);
+      flex-direction: column;
+    }
+
+    .product-grid-display {
+      max-width: calc(100% - 84px);
+    }
+
+    .subscription-period {
+      font-size: .8rem;
+      font-weight: 500;
+      padding-top: 10px;
+      display: none;
+      @include breakpoint(md) {
+        display: block;
+      }
+    }
+  }
+}

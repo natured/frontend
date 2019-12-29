@@ -1,0 +1,95 @@
+$color-primary: #334E4C !default;
+$color-secondary: #FFE074 !default;
+// ADC698
+
+// 5DA271
+// $color-highlight: #F06543 !default;
+
+// 5DA271s
+$color-highlight: #E1EFF2   !default;
+$color-font: #4A4A4A !default;
+$color-font-light: #787878 !default;
+$color-font-lightest: #BABABA !default;
+
+
+$color-safety: #2D6752 !default;
+$color-bright: #FFBC42 !default;
+
+$color-black: #1e1d02;
+$color-red: #E07A5F;
+$color-green: #7DA47B;
+$color-orange: #FF5722;
+$color-cool-grey: #B0BEC5;
+$color-subdued: #F9F6F3;
+// $color-success: #65a15a;
+// $color-success: #399E5A;
+$color-success: $green;
+$color-error: $color-highlight;
+$color-yellow: #fddf8c;
+// 73a07f
+// E0AFA0 F1DABF
+// B7D1DA
+
+$color-font: #4A4A4A;
+$color-border: #EBEBEB;
+$color-border-darker: #BABABA;
+$color-bg-gray: #F6F6F6;
+
+// Responsive
+$media-xs: 576px;
+$media-sm: 768px;
+$media-md: 992px;
+$media-lg: 1281px;
+
+// Brand colors
+$color-facebook: #365397;
+$color-twitter: #00a9f1;
+$color-google-plus: #e0452c;
+
+$font-family-serif: 'p22-mackinac-pro', serif !important;
+
+$font-family-sans-serif:
+  'soleil',
+  'proxima-nova',
+  BlinkMacSystemFont,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  Helvetica,
+  Arial,
+  sans-serif;
+
+$standard-font:
+  'soleil',
+  'proxima-nova',
+  BlinkMacSystemFont,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  Helvetica,
+  Arial,
+  sans-serif;
+
+$border-radius: 3px;
+$border: 1px solid rgba(0,0,0,0.05);
+$border-set: 1px solid $color-border;
+$transition: 0.3s ease;
+
+
+$box-shadow: 0 5px 10px rgba(0, 0, 0, 0.03);
+$box-shadow-top: 0 -5px 10px rgba(0, 0, 0, 0.03);
+$box-shadow-aggressive: 0 5px 10px rgba(0, 0, 0, 0.06);
+$box-shadow-alt: 0 4px 4px 0px rgba(0,0,0,0.05);
+
+
+
+
+$content-max-width: 969px;
+$max-width: 969px;
+
+$primary: #3E886B;
+$secondary: #FF5827;
+$primary-bg: #EDF4F1;
+$secondary-bg: #FFFDFB;
+$gray-bg: #F7F7F7;
+$primary-emph: #2E634E;

@@ -1,0 +1,59 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.column {
+  flex-basis: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .column {
+    flex: 1;
+  }
+}
+
+
+.payment-col {
+  width: 25%;
+
+
+  @media screen and (max-width: 1250px) {
+    width: 33.33333%;
+  }
+  @media screen and (max-width: 1025px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    .card-in-grid { margin: 0 0 15px 0; }
+  }
+}
+
+
+  .card-in-grid {
+    margin: 10px;
+    padding: 15px;
+    border: $border;
+    border-radius: $border-radius;
+
+    .tag-green { margin-top: 5px; }
+
+    .anticon {
+      padding-right: 0 !important;
+    }
+
+    .button-circle {
+      border-radius: 50px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .anticon { font-size: 14px; }
+    }
+  }

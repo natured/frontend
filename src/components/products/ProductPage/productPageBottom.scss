@@ -1,0 +1,19 @@
+@import 'src/styles/universal/responsive';
+
+.bottom-section {
+  padding-top: 10px;
+  line-height: 1.7;
+
+  p {
+    padding-bottom: 10px;
+  }
+
+  .beneath-left, .beneath-right {
+    width: 100%;
+  }
+
+  @include breakpoint(md) {
+    .beneath-left { width: 60%; }
+    .beneath-right { width: 40%; }
+  }
+}

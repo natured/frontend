@@ -1,0 +1,21 @@
+.fulfillment-header {
+  position: fixed;
+  padding: 10px;
+  width: calc(100% - 20px);
+  border-bottom: $border;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  z-index: 1;
+}
+
+.fulfillment-content {
+  padding-top: calc(42px);
+  min-height: calc(100vh - 42px);
+
+  .full-height {
+    height: -webkit-fill-available;
+  }
+}

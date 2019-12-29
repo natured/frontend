@@ -1,0 +1,12 @@
+.fulfillment-content {
+  @import "../components/fulfillment/pages/home";
+}
+
+@import "../components/fulfillment/header";
+@import "../components/fulfillment/orders";
+
+.banner {
+  @extend .centered;
+  background-color: $color-subdued;
+  padding: 15px;
+}

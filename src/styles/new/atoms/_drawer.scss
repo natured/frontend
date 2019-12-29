@@ -1,0 +1,90 @@
+// Overlay and drawer slideout
+$animation-length: .5s;
+$drawer-transition-close: z-index 0s ease-in-out $animation-length;
+$drawer-transition-open: z-index 0s;
+
+// Overlay
+$overlay-opacity: .75;
+$overlay-color: $black;
+$overlay-transition: opacity $animation-length ease-in-out;
+
+// Drawer container
+$drawer-container-transition: transform $animation-length ease-in-out;
+$drawer-container-max-width: 450px;
+$drawer-container-bg-color: $white;
+
+// Drawer content
+$drawer-content-padding: 15px;
+
+.drawer {
+  @include positioned(0, 0, 0, 0);
+  position: fixed;
+  z-index: -100; //Underneath nav, but above everything else
+  display: block;
+  transition: $drawer-transition-close; // Delays hiding until after animation
+
+  &.is-opened {
+    z-index: 100;
+    transition: $drawer-transition-open;
+  }
+
+  @media (min-width: 767px) {
+    display: none;
+  }
+}
+
+.drawer-overlay {
+  @include positioned(0, 0, 0, 0);
+  position: absolute;
+  display: block;
+  opacity: 0;
+  background-color: $overlay-color;
+  transition: $overlay-transition;
+
+  &.is-opened {
+    transition: $overlay-transition;
+    opacity: $overlay-opacity;
+  }
+}
+
+.drawer-container {
+  @include positioned(0, inherit, 0, 0);
+  position: absolute;
+  max-width: $drawer-container-max-width;
+  width: 100%;
+  background-color: $drawer-container-bg-color;
+  transition: $drawer-container-transition;
+
+  &.from-left {
+    transform: translateX(-100%);
+  }
+
+  &.from-right {
+    transform: translateX(100%);
+  }
+
+  &.is-opened {
+    transform: translateX(0);
+    transition: $drawer-container-transition;
+  }
+}
+
+.drawer-scroll {
+  overflow-y: scroll;
+}
+
+.drawer-content {
+  padding: 30px 0;
+}
+
+.drawer-outer {
+  @include outer-padding();
+}
+
+.drawer-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}

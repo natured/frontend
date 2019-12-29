@@ -1,0 +1,8 @@
+.bold-header {
+  font-weight: 800;
+}
+
+.bold-green {
+  @extend .bold-header;
+  color: $primary;
+}

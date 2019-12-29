@@ -1,0 +1,22 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+
+.natured-value {
+  text-align: left;
+  background-color: $gray-background-color;
+  padding: 10px 10px;
+  border-radius: $border-radius;
+  margin-bottom: 25px;
+  svg { padding-right: 10px; }
+  font-weight: 300;
+  // font-size: 14px;
+
+  @include breakpoint(md) {
+    padding: 10px 25px;
+    svg { padding-right: 25px; }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

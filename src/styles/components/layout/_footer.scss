@@ -1,0 +1,105 @@
+.footer__new {
+  border-top: $border-set;
+
+  // Menu contains logo + main links
+  // On desktop, very oversized spacing
+  .footer-menu {
+    padding: 2rem 0;
+    @media screen and (min-width: 64rem) {
+      padding: 4rem 0;
+    }
+
+    .footer-row {
+      @media screen and (max-width: 475px) {
+        flex-direction: column;
+        align-items: center;
+        .footer-main-links { padding-top: 2rem; }
+      }
+
+      @extend .content-container;
+      display: flex;
+      justify-content: space-between;
+      .natured-brand-logo { max-width: 100px; }
+
+      .footer-main-links {
+        display: flex;
+        justify-content: space-between;
+        width: 65%;
+
+        @media screen and (max-width: 767px) {
+          width: 100%;
+          justify-content: space-around;
+        }
+      }
+
+
+    }
+  }
+
+  .footer-info {
+    background-color: $color-bg-gray;
+    padding: 2rem 0;
+    .footer-row {
+      @extend .content-container;
+      display: flex;
+      justify-content: space-between;
+      color: $color-font-lightest;
+      font-size: 12px;
+    }
+
+    .footer-legal-links {
+      .footer-section-link {
+        padding: 0 7.5px;
+        &:first-child { padding-left: 0; }
+        &:last-child { padding-right: 0; }
+        color: $color-font-lightest;
+        &:hover {
+          color: $color-font;
+        }
+      }
+    }
+  }
+}
+
+.footer-section {
+  .footer-section-header {
+    // TODO: extrapolate this header type to the fonts file
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-font-light;
+    padding-bottom: 7.5px; // To make sure next link is spaced down 15px
+  }
+  .footer-section-link {
+    display: block;
+    font-weight: 600;
+    padding: 7.5px 0;
+    font-size: 14px;
+    color: $color-font-lightest;
+    transition: $transition;
+
+    &:hover {
+      transition: $transition;
+      color: $color-success;
+    }
+  }
+  .footer-social-icons {
+    display: flex;
+    padding: 15px 0;
+
+    .icon-link {
+      padding: 0 7.5px;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &.hide-on-mobile {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+}

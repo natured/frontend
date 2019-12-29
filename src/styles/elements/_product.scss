@@ -1,0 +1,29 @@
+$product-img-height: 65px;
+
+.product-grid-display {
+  display: flex;
+  align-items: center;
+
+  .product-image {
+    height: $product-img-height;
+    border-radius: $border-radius;
+    margin-right: 15px;
+  }
+
+  .product-name {
+    @include ellipsis-overflow(2);
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .product-foodmaker {
+    @include ellipsis-overflow(1);
+  }
+
+  .product-description {
+    font-size: 12px;
+    color: $color-font-lightest;
+    sup { top: -.35em; }
+  }
+
+}

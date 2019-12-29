@@ -1,0 +1,50 @@
+$input-font-color: rgba(0, 0, 0, 0.65);
+$input-placeholder-color: #C6C6C6;
+$input-padding: 10px 14px;
+$input-height: 1.5;
+$input-border: 1px solid #D9D9D9;
+$input-box-shadow: rgba(50, 50, 93, 0.109804) 0px 4px 6px, rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
+
+.StripeElement {
+  display: block;
+  margin: 0;
+  background: white;
+  color: $input-font-color;
+  padding: $input-padding;
+  border: $input-border;
+  border-radius: $border-radius;
+  line-height: $input-height;
+  font-family: $font-family-sans-serif;
+
+  // Styles set in  js component: placeholder, font color, font size
+}
+
+.is-disabled .StripeElement {
+  background: #f5f5f5;
+}
+
+.StripeElement--focus, .StripeElement:hover {
+  box-shadow: $input-box-shadow;
+  transition: all 150ms ease;
+}
+
+.StripeElement--invalid, .has-error .StripeElement {
+  border: 1px solid $color-highlight;
+
+  .ant-form-explain {
+    @extend .error-message;
+    padding-top: 10px;
+  }
+}
+
+.disabled {
+  .StripeElement {
+    pointer-events:none;
+    background-color: red;
+    opacity: 1;
+    color: #BABABA !important;
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}

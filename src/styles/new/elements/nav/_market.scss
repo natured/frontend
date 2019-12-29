@@ -1,0 +1,52 @@
+// Positioning
+$top-bar-z-index: 104;
+$bottom-bar-z-index: 103;
+
+$top-bar-bg-color: $primary-emph;
+$top-bar-height: 32px;
+$top-bar-spacing: 20px;
+$top-bar-font-color: $white;
+$top-bar-border-color: rgba(255, 255, 255, .4);
+
+$bottom-bar-bg-color: $white;
+$bottom-bar-height: 70px;
+$bottom-bar-mobile-height: 50px;
+
+// Overall styles
+.nav__market {
+  display: block;
+
+  // Makes sure nav is above drawer
+  z-index: 200;
+  .headroom {
+    z-index: 200 !important;
+  }
+}
+
+.nav-market__spacer {
+  positon: relative;
+  height: $bottom-bar-mobile-height;
+  @media (min-width: 767px) {
+    height: $bottom-bar-height;
+  }
+}
+
+
+// When drawer is toggled on mobile, hide the extra headroom
+.headroom-wrapper {
+  @media (max-width: 767px) {
+    &.is-opened .headroom {
+      position: fixed;
+      transition: transform 200ms ease-in-out;
+      transform: translateY(-100%) !important;
+    }
+
+    &:not(.is-opened) .headroom {
+      transition: transform 200ms ease-in-out;
+      transform: translateY(0%);
+    }
+  }
+}
+
+@import "top-bar";
+@import "bottom-bar";

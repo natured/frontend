@@ -1,0 +1,45 @@
+/* Handles product actions at different points
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+// Handles the product actions on the actual product page
+.product-page {
+  .product-actions {
+    padding: 30px;
+    text-align: center;
+
+    .request-btn, .add-to-cart-btn {
+      width: -webkit-fill-available;
+    }
+
+    @media screen and (max-width: 767px) {
+      border-bottom: $border;
+    }
+  }
+}
+
+
+.add-to-cart-btn {
+  @extend .oversized-btn;
+  @extend .dark;
+  padding: 7.5px 25px !important;
+  font-size: 14px !important;
+  background-color: white;
+}
+
+.request-btn {
+  @extend .oversized-btn;
+  padding: 7.5px 25px !important;
+  font-size: 14px !important;
+  border: $border;
+  color: $color-font-light;
+  transition: $transition;
+  background-color: white;
+
+  &:hover {
+    border: 1px solid $color-font;
+    color: $color-font;
+    transition: $transition;
+    box-shadow: $box-shadow-aggressive;
+  }
+}

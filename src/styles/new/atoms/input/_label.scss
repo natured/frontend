@@ -1,0 +1,18 @@
+.ant-form-item-label {
+  line-height: 1.2;
+  label {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 12px;
+    margin: 0px 0 3px 1px;
+    color: $light-gray;
+    &::after { content: ''; }
+  }
+}
+
+.hide-label {
+  label {
+    opacity: 0;
+  }
+}

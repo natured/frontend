@@ -1,0 +1,42 @@
+$hero-breakpoint-large: 56.25em;
+$hero-breakpoint-med: 37.5em;
+
+$hero-max-width: 700px;
+
+.hero--large {
+  .hero__inner {
+    @include flex-center();
+    min-height: 500px;
+
+    @media screen and (min-width: $hero-breakpoint-med) {
+      height: calc(100vh - 60px);
+    }
+    @media screen and (min-width: $hero-breakpoint-large) {
+      height: calc(100vh - 80px);
+    }
+  }
+
+  .hero__content {
+    z-index: 5;
+    .hero__outer {
+      @include outer-padding();
+    }
+
+    .hero__title {
+      max-width: $hero-max-width;
+      font-size: 64px;
+      font-weight: 800;
+      color: $white;
+      text-shadow: rgba(0,0,0,0.5) 0px 0px 120px;
+    }
+
+    .hero__subtitle {
+      width: 50%;
+      color: $white;
+      font-weight: 300;
+      font-size: 1.8rem;
+      padding: 48px 0;
+      text-shadow: rgba(0, 0, 0, .9) 5px 5px 120px;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+@import 'src/styles/universal/mixins';
+
+.product-actions.product-page-actions {
+  padding: 15px 15px 20px 15px;
+
+  @include breakpoint(md) {
+    padding: 15px 30px 30px 30px;
+  }
+
+  .dropdown-container {
+    @include flex(center, center);
+    .add-to-cart.add {
+      background-color: $midnight-color;
+      border-color: $midnight-color;
+      height: 38px;
+      margin-left: 15px;
+      &:hover {
+        cursor: default;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .add-to-cart {
+    width: 100%;
+    max-width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+
+    &.add .add-icon {
+      display: none;
+    }
+
+    &.dropdown {
+      border: $border-darkened;
+      height: 38px;
+      select {
+        height: 40px;
+        border: none;
+        width: inherit;
+      }
+    }
+  }
+}

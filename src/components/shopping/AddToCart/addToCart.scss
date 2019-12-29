@@ -1,0 +1,172 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+@import 'src/styles/universal/responsive';
+
+$add-to-cart-width: 94px;
+$add-to-cart-height: 27px;
+$add-to-cart-font-size: 12px;
+$add-to-cart-font-weight: 400;
+$add-to-cart-light-color: rgba(0,0,0,0.05);
+$add-to-cart-border: 1px solid $add-to-cart-light-color;
+
+// universal add to cart styles
+.add-to-cart {
+  @include flex(center, space-around);
+  text-align: center;
+  border: $add-to-cart-border;
+  border-radius: $border-radius;
+  max-width: $add-to-cart-width;
+  width: $add-to-cart-width;
+  height: $add-to-cart-height;
+  line-height: $add-to-cart-height;
+  color: $font-color;
+  font-weight: $add-to-cart-font-weight;
+  font-size: $add-to-cart-font-size;
+}
+
+
+.add-to-cart {
+  // add button for adding to cart
+  &.add {
+    border-color: $primary-color;
+    background-color: $primary-color;
+    color: white;
+    box-shadow: $box-shadow;
+
+    &:hover {
+      cursor: pointer;
+      border-color: $primary-color;
+      background-color: $primary-color;
+      color: white;
+      box-shadow: $btn-box-shadow;
+    }
+
+    &:disabled, &[disabled] {
+      opacity: 0.5;
+    }
+  }
+
+  // out of stock button
+  &.out-of-stock {
+    border-color: $gray-background-color;
+    background-color: $gray-background-color;
+
+    &:hover { cursor: default; }
+  }
+
+  &.dropdown {
+    position: relative;
+    $atc-dropdown-icon: 30px;
+    $atc-dropdown-padding: 30px;
+
+    select {
+      $atc-dropdown-right: $atc-dropdown-icon;
+      $atc-dropdown-left: $atc-dropdown-padding;
+      $atc-dropdown-total: $atc-dropdown-right + $atc-dropdown-left;
+
+      z-index: 1;
+      padding: 0 $atc-dropdown-padding;
+      width: calc(#{$add-to-cart-width} - #{$atc-dropdown-total});
+      padding-right: $atc-dropdown-right;
+      height: $add-to-cart-height;
+      line-height: $add-to-cart-height !important;
+      background-color: transparent;
+      
+      // removes default arrow
+      -moz-appearance: none; // firefox
+      -webkit-appearance: none; // chrome
+      &::-ms-expand { display: none; } //IE
+    }
+
+    .dropdown-icon {
+      position: absolute;
+      width: $atc-dropdown-icon;
+      right: 0;
+      line-height: $add-to-cart-height !important;
+      svg { vertical-align: middle; }
+    }
+  }
+}
+
+
+
+
+.add-to-cart.login {
+  &:hover {
+    background-color: $highlight-color;
+    border-color: $highlight-color;
+    color: $font-color;
+    box-shadow: $btn-box-shadow;
+  }
+}
+
+// when loading
+.add-to-cart.loading {
+  color: $font-lightest;
+  &:hover {
+    cursor: default;
+    border: $add-to-cart-border;
+  }
+}
+
+.add-to-cart.simple-add {
+  font-weight: 400;
+  font-size: 14px;
+  // border-radius: 50px;
+  border-color: $primary-color;
+  background-color: $primary-color;
+  color: white;
+
+  &:hover {
+    cursor: pointer;
+    border-color: $primary-color;
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+.increments {
+  @include flex(center, space-between);
+  &:hover, span:hover { cursor: default; }
+  max-width: $add-to-cart-width;
+  width: $add-to-cart-width;
+  height: $add-to-cart-height;
+  line-height: $add-to-cart-height;
+
+  .icon {
+    @include flex(center, center);
+    padding: 7.5px 10px;
+    font-weight: bold;
+    font-size: 10px;
+    width: 10px;
+    height: 10px;
+
+    &.unavailable {
+      color: $font-lightest;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.available-later {
+  font-size: 12px;
+  line-height: 12px;
+  color: $font-lightest;
+  font-weight: 300;
+}
+
+.remove-from-cart {
+  color: $font-lightest;
+  font-size: 12px;
+  font-weight: 300;
+  padding-top: 5px;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

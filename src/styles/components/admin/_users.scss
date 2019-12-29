@@ -1,0 +1,122 @@
+.user-navigation {
+  position: absolute;
+  width: 250px;
+  background-color: white;
+  box-shadow: $box-shadow;
+
+  .user-details {
+    padding: 15px;
+    text-align: center;
+    border-bottom: $border;
+  }
+}
+
+.user-page {
+  display: flex;
+}
+
+.user-navigation-list {
+  padding: 15px 0;
+  .user-navigation-item {
+    display: flex;
+    align-items: center;
+    padding: 15px calc(50% - 65px);
+    transition: $transition;
+    .anticon { padding-right: 30px; }
+
+    &.active {
+      padding-left: calc(50% - 68px);
+      border-left: 3px solid $color-success;
+      background-color: rgba(#313131, 0.02);
+    }
+
+    &:hover {
+      transition: $transition;
+      background-color: rgba(#313131, 0.01);
+    }
+  }
+}
+
+.user-content {
+  margin-left: 250px;
+  padding-left: 30px;
+  width: 100%;
+}
+
+.credits-stats {
+  margin: 0 0 30px 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border: $border;
+  box-shadow: $box-shadow;
+
+  .stat {
+    margin: 30px 0;
+    width: 33.333%;
+    &:not(:last-child) {
+      border-right: $border;
+    }
+  }
+}
+
+.stat {
+  display: flex;
+  justify-content: center;
+
+  .stat-icon {
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 50%;
+    padding: 0;
+    height: 75px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+  }
+
+  .stat-details {
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .stat-title {
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+
+  .stat-numbers {
+    display: flex;
+    align-items: center;
+
+    .stat-number {
+      font-size: 24px;
+      font-weight: bold;
+      padding-right: 30px;
+    }
+
+    .stat-caption {
+      font-size: 12px;
+      font-weight: 400;
+      color: $color-font-light;
+    }
+  }
+}
+
+.main-content {
+  flex: 4;
+  padding-right: 30px;
+}
+
+.side-content {
+  flex: 3;
+}
+
+
+.autopopulate-segment {
+  padding: 15px 0 30px 0;
+  a.underlined { padding-right: 15px; }
+}

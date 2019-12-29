@@ -1,0 +1,5 @@
+// shopping types
+export default {
+  GET_SUBSCRIPTIONS: 'GET_SUBSCRIPTIONS',
+  UPDATE_SUBSCRIPTION: 'UPDATE_SUBSCRIPTION',
+};

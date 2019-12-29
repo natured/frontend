@@ -1,0 +1,27 @@
+.full-page-content { // Content with only one div on screen that should be center
+  display: flex;
+  min-height: 100%;
+  // height: calc(100% - 60px); //  Accounts for 30px padding
+  justify-content: center;
+  background-color: lighten($color-subdued, 2%);
+
+  .single-section {
+    padding: 30px;
+  }
+
+
+  @media screen and (min-width: 768px) {
+    align-items: center;
+    .single-section {
+      width: 40%;
+      max-width: 500px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    align-items: flex-start;
+    .single-section {
+      width: 100%;
+    }
+  }
+
+}

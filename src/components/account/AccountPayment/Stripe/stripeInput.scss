@@ -1,0 +1,19 @@
+@import "src/styles/universal/variables";
+
+.StripeElement--focus, .StripeElement:hover {
+  box-shadow: $box-shadow;
+}
+
+.has-error .StripeElement {
+  border: 1px solid $red;
+}
+
+.is-disabled .StripeElement {
+  border: none;
+  color: $black !important;
+  opacity: 1 !important;
+  // TODO: how to get black font color to display on disabled
+  &:hover {
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,32 @@
+@import 'src/styles/universal/responsive';
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+
+.category-section {
+  // max-width: 1000px !important;
+  padding: 2rem 0 4rem !important;
+
+  .category-section-header {
+    padding: 15px;
+    margin-bottom: 2rem;
+
+    .subtitle {
+      @include breakpoint(md) {
+        max-width: 75%;
+      }
+
+      @include breakpoint(xl) {
+        max-width: 50%;
+      }
+      color: $gray-color;
+      font-size: 22px;
+    }
+  }
+
+  .category-images {
+    @include flex(center, flex-start);
+    flex-wrap: wrap;
+    // max-width: 1000px;
+    margin: auto;
+  }
+}

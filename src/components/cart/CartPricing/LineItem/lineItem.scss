@@ -1,0 +1,27 @@
+@import 'src/styles/universal/mixins';
+@import 'src/styles/universal/variables';
+@import 'src/styles/atoms/text';
+
+.cart--pricing--item {
+  @include flex(center, space-between);
+  padding: 10px 5px;
+
+  &.success { color: $bright-green; }
+}
+
+.cart--pricing--subdued {
+  font-size: 12px;
+  color: $font-lightest;
+  font-weight: 400;
+}
+
+.cart--pricing--total {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 30px 5px;
+
+  .cart--pricing--subdued {
+    padding-top: 5px;
+    @include be-gray();
+  }
+}

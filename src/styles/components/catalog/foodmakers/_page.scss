@@ -1,0 +1,44 @@
+/* Handles sizing, layout, padding, etc. for product page on mobile and desktop
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.foodmaker-page {
+  .foodmaker-image {
+    width: 100%;
+    height: calc(100% - 250px);
+    overflow: hidden;
+    background-size: cover !important;
+  }
+
+  .bottom-section {
+    max-width: 860px;
+    margin: auto;
+    padding: 30px 15px;
+    border-bottom: $border;
+
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .foodmaker-name {
+      @extend .black-header;
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .foodmaker-image {
+      width: 100%;
+    }
+
+    .bottom-section {
+      padding: 15px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .foodmaker-image {
+      max-height: 400px;
+    }
+  }
+}

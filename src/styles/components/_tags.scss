@@ -1,0 +1,80 @@
+.ant-tag {
+  &.yellow {
+    background-color: $color-secondary;
+    color: $color-font;
+    border-color: $color-secondary;
+  }
+
+  &.pink {
+    background-color: $color-highlight;
+    color: white;
+    border-color: $color-highlight;
+    &:hover {
+      color: white;
+    }
+
+    &.inverse {
+      background-color: white;
+      color: $color-highlight;
+      border-color: $color-highlight;
+    }
+  }
+
+
+
+}
+
+.ant-tag {
+  height: auto;
+  padding: 5px 10px;
+  color: rgba($color-font, .75);
+  background-color: white;
+
+  &:hover {
+    color: $color-black;
+  }
+}
+
+.tag-list {
+  .ant-tag {
+    margin: 0 10px 10px 0;
+  }
+}
+
+
+.ant-tag.with-natured-icon {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+
+  .natured-icon {
+    display: inline;
+    padding-right: 10px;
+  }
+}
+
+// Tags on a table should be transparent
+.ant-table {
+  .ant-tag {
+    background-color: transparent;
+  }
+}
+
+.natured-tag {
+  display: inline-block;
+  box-sizing: border-box;
+  white-space: nowrap;
+  list-style: none;
+
+  font-size: 12px;
+  line-height: 20px;
+  height: 22px;
+
+  background: #fafafa;
+  color: rgba(0, 0, 0, 0.65);
+
+  border: 1px solid #d9d9d9;
+  border-radius: 50px;
+  padding: 0 10px;
+  margin: 0 8px 0 0;
+}

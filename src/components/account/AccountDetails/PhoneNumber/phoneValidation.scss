@@ -1,0 +1,22 @@
+@import 'src/styles/atoms/headers';
+
+.phone-validation-form {
+  text-align: center;
+
+  p.explanation {
+    font-size: 14px;
+  }
+
+  .code-input {
+    margin-bottom: 50px;
+  }
+
+  .react-code-input {
+    input {
+      padding: 0 !important;
+      text-align: center;
+      color: $dark-green !important;
+      font-weight: bold;
+    }
+  }
+}

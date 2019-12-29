@@ -1,0 +1,18 @@
+.ant-collapse-item {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  border: $border !important;
+  margin-bottom: 30px;
+
+  .ant-collapse-content {
+    border-top: $border !important;
+    padding-top: 15px;
+  }
+
+  &.ant-collapse-item-active {
+    .ant-collapse-header {
+      font-weight: 400;
+      color: $color-success;
+    }
+  }
+}

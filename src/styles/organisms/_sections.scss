@@ -1,0 +1,35 @@
+/**
+ *  A form organism is any section that holds a form
+ *    We inherit styles for
+ *      - an initial h1 header
+ *      - a subparagraph
+ *      - the form itself
+ *      - sublinks if necessary
+ */
+.organism--form {
+  h1 {
+    @include dark-green-header();
+    margin-bottom: 0;
+  }
+
+  p {
+    @include p-large();
+  }
+
+  form {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
+  .links {
+    font-size: 13px;
+    font-weight: 500;
+
+    > *:not(:first-child) {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: $border;
+    }
+  }
+
+}

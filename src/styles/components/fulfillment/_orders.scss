@@ -1,0 +1,15 @@
+.fulfillment-list-item {
+  padding: 15px;
+  border-bottom: $border !important;
+
+  .ant-list-item-content {
+    @extend .flex-out;
+  }
+
+  .item-right {
+    display: flex;
+    align-items: center;
+    max-width: calc(100% - 45px);
+    overflow: hidden;
+  }
+}

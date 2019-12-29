@@ -1,0 +1,34 @@
+.search--field {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+
+  .search--close {
+    display: none;
+    align-items: center;
+    color: rgba($dark-green, .25);
+    font-weight: 300;
+  }
+
+  &.open {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 15px;
+
+    .search--close {
+      display: flex;
+    }
+
+    @include breakpoint(lg) {
+      position: relative;
+    }
+  }
+
+  .desktop-search-icon {
+    color: $dark-green;
+    font-weight: 400;
+  }
+}

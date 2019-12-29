@@ -1,0 +1,192 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+@import 'src/styles/atoms/tags';
+
+/**
+ *     Table of Contents
+ * ----------------------------
+ *   1. Variables
+ *   2. Main footer
+ *   3. Main spacing
+ *   4. Brand links (left-hand side)
+ *   5. Section links (right-hand side)
+ *   6s. Legal section (bottom portion)
+ */
+
+/* 1. Variables */
+$footer-color: darken($midnight-color, 2%);
+$footer-dark-color:darken($midnight-color, 5%);
+$footer-link-color: white;
+$footer-font-weight: 100;
+
+
+/* 2. Main footer */
+.footer-- {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $footer-color;
+  color: $footer-link-color;
+  font-weight: $footer-font-weight;
+
+  a {
+    color: $footer-link-color;
+    font-weight: $footer-font-weight;
+
+    &:hover {
+      color: $footer-link-color;
+      opacity: 0.5;
+    }
+  }
+}
+
+/* 3. Main spacing */
+.footer--main {
+  padding: 2rem 0;
+  @include breakpoint(md) {
+    padding: 4rem 0;
+  }
+
+  .container--outer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @include breakpoint(md) {
+      flex-direction: row;
+    }
+  }
+}
+
+[class^="footer--brand"] {
+  align-items: center;
+  padding-bottom: 3rem;
+  justify-content: space-between;
+
+  @include breakpoint(md) {
+    padding-bottom: 0;
+  }
+}
+
+.footer--logo {
+  padding-bottom: 2rem;
+
+  svg {
+    width: 100px;
+    @include breakpoint(md) {
+      width: 170px; // manually calcuylated from width of social links
+    }
+  }
+}
+
+.footer--social {
+  display: flex;
+  padding-top: 2rem;
+
+  > * {
+    margin: 0 15px;
+    &:first-child { margin-left: 0px; }
+    &:last-child { margin-right: 0px; }
+  }
+
+  .icon--circle {
+    color: white;
+    border: 2px solid white;
+    &:hover { opacity: 0.5; }
+  }
+}
+
+// The phone number and hep emails
+a.footer--help {
+  padding: .5rem 0;
+  width: 180px; //hard coded
+
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: -0.25px;
+
+  // On hover, make link opaque (but not icon)
+  &:hover {
+    color: $footer-link-color;
+    opacity: 1;
+    span { opacity: 0.5; }
+  }
+}
+
+.footer--help--vertical {
+  .contact-us {
+    @include tag
+  }
+}
+
+
+// Right hand side of footer
+[class^="footer--sections"] {
+  width: 100%;
+  justify-content: space-around;
+
+  @include breakpoint(md) {
+    width: 50%;
+    justify-content: space-between;
+  }
+
+  @include breakpoint(lg) {
+    width: 33.33333%;
+  }
+}
+
+[class^="footer--section"] {
+  .footer--header {
+    font-family: $serif-font;
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: .6rem;
+  }
+
+  a {
+    padding: .25rem 0;
+    opacity: .5;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: -0.25px;
+
+    &:hover {
+      opacity: 1;
+      color: white;
+    }
+  }
+}
+
+.footer--legal {
+  background-color: $footer-dark-color;
+  padding: 15px 10px;
+
+  a {
+    padding: 0 1rem;
+    &:first-child { padding-left: 0; }
+    &:last-child { padding-right: 0; }
+  }
+
+  a, span {
+    font-weight: 300;
+    opacity: .8;
+  }
+
+  a:hover {
+    color: white;
+    opacity: 1;
+  }
+
+  .container--outer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+
+.footer--emph {
+  @include yellow-tag();
+  color: $font-color;
+  font-weight: 400;
+  padding: 3px 8px;
+}

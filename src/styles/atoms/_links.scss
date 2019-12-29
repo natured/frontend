@@ -1,0 +1,88 @@
+@import 'src/styles/universal/variables';
+
+// links for new
+
+
+
+
+
+
+
+// Derived link variables
+$link-dark-slate: darken($slate-gray, 20%);
+$link-dark-peach: darken($peach, 20%);
+$link-lighten-green: lighten($dark-green, 10%);
+
+/**
+ *  Standard link
+ *    - Note that the standard link is the bold slate gray link
+ *    - TODO: once we remove antd, we can remove classname link,
+ *      because using an a tag will be enough for styles
+ */
+a, .link, [class^="link--"] {
+  font-weight: 500;
+  color: $slate-gray; // TODO: Remove once antd is removed
+  transition: $transition;
+  background-color: transparent;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    transition: $transition;
+    color: $link-dark-slate; // TODO: Remove once antd is removed
+  }
+
+  &.underlined {
+    text-decoration: underline;
+  }
+
+  &.primary {
+    color: $primary-color;
+    &:hover { color: darken($primary-color, 10%); }
+  }
+
+  &.highlight {
+    color: $highlight-color;
+    &:hover { color: darken($highlight-color, 10%); }
+  }
+}
+
+// 2. Colors
+@mixin dark-green-link() {
+  color: $dark-green;
+  &:hover { color: $link-lighten-green; }
+}
+
+[class^="link--"][class*="--dark-green"] {
+  @include dark-green-link();
+}
+
+@mixin underline-link() {
+  font-weight: 500;
+  color: $font-color;
+  border-bottom: 1px solid rgba($font-color, .7);
+  // note: set lineheight to font size + 2px
+
+  &:hover {
+    color: $font-lighter;
+    border-color: rgba($font-lighter, .7);
+  }
+}
+
+.link--underline {
+  @include underline-link();
+}
+
+
+
+// 2. Colors
+[class^="link--"][class*="nav"] {
+  @include dark-green-link();
+}
+
+a.text-subdued {
+  &:hover {
+    color: $dark-green;
+  }
+}

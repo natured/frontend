@@ -1,0 +1,226 @@
+.split-page-content {
+  display: flex;
+
+  .split-content {
+    width: 50%;
+    height: calc(100% - 15px);
+    padding: 45px 45px 10px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .true-header {
+    font-size: 3.5rem;
+  }
+
+  .button-default {
+    background-color: transparent;
+  }
+
+  .hide-when-large {
+    display: none;
+  }
+
+  // Static header when split page
+  .static-header {
+    margin-right: -15%;
+    padding: 0;
+    box-shadow: none;
+    justify-content: space-between;
+
+    .brand-header {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .am-navbar {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .diagonal.secondary-split {
+    width: 50%;
+    overflow: hidden;
+
+    .diagonal-image {
+      height: 100%;
+      float: right;
+    }
+  }
+
+  .show-img-sometimes {
+    display: none;
+  }
+
+  .small-footer {
+    padding-top: 45px;
+  }
+
+  // First break point
+  @media only screen and (max-width: 1238px) {
+    .true-subheader {
+      font-size: 1.2rem;
+    }
+  }
+
+  // Second break point
+  @media only screen and (max-width: 1123px) {
+    .static-header {
+      margin-right: -25%;
+      .nav-link {
+        padding: 0 .5rem;
+      }
+
+      .button-nav-link {
+        margin: 0 .5rem;
+      }
+    }
+  }
+
+  // Third break point
+  @media only screen and (max-width: 939px) {
+
+    // Let left hand content fill screen
+    .split-content {
+      width: 100%;
+      z-index: 1;
+      height: calc(100% - 55px);
+      background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 78%);
+    }
+
+    // Hides right hand image when small
+    .secondary-split {
+      display: none;
+    }
+
+    .show-img-sometimes {
+      display: block;
+      position: absolute;
+      width: 100%;
+    }
+
+    .static-header {
+      margin-right: 0;
+      justify-content: space-between;
+    }
+
+    .brand-header {
+      position: absolute;
+      top: 18px;
+      left: 15px;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .true-header {
+      font-size: 2rem;
+      br { display: none; } // hide breaks
+    }
+
+    .true-subheader {
+      br { display: none; } // hide breaks
+    }
+
+    .hide-when-large {
+      display: block;
+    }
+
+    .static-header {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .split-content {
+      height: auto;
+      min-height: 100vh;
+      background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+    }
+  }
+
+  @media only screen and (max-width: 401px) {
+    .split-content {
+      padding: 30px;
+    }
+  }
+
+  @media only screen and (max-width: 321px) {
+    .split-content {
+      padding: 15px;
+      padding-top: 90px;
+      background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 60%);
+    }
+
+    .true-subheader {
+      padding-bottom: 15px;
+
+    }
+  }
+}
+
+// On pages that aren't split-content
+.static-header {
+  // box-shadow: $box-shadow;
+  padding: 10px 15px;
+  .brand-header {
+    position: absolute;
+    top: 23px;
+    left: 15px;
+  }
+}
+
+.static-page-content {
+  @media only screen and (max-width: 767px) {
+    padding-top: 45px;
+    &.transparent { padding-top: 0px; }
+  }
+}
+
+// Should this be moved somewhere else?
+.content-page {
+  @extend .content-container;
+  margin: auto;
+
+  padding-top: 3rem;
+  @media (min-width: 767px) { padding-top: 5rem; }
+
+  @media (min-width: 992px) {
+    max-width: 860px;
+  }
+
+    .non-header {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+        font-weight: 900;
+        color: $color-black;
+        font-family: $font-family-serif;
+    }
+
+    .larger-paragraph {
+        font-size: 1.3em;
+    }
+
+    .body-paragraph {
+        line-height: 2;
+        padding-bottom: 10px;
+    }
+
+    .title {
+        color: $color-black;
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.body-paragraph {
+    line-height: 2;
+    padding-bottom: 10px;
+}
+
+@import './register';

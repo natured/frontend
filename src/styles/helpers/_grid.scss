@@ -1,0 +1,77 @@
+.grid-with-columns {
+  display: flex;
+  padding: 30px 25px;
+
+  .left-column {
+    width: 16.666666666667%;
+    min-width: 225px;
+
+    .main-link {
+      line-height: 2;
+      font-size: 16px;
+      padding: 7.5px 0;
+      color: $dark-green;
+      font-weight: 500;
+
+      &.active {
+        font-weight: bold;
+      }
+
+      &.active + .dropdown {
+        display: block;
+      }
+
+      &:not(.active) + .dropdown {
+        display: none;
+      }
+    }
+
+    .dropdown-link {
+      border-left: 2px solid rgba(0,0,0,0.05);
+      transition: $transition;
+      padding: 10px 0 10px 1.5rem;
+
+      &:hover {
+        border-color: $slate-gray;
+        transition: $transition;
+        padding-left: calc(1.5rem + 2px);
+      }
+
+      &.active {
+        border-color: $color-secondary;
+      }
+    }
+  }
+
+  .right-column {
+    width: 83.3333333333%;
+    max-width: calc(100% - 225px);
+    -webkit-box-flex: 0;
+    flex: none;
+    display: block;
+
+    .main-section {
+      padding-bottom: 30px;
+    }
+
+    .main-title {
+      font-weight: bold;
+      border-bottom: $border;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+
+// .grid {
+//   display: flex;
+//   padding-bottom: 15px;
+//
+//   .grid-2 {
+//     width: 50%;
+//     position: relative;
+//
+//     &:first-child { margin-right: 7.5px; }
+//     &:last-child { margin-left: 7.5px; }
+//   }
+// }

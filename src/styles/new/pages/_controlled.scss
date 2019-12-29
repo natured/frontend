@@ -1,0 +1,20 @@
+.controlled-page {
+  margin: auto;
+
+  &.with-padding {
+    padding: 45px 0;
+  }
+}
+
+.full-page {
+  @include flex-center();
+  @include full-height();
+  @include outer-padding();
+  padding: 20px;
+  flex-direction: column;
+}
+
+.loading-screen {
+  @include flex-center();
+  @include full-height();
+}

@@ -1,0 +1,14 @@
+.cart-delivery-remaining {
+  padding: 10px;
+  text-align: center;
+}
+
+.cart-slideout {
+  background-color: $color-bg-gray;
+}
+
+.cart {
+  @media (max-width: 767px) {
+    padding: 15px 0;
+  }
+}

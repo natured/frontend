@@ -1,0 +1,25 @@
+
+.product--list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  @include breakpoint(xs) {
+    border-top: $border;
+    box-shadow: $box-shadow;
+  }
+}
+
+/** Spacing for product tile */
+.product--tile {
+  width: 100%;
+  padding: 0;
+
+  @include breakpoint(md) {
+    width: calc(50% - 30px);
+    padding: 15px;
+  }
+  @include breakpoint(lg) { width: calc(33.33333% - 30px); }
+  @include breakpoint(xl) { width: calc(25% - 30px); }
+}

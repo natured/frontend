@@ -1,0 +1,27 @@
+.secondary-link {
+  @include transition();
+  &:hover {
+    color: $secondary;
+  }
+}
+
+.link {
+  @include transition();
+  position: relative;
+  font-weight: bold;
+  font-size: 15px;
+
+  &::after {
+    @include transition();
+    @include underline(2px, $font-color);
+    opacity: 0;
+  }
+
+  &.green {
+    color: $primary-emph;
+    &:hover::after {
+      @include underline(2px, $primary-emph);
+      opacity: 1;
+    }
+  }
+}

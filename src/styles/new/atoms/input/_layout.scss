@@ -1,0 +1,61 @@
+.horizontal-form {
+  display: flex;
+  align-items: flex-end;
+}
+
+.ant-form {
+  .ant-form-item:not(:last-child) {
+    padding-bottom: 15px;
+  }
+}
+
+// Two next to each other on desktop, above on mobile
+.split-input {
+  display: flex;
+
+  &:not(:last-child) {
+    padding-bottom: 15px;
+  }
+
+  div.split {
+    width: 50%;
+    &:first-child { padding-right: 7.5px; }
+    &:last-child { padding-left: 7.5px; }
+  }
+
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+    div.split {
+      width: 100% !important;
+      padding: 0 0 0 0;
+
+      &:first-child {
+        padding-right: 0px;
+        margin-bottom: -18px;
+        input {
+          border-radius: 3px 3px 0 0;
+          border-bottom: 0;
+        }
+
+        // First child, on mobile, when theres an error
+        .ant-form-item-with-help {
+          margin-bottom: 15px;
+          input {
+            border-radius: $border-radius;
+            border: $border;
+          }
+        }
+      }
+
+      &:last-child {
+        padding-left: 0px;
+        input {
+          border-radius: 0 0 3px 3px;
+        }
+      }
+    }
+  }
+
+
+
+}

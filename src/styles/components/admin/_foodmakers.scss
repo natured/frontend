@@ -1,0 +1,267 @@
+
+.admin-page-section {
+  padding-bottom: 45px;
+
+  .foodmaker-name, .product-name {
+    @extend .main-header;
+  }
+
+  .foodmaker-slug, .product-slug {
+    padding-bottom: 10px;
+    span { @extend .highlighted; }
+  }
+
+  .foodmaker-detail, .product-detail {
+    font-size: 12px;
+    color: $color-font-light;
+    height: 24px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    .anticon.success { font-size: 14px; }
+  }
+
+  .local-icon {
+    padding-right: 5px;
+  }
+
+  .product-link {
+    font-size: 12px;
+    color: $color-success;
+    height: 24px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: darken($color-success, 5%);
+    }
+
+    .anticon {
+      padding-left: 5px;
+      padding-top: 2px;
+      font-size: 8px;
+    }
+  }
+}
+
+.split-list-item {
+  .ant-list-item-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  border-bottom: $border !important;
+}
+
+.list-item-with-form {
+  @extend .split-list-item;
+  @extend .flex-out;
+  width: 100%;
+  padding-bottom: 8px;
+}
+
+
+.block-item {
+  .ant-list-item-content {
+    display: block;
+  }
+}
+
+.boxed-form {
+  width: 100%;
+  padding: 15px;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  background-color: white;
+}
+
+.ant-switch-checked {
+  background-color: $color-success;
+}
+
+
+.inline-edit {
+  width: 100%;
+
+  .ant-form-item {
+    margin-bottom: 0 !important;
+  }
+
+  .ant-input-sm {
+    font-size: 12px;
+  }
+
+  .ant-input-group-addon {
+    line-height: 23px;
+  }
+}
+
+
+.inline-edit-standard-width {
+  display: inline;
+
+  .ant-form-item {
+    display: inline-block;
+    margin-bottom: 0 !important;
+    &:not(:last-child) { padding-right: 15px; }
+  }
+
+  .ant-input-sm {
+    font-size: 12px;
+  }
+  .ant-input-group-addon {
+    font-size: 10px;
+    line-height: 23px;
+  }
+
+  .maxed-40 { max-width: 40px; }
+  .maxed-100 { max-width: 100px; }
+}
+
+
+
+.timeslot-form-icon {
+  &.anticon-down-circle {
+    @extend .success;
+    transition: color 0.3s ease;
+  }
+
+  &.anticon-right-circle {
+    color: $color-font-lightest;
+    transition: color 0.3s ease;
+  }
+}
+
+
+.image-previews {
+  padding-top: 15px;
+  .rect-preview {
+    padding: 2px;
+    width: 25%;
+  }
+  .square-preview {
+    width: 33.3333%;
+    padding: 2px;
+  }
+}
+
+
+.catalog-page-text {
+  font-size: 12px;
+  color: $color-font-light;
+  height: 24px;
+  line-height: 24px;
+
+  &.product-description {
+    height: auto;
+    p {
+      margin-bottom: 7.5px;
+      &:last-child { margin-bottom: 0; }
+    }
+  }
+}
+
+.page-preview-detail {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  padding: 15px;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  border: $border;
+  transition: $transition;
+  .anticon {
+    color: transparent;
+    transition: $transition;
+    font-size: 8px;
+  }
+
+  &:hover {
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transition: $transition;
+    .anticon {
+      color: $color-success;
+      transition: $transition;
+    }
+  }
+
+  .section-title {
+    @extend .catalog-page-text;
+    min-width: 100px;
+  }
+
+  &.show {
+    background-color: white;
+    .section-title { display: none; }
+  }
+}
+
+
+.multiline-item {
+  font-size: 12px;
+  color: $color-font-light;
+
+  border-bottom: $border;
+  &.no-border { border-bottom: none; }
+
+  .ant-list-item-content {
+    display: block;
+  }
+
+  .key-val {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 0;
+  }
+}
+
+.timeslot-dropdown {
+  .ant-input-sm {
+    min-width: 200px;
+  }
+  .ant-select-sm {
+    min-width: 200px;
+    .ant-select-selection {
+      width: 200px;
+    }
+  }
+  .ant-select-selection-selected-value {
+    font-size: 11px !important;
+  }
+  .ant-select-dropdown-menu-item {
+    font-size: 11px !important;
+  }
+}
+
+
+.lifetime-input {
+  .ant-input-wrapper {
+    width: 200px;
+  }
+  .ant-input-group-addon {
+    line-height: 22px;
+  }
+}
+
+
+.ant-list-item.flex-out {
+  .ant-list-item-content {
+    @extend .flex-out;
+  }
+}
+
+.hidden-action {
+  @extend .product-detail;
+  color: $color-font-lightest !important;
+  padding: 0 10px;
+}
+
+.ant-list-item {
+  .hidden-action { display: none; }
+  &:hover .hidden-action { display: block; }
+}

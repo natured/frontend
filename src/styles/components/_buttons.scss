@@ -1,0 +1,587 @@
+label {
+	cursor: pointer;
+	display: block;
+	margin: 0 0 7px 0;
+}
+
+button {
+	cursor: pointer;
+}
+
+button.oversized, .oversized-btn {
+	padding: 14px 30px 15px;
+	font-weight: 500;
+	font-size: 16px;
+	border-radius: $border-radius;
+	transition: $transition;
+	&:hover { transition: $transition; }
+
+	&.dark {
+		border: 1px solid $color-font;
+		color: $color-font;
+		background-color: white;
+
+		&:hover {
+			border-color: $color-black;
+			color: $color-black;
+			box-shadow: $box-shadow-aggressive;
+		}
+	}
+}
+
+// .button-white {
+// 	background-color: white;
+// 	border: white;
+// 	color: $color-font;
+// 	transition: $transition;
+// 	&:hover {
+// 		box-shadow: $box-shadow-aggressive;
+// 	}
+// }
+
+button:focus { outline:0; }
+
+.transparent-on-hover {
+	display: block;
+	width: fit-content;
+	transition: $transition;
+	border: 1px solid white;
+	background-color: white;
+	color: $color-font;
+	&:hover {
+		transition: $transition;
+		border: 1px solid white;
+		background-color: transparent;
+		color: white;
+	}
+}
+
+.button-group {
+	white-space: nowrap;
+
+	> .button {
+		margin-right: 4px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.button {
+	box-sizing: border-box;
+	border: 0;
+	display: inline-block;
+	height: 42px;
+	line-height: 42px;
+	font-size: 14px;
+	padding: 0 16px;
+	text-align: center;
+	transition: all .2s ease;
+	font-weight: 400;
+	border-radius: 3px;
+
+	.anticon, .natured-icon {
+		&:not(:first-child) {
+			padding-left: 25px;
+		}
+		&:first-child {
+			padding-right: 15px;
+		}
+	}
+
+	&.danger {
+		color: $color-red;
+
+		&:hover {
+			color: $color-red;
+		}
+	}
+
+	&.large {
+		height: 54px;
+		line-height: 54px;
+		font-size: 16px;
+		padding: 0 28px;
+	}
+
+	&.small {
+		height: 32px;
+		line-height: 32px;
+		font-size: 11px;
+
+		button:disabled {
+			line-height: 28px;
+			border: none;
+		}
+	}
+
+	&.mini {
+		height: 28px;
+		line-height: 28px;
+		font-size: 14px;
+		padding: 0 14px;
+	}
+}
+
+.button-default {
+	border: 1px solid $color-border-darker;
+	color: $color-font-light;
+	background-color: white;
+
+	&:hover { color: $color-black; border-color: $color-black; }
+}
+
+.button-primary {
+	border: 1px solid $color-primary;
+	background-color: $color-primary;
+	color: #fff;
+
+	&.inverse {
+		border: 1px solid $color-primary;
+		background-color: transparent;
+		color: $color-primary;
+	}
+
+	&:hover {
+		background-color: darken($color-primary, 5%);
+		color: white;
+	}
+}
+
+.button-secondary {
+	background-color: $color-secondary;
+	border: 1px solid $color-secondary;
+	color: $color-font;
+
+	&.inverse {
+		background-color: rgba($color-secondary, .05);
+		border: 1px solid $color-secondary;
+		color: $color-font;
+
+		&:hover, &:focus {
+			background-color: darken($color-secondary, 5%);
+		}
+	}
+
+	&:hover, &:focus {
+		background-color: darken($color-secondary, 5%);
+	}
+
+	&.hover-inverse:hover {
+		background-color: transparent;
+		border: 1px solid $color-secondary;
+		color: $color-secondary;
+	}
+}
+
+.button-red {
+	border: 1px solid $color-highlight;
+	background-color: $color-highlight;
+	color: white;
+
+	&:hover {
+		border-color: darken($color-highlight, 2.5%);
+		background-color: darken($color-highlight, 2.5%);
+		color: white;
+		box-shadow: $box-shadow;
+	}
+}
+
+.button-outline-red {
+	border: 1px solid $color-highlight;
+	color: $color-highlight;
+
+	&:hover {
+		background-color: darken($color-highlight, 2.5%);
+		color: white;
+		box-shadow: $box-shadow;
+	}
+}
+
+.button-highlight {
+	background-color: white;
+	border: 1px solid $color-border-darker;
+	color: $color-highlight;
+
+	&.bordered {
+		border-color: $color-highlight;
+		&:hover {
+			background-color: $color-highlight;
+			color: white;
+			box-shadow: $box-shadow;
+		}
+	}
+
+	&:hover {
+		border-color: $color-highlight;
+	}
+}
+
+.button-outline-white {
+	background-color: transparent;
+	border: 1px solid white;
+	color: white;
+	transition: $transition;
+	&:hover {
+		color: $color-font;
+		background-color: white;
+		transition: $transition;
+	}
+}
+
+.button-outline-yellow {
+	background-color: transparent;
+	border: 1px solid $color-secondary;
+	color: $color-secondary;
+	transition: $transition;
+	&:hover {
+		color: $color-font;
+		background-color: $color-secondary;
+		transition: $transition;
+	}
+}
+
+
+.button-outline-success {
+	background-color: transparent;
+	border: 1px solid $color-success;
+	color: $color-success;
+	transition: $transition;
+
+	&:hover {
+		color: white;
+		transition: $transition;
+		background-color: $color-success;
+	}
+}
+
+
+
+.button-success {
+	background-color: $color-success;
+	border: 1px solid $color-success;
+	color: #fff;
+
+	&:hover {
+		background-color: darken($color-success, 5%);
+	}
+}
+
+.button-danger {
+	background-color: $color-red;
+	border: 1px solid $color-red;
+	color: #fff;
+
+	&:hover {
+		background-color: darken($color-red, 5%);
+	}
+}
+
+.button-transparent {
+	background-color: transparent;
+	border: 1px solid white;
+	color: #fff;
+
+	&:hover {
+		background-color: white;
+		border: 1px solid white;
+		color: $color-font;
+	}
+}
+
+.button-dark {
+	background-color: $color-black;
+	border: 1px solid $color-black;
+	color: #fff;
+
+	&:hover {
+		background-color: darken($color-black, 5%);
+	}
+
+	&.hover-inverse:hover {
+		background-color: transparent;
+		border: 1px solid $color-black;
+		color: $color-black;
+	}
+
+	&.inverse {
+		background-color: transparent;
+		border: 1px solid $color-black;
+		color: $color-black;
+
+		&:hover {
+			color: #fff;
+			background-color: darken($color-black, 5%);
+		}
+	}
+}
+
+
+.button-bright {
+	background-color: $color-bright;
+	border: 1px solid $color-bright;
+	color: #fff;
+
+	&:hover {
+		background-color: darken($color-bright, 5%);
+	}
+}
+
+.button-white {
+	font-weight: 500;
+	color: $color-font;
+	box-shadow: $box-shadow-alt;
+	border: $border;
+	background-color: white;
+	&:hover {
+		color: $color-black;
+	}
+}
+
+
+.button-error-bs {
+	font-weight: 500;
+	color: white;
+	box-shadow: $box-shadow-alt;
+	border: $border;
+	background-color: $color-error;
+	&:hover {
+		background-color: darken($color-error, 5%);
+	}
+}
+
+
+.button-success-bs {
+	font-weight: 500;
+	color: white;
+	box-shadow: $box-shadow-alt;
+	border: $border;
+	background-color: $color-success;
+	&:hover {
+		background-color: darken($color-success, 5%);
+	}
+}
+
+.hover-primary-inverse:hover {
+	background-color: transparent;
+	border: 1px solid $color-primary;
+	color: $color-primary;
+}
+
+.button-right {
+	float: right;
+}
+
+.button-block {
+	margin: 0 0 15px 0;
+	text-align: center;
+	width: 100%;
+}
+
+.button-dropdown {
+	position: relative;
+
+	&:hover {
+		.md-icon {
+			color: $color-black;
+		}
+
+		ul {
+			display: block;
+		}
+	}
+
+	.md-icon {
+		color: rgba($color-font, .5);
+		cursor: pointer;
+		padding: 10px;
+		transition: all .2s ease;
+	}
+
+	ul {
+		background-color: #fff;
+		border-radius: 2px 0 2px 2px;
+		display: none;
+		filter: drop-shadow(0 0 2px rgba(#000, .12));
+		list-style: none;
+		margin: -3px 0 0 0;
+		padding: 8px 0;
+		position: absolute;
+		right: 18px;
+		width: 120px;
+		z-index: 100;
+
+		li {
+			font-size: 13px;
+
+			a {
+				display: block;
+				padding: 2px 20px;
+			}
+		}
+
+		&:before {
+			border: 3px solid transparent;
+			border-bottom-color: #fff;
+			border-right-color: #fff;
+			content: '';
+			display: block;
+			height: 0;
+			position: absolute;
+			right: 0;
+			top: -6px;
+			width: 0;
+		}
+	}
+}
+
+.big-dark-button {
+	@extend .button;
+	@extend .button-dark;
+	@extend .large;
+}
+
+.filled {
+	width: -webkit-fill-available;
+}
+
+.button.bottom {
+	position: fixed;
+	bottom: 0;
+	z-index: 1000;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 50px; // cover entire tabbar
+}
+
+.payment-button {
+	position: fixed;
+	bottom: 75px;
+	transition: .3s ease;
+	height: 50px;
+	width: calc(100vw - 30px);
+
+	&.bottom {
+		bottom: 0;
+		width: 100%;
+		margin-left: -15px;
+		border-radius: 0px;
+	}
+}
+
+.button-hov:hover {
+	box-shadow: $box-shadow;
+}
+
+.button.subdued-message {
+	font-size: 12px;
+
+}
+
+
+// Image upload
+.upload-button-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+	transition: $transition;
+
+	&:hover {
+		background-color: $color-secondary;
+		border-radius: $border-radius;
+		transition: $transition;
+	}
+}
+
+::-webkit-file-upload-button {
+  cursor:pointer;
+	background-color: red;
+}
+
+/* IE11 (if it doesn't work, try maybe also on the parent/wrapper) */
+input[type=file] {
+  cursor:pointer;
+	background-color: red;
+}
+
+.upload-button-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+	width: 163px;
+	height: 42px;
+	z-index: 10;
+	background-color: red;
+}
+
+.circular-transparent {
+	padding: 10px;
+	border: $border;
+	border-radius: 50px;
+	transition: $transition;
+
+	&:disabled, &[disabled] {
+		background-color: rgba(0,0,0,0.05);
+		color: #d9d9d9;
+		border-color: transparent;
+		&:hover {
+			border-color: transparent;
+			cursor: not-allowed;
+		}
+	}
+
+	&.table-hover:hover {
+		border-color: $color-secondary;
+		transition: $transition;
+	}
+}
+
+
+.button-with-disable {
+	&:disabled, &[disabled] {
+		background-color: rgba(0,0,0,0.05);
+		color: #d9d9d9;
+		border-color: transparent;
+		&:hover {
+			border-color: transparent;
+			cursor: not-allowed;
+		}
+	}
+}
+
+.full-screen-modal-button {
+	@extend .button;
+	@extend .button-secondary;
+	@extend .large;
+}
+
+.save-button {
+	@extend .button-secondary;
+	@extend .button-with-disable;
+}
+
+
+$button-test-hover-color: lighten($color-success, 5%);
+.button-test {
+	background-color: $color-success !important;
+	border-color: $color-success !important;
+	color: white !important;
+	font-weight: 600 !important;
+	letter-spacing: .5px !important;
+	border-radius: 1px !important;
+	box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.1) !important;
+
+	&:hover {
+		background-color: $button-test-hover-color !important;
+		border-color: $button-test-hover-color !important;
+		// box-shadow: $box-shadow-aggressive;
+	}
+}
+
+.fill {
+	width: 100%;
+}

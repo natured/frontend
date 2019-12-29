@@ -1,0 +1,116 @@
+@import 'src/styles/atoms/links';
+
+@mixin be-gray() {
+  font-size: 14px;
+  font-weight: 300;
+  color: $gray-color;
+}
+
+// Headers
+@mixin dark-green-header() {
+  color: $dark-green;
+  font-weight: 800;
+}
+
+p, .p {
+  line-height: 1.4285em;
+  font-size: 16px;
+  font-weight: 300;
+
+  &.dark-green { color: $dark-green; font-weight: 600; }
+}
+
+// Paragraph styles
+@mixin p-large() {
+  font-size: 16px;
+}
+
+
+// Small snippetss
+@mixin label() {
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+label, .label {
+  @include label();
+}
+
+
+// Specific use case
+@mixin error() {
+  @include label();
+  transition: $transition;
+  color: $red;
+  padding-top: 10px;
+  font-weight: 700;
+  letter-spacing: .01rem;
+}
+
+.error {
+  @include error();
+  a {
+    @include underline-link();
+    border-color: $red;
+    @include error();
+
+    &:hover {
+      $error-hover-color: lighten($red, 10%);
+      border-color: $error-hover-color;
+      color: $error-hover-color;
+    }
+  }
+}
+
+.main-description {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.subdescription {
+  font-size: 15px;
+  color: $font-lighter;
+}
+
+
+.text-subdued {
+  color: $font-lightest;
+  font-weight: 300;
+  letter-spacing: .04em;
+  font-size: 12px;
+}
+
+.orange {color: $orange; }
+
+.barely-there {
+  color: #ebebeb;
+}
+
+.highlight { color: $highlight-color; }
+
+.subtitle {
+  font-weight: 300;
+}
+
+.paragraph {
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+}
+
+@mixin midnight-emphasis () {
+  display: block;
+  background-color: $midnight-color;
+  color: white;
+  border-radius: 50px;
+  padding: 0 10px;
+  width: fit-content;
+  font-weight: 400;
+  margin-bottom: 5px;
+  font-size: 11px;
+}
+
+.midnight-emphasis {
+  @include midnight-emphasis();
+}

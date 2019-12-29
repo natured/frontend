@@ -1,0 +1,54 @@
+.modal__auth {
+
+  .modal__container {
+    max-width: 800px;
+    transition: height .4s ease-in-out;
+  }
+
+  .modal__auth-content {
+    @include space-around();
+    > div {
+      width: 50%;
+    }
+  }
+
+  .modal__auth-img {
+    display: none;
+    width: 50%;
+
+    @media (min-width: 767px) {
+      display: block;
+    }
+  }
+
+  .modal__absolute-img {
+    width: 50%;
+    .modal__auth-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+    }
+  }
+
+  .modal__auth-header {
+    margin: 3em 0;
+
+    h1, p {
+      margin: 0;
+    }
+
+    h1 {
+      @media (max-width: 767px) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+.modal__auth-login {
+  align-items: flex-start !important;
+  .modal__auth-img {
+    margin-top: -20px;
+  }
+}

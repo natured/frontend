@@ -1,0 +1,17 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+
+.recommend-product {
+  background-color: $gray-background-color;
+  padding: 3rem 0;
+  text-align: center;
+
+  @include breakpoint(md) {
+    margin-top: 3rem;
+  }
+
+  .para--16 {
+    color: #777;
+    padding-bottom: 15px;
+  }
+}

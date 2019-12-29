@@ -1,0 +1,66 @@
+$breakpoint-small: 37.5em;
+$breakpoint-med: 56.25em;
+$breakpoint-large: 65.63em;
+
+section.home-intro {
+  position: relative;
+  overflow: hidden;
+  padding: 72px 0 48px;
+  background-color: white;
+
+  @media (min-width: $breakpoint-med) {
+    padding: 128px 0 72px;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    padding: 210px 0;
+  }
+
+  .intro__images {
+    @include positioned(0, 0, 0, 0);
+    width: 100%;
+    max-width: 280px;
+    margin: 40px auto 16px;
+    padding-top: 100px;
+
+    @media (min-width: $breakpoint-large) {
+      height: 100%;
+      left: -100px;
+      max-width: 200%;
+      position: absolute;
+      right: -100px;
+      width: auto;
+    }
+
+    .image {
+      @include positioned(0, 0, 0, 0);
+      position: absolute;
+      max-width: 150px;
+      width: 50%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      @media (min-width: $breakpoint-large) {
+        max-width: 300px;
+        width: 50%;
+      }
+
+      &:first-child {
+        transform: rotate(13deg) translateY(-10%);
+        width: 60%;
+      }
+
+      &:last-child {
+        left: auto;
+        right: 14px;
+        max-width: 450px;
+        transform: rotate(-38deg) translateY(7%);
+        top: -15%;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+@import 'src/styles/universal/responsive';
+@import 'src/styles/atoms/text';
+
+.cart--empty, .cart--logged-out {
+  @include flex(center, flex-start);
+  flex-direction: column;
+  padding: 3rem 0;
+
+  @include breakpoint(md) {
+    justify-content: center;
+    min-height: 50vh;
+  }
+
+  .cart--empty--text {
+    @include be-gray();
+    font-size: 22px;
+    padding-bottom: 30px;
+  }
+
+  .join-or-login {
+    @include flex(center, center);
+    flex-direction: column;
+    @include breakpoint(md) { flex-direction: row; }
+    .or {
+      padding: 2rem;
+    }
+  }
+}

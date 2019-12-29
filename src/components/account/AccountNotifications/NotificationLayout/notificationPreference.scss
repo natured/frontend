@@ -1,0 +1,38 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+@import 'src/styles/universal/mixins';
+
+.notification-preference {
+  @include flex(center, space-between);
+
+  padding: 20px 0;
+  border-bottom: $border;
+  max-width: 500px;
+
+  .descriptions {
+    width: 80%;
+    max-width: 380px;
+  }
+
+  .main-description {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .subdescription {
+    font-size: 15px;
+    color: $font-lighter;
+  }
+
+  .toggle {
+    font-size: 20px;
+    padding: 10px;
+    padding-top: 0;
+    padding-right: 0;
+    color: $font-lightest;
+    transition: 0.2s ease;
+    &.on {
+      color: $green;
+    }
+  }
+}

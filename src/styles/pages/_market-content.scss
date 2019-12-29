@@ -1,0 +1,121 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+$market-content-max-width: 1024px;
+
+
+@mixin isMarketContent() {
+  max-width: $market-content-max-width;
+  margin: auto;
+  @include breakpoint(md) {
+    padding: 50px;
+  }
+}
+
+@mixin isMarketContentSection() {
+  @include breakpoint(md) {
+    border-radius: $border-radius;
+    border: $border;
+    box-shadow: $box-shadow;
+  }
+}
+
+
+// .product-page {
+//
+//   max-width: 1024px;
+//   margin: auto;
+//   padding: 60px;
+//
+//   .top-section {
+//     display: flex;
+//     border: $border;
+//     border-bottom: none;
+//     border-radius: $border-radius;
+//     box-shadow: $box-shadow;
+//
+//     .product-image {
+//       width: 60%;
+//       img {
+//         width: 100%;
+//         border-radius: 3px 0 0 3px;
+//       }
+//     }
+//
+//     .product-details {
+//       border-radius: 0 3px 3px 0;
+//       width: 40%;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: space-between;
+//     }
+//   }
+//
+//   .bottom-section {
+//     max-width: 1024px;
+//     margin: auto;
+//     display: flex;
+//
+//     @media screen and (max-width: 767px) {
+//       display: block;
+//     }
+//   }
+//
+//   .more-about-this {
+//     padding: 30px;
+//     @media screen and (max-width: 767px) {
+//       padding: 0;
+//     }
+//   }
+//
+//   .product-more-item {
+//     display: flex;
+//     align-items: baseline;
+//     margin: .75em 0;
+//
+//     .section-name {
+//       min-width: 70px;
+//       padding-right: 15px;
+//       color: $color-success;
+//       font-weight: 400;
+//       font-size: 12px;
+//     }
+//
+//     @media screen and (max-width: 767px) {
+//       display: block;
+//       margin-bottom: 1.5em;
+//     }
+//   }
+//
+//   @media screen and (max-width: 1024px) {
+//     // Makes overall padding slightly smaller for better fit
+//     padding: 30px;
+//   }
+//
+//
+//   @media screen and (max-width: 767px) {
+//     // Removes padding around screen
+//     padding: 0;
+//
+//     /* Removes the separation of the top section from rest of page
+//      *  - No box shadow, border, or border radius
+//      *  - Image and details now both take up full width */
+//     .top-section {
+//       display: block;
+//       box-shadow: none;
+//       border-radius: 0;
+//       border: none;
+//
+//       .product-image, .product-details {
+//         width: 100%;
+//         border-radius: 0;
+//       }
+//     }
+//
+//     // Area underneath pic should fill screen
+//     .bottom-section {
+//       .beneath-left {
+//         width: 100%;
+//       }
+//     }
+//   }
+// }

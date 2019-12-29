@@ -1,0 +1,6 @@
+// auth types
+export default {
+  GET_REFERRAL: 'GET_REFERRAL',
+  GET_REFERRALS: 'GET_REFERRALS',
+  ADD_REFERRALS: 'ADD_REFERRALS',
+};

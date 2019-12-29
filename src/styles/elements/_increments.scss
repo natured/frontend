@@ -1,0 +1,29 @@
+$cart-pricing-border-color: rgba(0,0,0,0.05);
+
+.increments {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $cart-pricing-border-color;
+  border-radius: 3px;
+  text-align: center;
+  max-width: 100px;
+
+  &:hover {
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  &.loading {
+    color: $color-font-lightest;
+  }
+
+  .icon {
+    padding: 7.5px 10px;
+    font-weight: bold;
+    font-size: 10px;
+
+    &.inactive {
+      color: $cart-pricing-border-color;
+    }
+  }
+}

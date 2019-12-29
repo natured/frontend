@@ -1,0 +1,12 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+
+.loader {
+  @include flex(center, center);
+  color: $slate-gray;
+
+  svg {
+    height: 2em;
+    width: 2em;
+  }
+}

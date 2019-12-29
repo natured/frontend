@@ -1,0 +1,44 @@
+@import 'src/styles/universal/responsive';
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+
+.not-found {
+  @include flex(space-between, center);
+  flex-direction: column;
+  text-align: center;
+
+  img {
+    width: 200px;
+  }
+
+  .content {
+    background-color: rgba(white, .8);
+    border-radius: $border-radius;
+    padding: 30px 15px;
+  }
+
+  @include breakpoint(md) {
+    @include flex(center, space-between);
+    flex-direction: row;
+    .content {
+      text-align: left;
+      padding: 100px;
+      background-color: white;
+    }
+
+  }
+
+  .subheader {
+    font-size: 16px;
+  }
+
+  .text-content {
+    margin-bottom: 30px;
+  }
+
+  .beet-ravioli {
+    width: 100%;
+  }
+
+
+}

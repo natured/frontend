@@ -1,0 +1,95 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+
+@mixin header () {
+  color: $font-color;
+  margin-bottom: .5rem;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6, .header, [class^="header--"] {
+  @include header();
+}
+
+
+//
+// h1, .h1, .header, [class^="header--"] {
+//   font-size: 2.5rem;
+// }
+
+@mixin size-ranges($sm, $md, $lg, $xl) {
+  font-size: $sm;
+  @include breakpoint(md) { font-size: $md; }
+  @include breakpoint(lg) { font-size: $lg; }
+  @include breakpoint(xl) { font-size: $xl; }
+}
+
+// Sizing ranges:
+// 6rem -> 5.5rem -> 4.5rem -> 3.5rem -> 2.5rem -> 2rem -> 1.75rem -> 1.5rem -> 1.25rem ->  1rem
+
+@mixin display-header($size) {
+  @if ($size == 1) { @include size-ranges(3.5rem, 4.5rem, 5.5rem, 6rem); }
+  @if ($size == 2) { @include size-ranges(2.8rem, 4rem, 4.8rem, 5.5rem); }
+  @if ($size == 3) { @include size-ranges(2.5rem, 3.5rem, 4rem, 4.5rem); }
+  @if ($size == 4) { @include size-ranges(2.2rem, 3rem, 3.5rem, 4rem); }
+}
+
+@mixin standard-header($size) {
+  @if ($size == 1) { @include size-ranges(2rem, 2.8rem, 3rem, 3.5rem); }
+  @if ($size == 2) { @include size-ranges(1.75rem, 2.5rem, 2.5rem, 3rem); }
+  @if ($size == 3) { @include size-ranges(1.5rem, 2.2rem, 2.2rem, 2.5rem); }
+  @if ($size == 4) { @include size-ranges(1.5rem, 2rem, 2rem, 2rem); }
+  @if ($size == 5) { @include size-ranges(1.25rem, 1.75rem, 1.75rem, 1.75rem); }
+  @if ($size == 6) { @include size-ranges(1rem, 1.5rem, 1.5rem, 1.5rem); }
+}
+
+// Display headers, jumbo-1 -> jumbo-4
+@for $size from 1 through 4 {
+  [class^="header--"][class*="--jumbo-#{$size}"] {
+    @include display-header($size);
+  }
+}
+
+// Standard headers, h1 -> h6
+@for $size from 1 through 6 {
+  [class^="header--"][class*="--#{$size}"], h#{$size} {
+    @include standard-header($size);
+  }
+}
+
+[class^="header--"][class*="--white"] { color: white; }
+[class^="header--"][class*="--slate-gray"] { color: $slate-gray; }
+[class^="header--"][class*="--orange"] { color: $orange; }
+[class^="header--"][class*="--dark-slate"] { color: $dark-slate; }
+[class^="header--"][class*="--gray"] { color: $font-lighter; }
+[class^="header--"][class*="--primary"] { color: $primary-color; }
+
+[class^="header--"][class*="--thin"] {
+  font-weight: 100;
+}
+
+@mixin uppercase() {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: 12px;
+}
+
+[class^="header--"][class*="--upper"] {
+  @include uppercase();
+}
+
+
+.subtitle {
+  font-size: 14px;
+  font-weight: 100;
+  color: $font-lighter;
+
+  @include breakpoint(md) { font-size: 24px; }
+}
+
+[class^="header--"][class*="--ish"] {
+  font-family: p22-mackinac-pro !important;
+}

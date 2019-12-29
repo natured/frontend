@@ -1,0 +1,139 @@
+@mixin setStickyTop () {
+  // Transition to match the skinny nav
+  transition: all 0.2s ease-in-out;
+
+  $mobile-both-height: $main-nav-height-mobile + $skinny-nav-height;
+  $mobile-one-height: $main-nav-height-mobile;
+  $both-height: $main-nav-height + $skinny-nav-height;
+  $one-height: $main-nav-height;
+
+  // Distance from top on mobile
+  top: $mobile-one-height;
+  &.has--skinny { top: $mobile-both-height; }
+
+  // Screens bigger than a mobile phone
+  @include breakpoint(md) {
+    top: calc(#{$one-height} + #{$universal-page-padding-md});
+    &.has--skinny { top: calc(#{$both-height} + #{$universal-page-padding-md}); }
+  }
+
+  // Only the largest screens
+  @media screen and (min-width: $universal-max-width) {
+    top: calc(#{$one-height} + #{$universal-page-padding});
+    &.has--skinny { top: calc(#{both-height} + #{$universal-page-padding}); }
+  }
+}
+
+.sticky--nav {
+  @include setStickyTop();
+
+  // MOBILE-SPECIFIC STYLES
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom: $border;
+  box-shadow: $box-shadow;
+
+  // NON-MOBILE STYLES
+  @include breakpoint(md) {
+    display: flex;
+    flex-direction: column;
+    position: -webkit-sticky;
+    position: sticky;
+    border-bottom: none;
+    box-shadow: none;
+  }
+}
+
+
+[class^="side--link"] {
+  display: block;
+  line-height: 1.5;
+  font-weight: 300;
+  color: $font-color;
+
+  &[class*="--parent"] {
+    line-height: 1.8;
+    padding: 3px 0px;
+    transition: all 0.3s ease;
+
+    &.active span {
+      @include tag($midnight-color, white);
+      padding: 3px 15px;
+      margin-left: -15px;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &[class*="--child"] {
+    line-height: 1.5;
+    padding: 5px 10px;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    border-left: $border;
+    border-width: 2px;
+
+    &.active {
+      transition: all 0.3s ease;
+      opacity: 1;
+      border-color: $font-color;
+    }
+
+    &:hover {
+      color: $font-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Toggles showing children of category when active/inactive
+.side--children { display: none; }
+.side--link--parent.active + .side--children { display: block; }
+
+
+
+[class^="side--link"] {
+  display: none;
+  @include breakpoint(md) {
+      display: block;
+  }
+}
+
+
+.category--dropdown {
+  > div {
+    padding: 15px;
+  }
+  .anticon {
+    font-weight: 800;
+    right: 18px;
+  }
+
+  [class^="field"] {
+    margin: 0;
+    padding: 0;
+    width: calc(100% - 30px);
+    text-align: center;
+
+    select {
+      font-weight: 700;
+      color: $dark-green;
+      border: none;
+      background-color: $gray-bg;
+      padding-top: 7.5px;
+      padding-bottom: 7.5px;
+      border-radius: 0;
+      box-shadow: $box-shadow;
+    }
+  }
+
+  @include breakpoint(md) {
+    display: none;
+  }
+}

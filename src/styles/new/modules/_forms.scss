@@ -1,0 +1,18 @@
+$zip-width: 325px;
+
+.zip__form-container {
+  margin: 30px;
+
+  .gray__copy {
+    margin: 2em 0 1em 0;
+  }
+}
+
+.zip__reset {
+  text-align: center;
+  padding: 2em 0 1em 0;
+  a {
+    color: $lightest-gray;
+    font-weight: 600;
+  }
+}

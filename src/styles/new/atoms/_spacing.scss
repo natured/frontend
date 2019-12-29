@@ -1,0 +1,83 @@
+@mixin outer-padding() {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+
+  @media only screen and (min-width: 25em)  {
+    padding: 0 32px;
+  }
+
+  @media only screen and (min-width: 65.63em)  {
+    padding: 0 48px;
+  }
+
+  @media only screen and (min-width: 75em)  {
+    padding: 0 72px;
+  }
+}
+
+@mixin inner-padding() {
+  padding: 20px;
+}
+
+@mixin vertical-space() {
+  padding: 32px 0;
+}
+
+@mixin positioned($top, $right, $bottom, $left) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin horizontal-margin($margin) {
+  margin-left: $margin;
+  margin-right: $margin;
+}
+
+@mixin space-between() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin space-around() {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin flex-start() {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-end() {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin full-height() {
+  min-height: calc(100% - 90px); // When header is 50px + 20px padding
+  justify-content: flex-start;
+
+  @media (min-width: 767px) {
+    justify-content: center;
+    min-height: calc(100% - 80px); // When header is 80px
+  }
+}
+
+
+.outer {
+  @include outer-padding();
+}

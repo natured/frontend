@@ -1,0 +1,27 @@
+.ant-message-error {
+  .anticon {
+    color: $color-highlight;
+  }
+}
+
+// For popup notifications
+.ant-notification-notice {
+  border-left: 5px solid $orange;
+
+  &.error {
+    border-color: $color-highlight;
+  }
+
+  &.success {
+    border-color: $green;
+  }
+
+  .ant-notification-notice-btn {
+    float: left;
+  }
+
+  .ant-notification-notice-message {
+    color: $dark-green;
+    font-weight: 800;
+  }
+}

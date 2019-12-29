@@ -1,0 +1,15 @@
+.auth-form {
+
+  // Big header for title of form
+  h1 {
+    @extend .bold-header;
+    padding-bottom: 30px;
+  }
+
+  // Descriprtion that comes beneath the title
+  p {
+    padding-bottom: 15px;
+    font-size: 16px;
+  }
+
+}

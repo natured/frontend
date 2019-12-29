@@ -1,0 +1,124 @@
+$carousel-height: 500px;
+$carousel-inner-padding: 50px;
+$carousel-inner-padding-sm: 15px;
+$carousel-indicator-size: 50px;
+$carousel-section-inner-padding: 30px;
+
+.carousel {
+  min-height: $carousel-height;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: $border-radius;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  padding: $carousel-inner-padding-sm;
+  padding-bottom: $carousel-indicator-size;
+
+  @include breakpoint(md) {
+    padding: $carousel-inner-padding;
+    padding-bottom: (2 * $carousel-indicator-size);
+  }
+
+  .section {
+    padding: $carousel-inner-padding-sm;
+    padding-bottom: $carousel-indicator-size;
+
+    @include breakpoint(md) {
+      padding: $carousel-inner-padding;
+      padding-bottom: (2 * $carousel-indicator-size);
+    }
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+  }
+
+  .show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .pagination {
+    position: absolute;
+    bottom: calc(#{$carousel-indicator-size} / 2);
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+  }
+
+  .indicator {
+    background: white;
+    height: $carousel-indicator-size;
+    width: $carousel-indicator-size;
+    margin: 0 ($carousel-indicator-size / 4);
+    border: 3px solid white;
+    overflow: hidden;
+    border-radius: 100px;
+    display: block;
+    padding: 0;
+
+    .image {
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden;
+      border-radius: 100px;
+
+      img {
+        border-radius: 100px;
+        height: 100%;
+        width: 100%;
+        opacity: 0.3;
+      }
+    }
+
+    &.active .image img {
+      opacity: 1;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+
+.carousel--section, [class^="carousel--section--"] {
+  background-color: white;
+  padding: $carousel-section-inner-padding;
+  border-radius: $border-radius;
+
+  text-align: center;
+  @include breakpoint(sm) {
+    text-align: left;
+  }
+
+  &[class*="--is-half"] {
+    width: 100%;
+    @include breakpoint(lg) { width: 50%; }
+  }
+
+  &[class*="--is-one-third"] {
+    width: 100%;
+    @include breakpoint(lg) { width: 33.333%; }
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+}

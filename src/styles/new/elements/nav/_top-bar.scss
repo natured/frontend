@@ -1,0 +1,81 @@
+// Market Top Bar
+.nav__market-top-bar {
+  position: relative;
+  z-index: $top-bar-z-index;
+  background-color: $top-bar-bg-color;
+  color: $top-bar-font-color;
+  height: $top-bar-height;
+}
+
+.top-bar__outer {
+  height: 100%;
+  @include outer-padding();
+  @include space-between();
+}
+
+.top-bar__right {
+  @include flex-end();
+}
+
+.top-bar__link {
+  padding-left: $top-bar-spacing;
+
+  &:not(:last-child) {
+    padding: 0 $top-bar-spacing;
+    border-right: 1px solid $top-bar-border-color;
+  }
+}
+
+.top-bar__link.zip-code {
+  padding-left: 0;
+
+  span {
+    padding-right: 0px;
+    transition: $transition;
+    font-weight: 600;
+  }
+
+  // .anticon {
+  //   opacity: 0;
+  //   transition: $transition;
+  //   font-size: 12px;
+  //   font-weight: 300;
+  // }
+
+  &:hover {
+    cursor: pointer;
+    span {
+      padding-right: 10px;
+      transition: $transition;
+    }
+
+    .anticon {
+      opacity: 1;
+      transition: $transition;
+    }
+  }
+}
+
+.top-bar__anchor {
+  position: relative;
+  color: $top-bar-font-color;
+  padding: 1px 0;
+  font-weight: 600;
+
+  &:hover::after {
+    @include underline(2px, $top-bar-font-color);
+  }
+}
+
+// On mobile, hide account and auth links (those should be in the slideout)
+// Center the shopping for details and hide it in the headroom
+@media (max-width: 767px) {
+  .top-bar__right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .top-bar__link:not(.shopping-for) {
+    display: none;
+  }
+}

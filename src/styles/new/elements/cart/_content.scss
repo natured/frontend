@@ -1,0 +1,47 @@
+$cart-header-height: 70px;
+$cart-progress-bar-height: 5px;
+
+.cart__content {
+  .progress-bar__holder {
+    height: $cart-progress-bar-height;
+  }
+}
+
+.cart__header {
+  height: $cart-header-height;
+  @include flex-center();
+  flex-direction: column;
+}
+
+.cart__timeslot {
+  @include market-dual-top();
+}
+
+.cart__window {
+  @include market-dual-bottom();
+  line-height: 1;
+}
+
+.cart__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.cart-progress__status {
+  padding: 10px;
+  text-align: center;
+  font-weight: 400;
+  b { font-weight: 600; }
+}
+
+.cart__scroll {
+  height: calc(100% - #{$cart-header-height} - #{$cart-progress-bar-height});
+  overflow-y: scroll;
+}

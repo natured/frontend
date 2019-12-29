@@ -1,0 +1,34 @@
+/* Styles for the product snippet - name and foodmaker
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.product-page {
+
+  .product-snippet {
+    padding: 30px;
+  }
+
+  .product-name {
+    @extend .black-header;
+    margin-bottom: 0;
+    font-size: 1.4rem;
+  }
+  //
+  // .foodmaker-link {
+  //   color: $color-font-lightest;
+  // }
+
+  // Styles for mobile devices
+  @media screen and (max-width: 767px) {
+    .product-snippet {
+      padding: 15px;
+    }
+
+    .product-name {
+      font-size: 1rem;
+    }
+
+    .foodmaker-link {
+      font-weight: 300;
+    }
+  }
+}

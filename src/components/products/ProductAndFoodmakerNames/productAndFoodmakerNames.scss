@@ -1,0 +1,44 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/atoms/headers';
+
+// when used on product page
+.product-page {
+  .product-name-details {
+    h3.product-name {
+      @include standard-header(5);
+      @include header();
+      margin-bottom: 10px;
+      line-height: 1.1;
+      font-weight: 500;
+    }
+
+    .product-foodmaker-name {
+      font-size: 1rem;
+      color: $gray-color;
+      font-weight: 300;
+      margin-bottom: 0;
+
+      @include breakpoint(md) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.product-tile {
+  .product-name-details {
+    h3.product-name {
+      @include header();
+      margin-bottom: 0;
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+
+    .product-foodmaker-name {
+      font-size: 13px;
+      color: $font-lightest;
+      font-weight: 300;
+      margin-bottom: 0;
+    }
+  }
+}

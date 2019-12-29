@@ -1,0 +1,35 @@
+.register-form-container {
+  width: 350px;
+  background-color: white;
+  border-radius: 4px;
+  padding: 30px;
+  box-shadow: $box-shadow-aggressive;
+  border: $border;
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+    margin: 25px;
+    padding: 20px;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.register-page {
+  min-height: 100%;
+  min-width: 100%;
+  overflow: hidden;
+  background-size: cover !important;
+
+  .register-form-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100% - 68px);
+    @media only screen and (max-width: 767px) {
+      min-height: calc(100% - 45px);
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import 'src/styles/universal/variables';
+
+.ui.segment.cart--pricing {
+  border: $border;
+  border-top: none;
+  padding: 15px;
+  border-radius: 0 0 $border-radius $border-radius;
+  margin: 0;
+}

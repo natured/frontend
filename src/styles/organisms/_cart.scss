@@ -1,0 +1,128 @@
+// variables
+// Cart Icons
+// Cart Header
+// Cart line items
+// Cart footer
+//
+
+$cart-header-height: 82px;
+$cart-footer-height: 51px;
+
+
+/* Cart Icons */
+.cart--close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 15px;
+  margin: -15px -15px 0 0;
+  font-size: 16px;
+  color: rgba(0,0,0,0.3);
+  transition: .1s ease;
+
+  &:focus, &:hover {
+    color: $dark-green;
+    cursor: pointer;
+    transition: .1s ease;
+  }
+}
+
+
+/* Cart Header */
+.cart--header {
+  position: fixed;
+  top: 0;
+  z-index: 201;
+  overflow: hidden;
+  width: 100%;
+  height: $cart-header-height;
+  background-color: white;
+
+  .cart--delivery {
+    display: block;
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+
+
+/* Cart Line Items */
+.cart--line-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+$cart-animation-in: fadeInUp 0.1s;
+$cart-animation-out: fadeOutDown 0.1s;
+
+.cart--footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 200;
+  -webkit-transform: translate3d(0,0,0);
+  background-color: $dark-green;
+  color: white;
+  height: $cart-footer-height;
+
+  .cart--line-item {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+
+// .cart-delivery-progress-bar-holder {
+//   background-color: $peach;
+// }
+// .cart-delivery-progress-bar {
+//   background-color: $orange;
+// }
+
+
+
+.cart--scroll {
+  @include fixedAt(0, 0, 0, 0);
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  * {
+    -webkit-overflow-scrolling: touch;
+    z-index: 200;
+  }
+
+  .cart--content {
+    padding-top: $cart-header-height;
+    padding-bottom: $cart-footer-height;
+    height: calc(100% - #{$cart-header-height} - #{$cart-footer-height});
+    * {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+
+// .cart-scroll {
+
+//   overflow-y: scroll;
+//
+
+//
+//   padding-bottom: 51px;
+//   height: calc(100% - 82px - 51px);
+// }
+//
+// .cart--sticky {
+//   top: 0;
+//   background-color: white;
+//   position: fixed;
+//   width: 100%;
+//   z-index: 201;
+//   overflow: hidden;
+// }
+//

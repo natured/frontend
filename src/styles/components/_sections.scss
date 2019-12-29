@@ -1,0 +1,247 @@
+.admin-section {
+  background-color: white;
+  border-radius: $border-radius;
+  padding: 15px;
+  box-shadow: $box-shadow;
+
+  &:not(:first-of-type) {
+    margin-top: 30px;
+  }
+
+  .header {
+    @extend .uppercase-header;
+  }
+
+  .section-content {
+    padding: 30px 0;
+
+    &.centered {
+      text-align: center;
+    }
+  }
+
+  .top-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .actions {
+      font-size: .8rem;
+      .anticon { font-size: 10px; }
+    }
+  }
+}
+
+
+.infographic {
+  h1 {
+    font-weight: bold;
+    .anticon {
+      padding-bottom: 15px;
+    }
+  }
+
+  span { color: rgba(0,0,0,0.3); }
+
+  &.top {
+    padding-bottom: 30px;
+    border-bottom: $border;
+  }
+
+  &.bottom {
+    padding-top: 30px;
+  }
+
+  &.left {
+    border-right: $border;
+  }
+}
+
+.order-view {
+  padding: 30px;
+  .order-section {
+    @extend .admin-section;
+    padding: 15px 0;
+
+    .order-subsection {
+      padding: 15px;
+    }
+
+    .order-header {
+      @extend .flex-out;
+      @extend .order-subsection;
+    }
+
+    .order-stats {
+      background-color: rgba(0,0,0,0.02);
+      border: $border;
+      border-right: none;
+      border-left: none;
+      margin: 0 !important;
+
+      .order-stat {
+        margin: 0;
+        padding: 15px;
+        border-right: $border;
+
+        &:last-child {
+          border-right: none;
+        }
+
+        .order-stat-title {
+          @extend .uppercase-header-thin;
+          font-size: 12px;
+        }
+
+        .order-stat-content {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .order-items {
+      @extend .order-subsection;
+
+      th {
+        @extend .uppercase-header-thin;
+        font-size: 12px;
+        &:first-child {
+          padding-left: 0px;
+        }
+      }
+      td {
+        &:first-child {
+          padding-left: 0px;
+        }
+      }
+    }
+
+    .order-actions {
+      display: flex;
+      .order-action {
+        padding: 30px 15px;
+        &:first-of-type {
+          padding-left: 0px;
+        }
+      }
+    }
+  }
+}
+
+
+section.hero {
+  button, .button {
+    min-width: 150px;
+    width: fit-content;
+  }
+}
+
+// Split with image section
+section.hero.split-with-image {
+  border-top: $border;
+
+  .hero-content {
+    display: flex;
+
+    .left, .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+
+      img {
+        width: 100%;
+        border-radius: $border-radius;
+      }
+
+      h1 {
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 16px;
+        margin-bottom: 2rem;
+      }
+    }
+
+    &.image-left {
+      .right {
+        margin-left: 10%;
+        width: 40%;
+        align-items: flex-start;
+      }
+    }
+
+    &.image-right {
+      .left {
+        margin-right: 10%;
+        width: 40%;
+        align-items: flex-start;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      &.image-right {
+        flex-direction: column-reverse;
+        .left {
+          padding-top: 15px;
+        }
+      }
+
+      &.image-left .right {
+        padding-top: 15px;
+      }
+
+      .left, .right {
+        width: 100% !important;
+        margin: 0 !important;
+      }
+    }
+  }
+
+}
+
+.hero.with-background-image {
+  min-height: calc(100vh - 15rem);
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    height: auto;
+    padding-top: 6rem;
+  }
+
+  .hero-content {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    .button {
+      margin-top: 2rem;
+      font-weight: 500;
+      color: $color-font;
+      box-shadow: $box-shadow-alt;
+      border: 2px solid white;
+      &:hover {
+        border: 2px solid white;
+        color: $color-black;
+      }
+    }
+
+    .hero-paragraph {
+      color: $dark-green;
+      font-size: 1.55rem;
+      font-weight: 600;
+      text-shadow: 5px 1px 15px rgba(255, 255, 255, .6);
+
+
+      @media screen and (max-width: 767px) {
+        font-size: 18px;
+        line-height: inherit;
+      }
+    }
+  }
+}

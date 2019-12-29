@@ -1,0 +1,22 @@
+@mixin fixedAt($top, $right, $bottom, $left) {
+  position: fixed;
+  @if ($top) { top: $top; }
+  @if ($right) { right: $right; }
+  @if ($bottom) { bottom: $bottom; }
+  @if ($left) { left: $left; }
+}
+
+
+.no-scroll {
+  overflow: hidden;
+}
+
+[class*="--vertical"] {
+  display: flex;
+  flex-direction: column;
+}
+
+[class*="--horizontal"] {
+  display: flex;
+  flex-direction: row;
+}

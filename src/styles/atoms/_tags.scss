@@ -1,0 +1,68 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+
+@mixin tag($color: $bg-gray, $font: $font-color) {
+  padding: 3px 15px;
+  border-radius: 50px;
+  background-color: $color;
+  color: $font;
+
+  @if ($color == blue) {
+    color: $dark-green;
+    background-color: lighten($light-blue, 5%);
+  }
+
+  @if ($color == orange) {
+    background-color: $orange;
+    color: white;
+  }
+
+  @if ($color == green) {
+    background-color: $dark-green;
+    color: white;
+  }
+
+  @if ($color == slate) {
+    background-color: $slate-gray;
+    color: white;
+  }
+
+
+}
+
+.tag {
+  @include tag($gray-bg);
+}
+
+
+@mixin yellow-tag() {
+  background-color: $highlight-color;
+  position: relative;
+  display: inline-block;
+  color: $font-color;
+  border-radius: 2px;
+  font-size: 11px;
+  line-height: 1.4;
+  padding: 0 3px 0 4px;
+  margin-left: 2px;
+  top: -1px;
+}
+
+.yellow--emphasis {
+  @include yellow-tag();
+}
+
+.tag--like {
+  background-color: $highlight-color;
+  position: relative;
+  display: inline-block;
+  color: $font-color;
+  border-radius: 2px;
+  line-height: 1.4;
+  padding: 0px 6px 2px 6px;
+  margin-bottom: -2px;
+
+  @include breakpoint(md) {
+
+  }
+}

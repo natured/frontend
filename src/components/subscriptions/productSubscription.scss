@@ -1,0 +1,54 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+
+.product-subscription {
+  padding-top: 20px;
+  font-size: 12px;
+  color: $gray-color;
+
+  svg {
+    margin-right: 7.5px;
+  }
+
+  .subscribe {
+    svg {
+      margin-left: 5px;
+      font-size: 10px;
+    }
+  }
+
+  &:hover .subscribe {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  // when already subscribed
+  .subscribed {
+    @include flex(center, space-between);
+    font-weight: 400;
+    color: $font-color;
+
+    span:first-child {
+      color: $font-color;
+    }
+  }
+
+  &:hover .subscribed {
+    cursor: pointer;
+    text-decoration: underline;
+    span {
+      opacity: 1;
+      transition: $transition;
+    }
+  }
+
+  .manage-subscription {
+    color: $font-lightest;
+    font-weight: 300;
+    margin-left: 10px;
+    &:hover {
+      cursor: pointer;
+      border-bottom: 1px solid rgba($font-lightest, .7);
+    }
+  }
+}

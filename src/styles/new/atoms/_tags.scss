@@ -1,0 +1,10 @@
+@mixin tag($color) {
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-weight: 500;
+  background-color: $color;
+}
+
+.tag {
+  @include tag($gray-bg);
+}

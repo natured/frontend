@@ -1,0 +1,46 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+@import 'src/styles/atoms/containers';
+
+.account--container {
+  flex-direction: column;
+  padding-top: 15px;
+
+  // On tablet and up!
+  @include breakpoint(md) {
+    padding-top: 0;
+    flex-direction: row;
+
+    .account--nav {
+      width: 16.666666%;
+      min-width: 225px;
+    }
+
+    .account--content {
+      padding-top: $universal-page-padding-sm;
+      padding-bottom: $universal-page-padding-sm;
+      width: 83.3333333333%;
+      max-width: calc(100% - 225px);
+      min-height: calc(100vh - 150px);
+      @include breakpoint(sm) {
+        padding-top: $universal-page-padding-md;
+        padding-bottom: $universal-page-padding-md;
+      }
+    }
+  }
+}
+
+.account-section {
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .account-section-bottom {
+    margin-bottom: 50px;
+  }
+}
+
+.account-form-container {
+  max-width: 500px;
+}
+// // Screens bigger than a mobile phone

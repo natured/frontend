@@ -1,0 +1,66 @@
+
+.product-carousel {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  width: 100%;
+  padding: 15px 0 0 0;
+  -webkit-overflow-scrolling: touch;
+
+  .carousel-product {
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 40%;
+    padding-right: 15px;
+
+    .product {
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+    }
+
+    .product-image {
+      border-radius: 3px 3px 0 0;
+      width: 100%;
+    }
+
+    .product-bottom {
+      border-radius: 0 0 3px 3px;
+      border: $border;
+      border-top: none;
+      white-space: normal;
+      text-overflow: ellipsis;
+      font-size: .8rem;
+      padding: 10px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .product-name {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  -ms-overflow-style: none;  // IE 10+
+  overflow: -moz-scrollbars-none;  // Firefox
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    overflow-y: visible;
+    white-space: normal;
+
+    .carousel-product {
+      width: calc(20% - 20px);
+      padding-bottom: 30px;
+    }
+  }
+}

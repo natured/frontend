@@ -1,0 +1,182 @@
+// Hides bottom tabs on small screens
+.tab-nav-mobile {
+  display: none;
+  @media only screen and (max-width: 767px) {
+    display: block;
+    .am-tabs-tab-bar-wrap {
+      z-index: 51; //above tab panes
+    }
+  }
+}
+
+@import "top-bar";
+@import "market-nav";
+
+
+// Styling for market header
+.market-desktop-nav {
+  display: block;
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+
+
+
+  .dropdown-with-arrow {
+    margin: 0;
+    height: 70px; // fills height of nav
+    display: flex;
+    a {
+      padding: 24px 1rem;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        color: $color-black;
+        .anticon { color: $color-success; }
+        // border-color: rgba(0,0,0,0.05);
+      }
+
+      &.active {
+        border-color: $color-success;
+      }
+
+      @media screen and (max-width: 870px) {
+        padding: 24px .75rem;
+      }
+      @media screen and (max-width: 800px) {
+        padding: 24px .5rem;
+      }
+    }
+
+    .dropdown-content {
+      min-width: 200px;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 2;
+      color: $color-font;
+      position: absolute;
+      text-align: left;
+      background-color: white;
+      top: 70px; // height of market nav
+      margin-top: 1px;
+      border: $border;
+      border-top: none;
+      box-shadow: $box-shadow-aggressive;
+      border-radius: 0 0 3px 3px;
+      border: none;
+
+      a.subcategory-name {
+        display: block;
+        padding: 15px;
+        border-bottom: $border;
+        border-left: 2px solid transparent;
+        transition: $transition;
+        &:hover {
+          transition: $transition;
+          padding-left: 20px;
+          border-left: 2px solid $color-success;
+        }
+      }
+
+    }
+
+    .down-arrow {
+      margin-left: 5px;
+      font-size: 10px;
+      &:before {
+        transform: rotate(0deg);
+        transition: 0.3s ease;
+      }
+    }
+
+    &.show-dropdown {
+
+      a { .anticon { color: $color-success; } }
+
+      .dropdown-content {
+        visibility: visible;
+        opacity: 1;
+      }
+      &:before {
+        visibility: hidden;
+      }
+    }
+
+    &:hover {
+      .down-arrow:before {
+        // color: $color-success;
+        transform: rotate(180deg);
+        transition: 0.3s ease;
+      }
+      .down-arrow.no-spin:before {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  .shopping-for {
+    @extend .dropdown-with-arrow;
+    border-bottom: 0;
+    padding: 0;
+  }
+}
+
+
+
+.dropdown-content {
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  color: $color-font;
+  position: absolute;
+  text-align: left;
+  background-color: white;
+  margin-top: 1px;
+  border: $border;
+  border-top: none;
+  box-shadow: $box-shadow-aggressive;
+  border-radius: 0 0 3px 3px;
+  border: none;
+
+  a.subcategory-name {
+    display: block;
+    padding: 15px;
+    border-bottom: $border;
+    border-left: 2px solid transparent;
+    transition: $transition;
+    &:hover {
+      transition: $transition;
+      padding-left: 20px;
+      border-left: 2px solid $color-success;
+    }
+  }
+}
+
+.account.dropdown + .dropdown-content {
+  a { color: $color-font !important; }
+  box-shadow: $box-shadow-aggressive;
+
+  &.show-dropdown {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.dropdown-content {
+  top: 41px;
+  margin-top: 1px;
+
+  a.dropdown-item {
+    display: block;
+    padding: 15px;
+    border-bottom: $border;
+    border-left: 2px solid transparent;
+    transition: $transition;
+    &:hover {
+      transition: $transition;
+      padding-left: 20px;
+      border-left: 2px solid $color-success;
+    }
+  }
+}

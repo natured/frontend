@@ -1,0 +1,34 @@
+/* Styles for the foodmaker snippet: shows small avatar + name + location
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.foodmaker-snippet {
+  display: flex;
+  padding-bottom: 1em;
+
+  img {
+    @extend .avatar;
+  }
+
+  // Gives the text space from the avatar
+  .foodmaker-text {
+    padding-left: 25px;
+
+    // Styling for "Meet the Foodmaker"
+    .title {
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    .details {
+      margin-bottom: 0;
+
+      .name {
+        @extend .bright-green;
+      }
+
+      .location {
+        @extend .supa-light;
+      }
+    }
+  }
+}

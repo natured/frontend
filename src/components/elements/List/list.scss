@@ -1,0 +1,26 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+
+.link-list {
+  .header {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    color: $orange;
+  }
+
+  .link {
+    border-top: $border;
+    width: 100%;
+    margin: 0 -15px;
+    padding: 10px 15px;
+    display: flex;
+    color: $dark-green;
+    font-weight: 600;
+    @include flex(center, space-between);
+
+    &:last-child {
+      border-bottom: $border;
+    }
+  }
+}

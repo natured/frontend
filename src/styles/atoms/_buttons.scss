@@ -1,0 +1,294 @@
+/**
+ *
+ *  We've built the button styles so that you can build your own class name:
+ *    - Every class must be prepended with button-- for styles to apply
+ *    - Every color button is possible by name (i.e. orange or light-blue)
+ *    - Sizing can be small or large (in addition to the standard button)
+ *    - Therefore: a full class name might be...
+ *        button--orange--small
+ *        button
+ *        button--large
+ *        button--light-blue
+ *
+ * 1. Standard button styles
+ * 2. Colors
+ * 3. Sizing
+ */
+
+// Button-specific variables
+$button-height: 40px;
+$button-padding: 16px;
+$button-font-weight: 400;
+
+$button-jumbo-height: 57px;
+$button-large-height: 48px;
+
+$button-light-peach: lighten($peach, 3%);
+$button-light-orange: lighten($orange, 3%);
+$button-lighter-blue: lighten($light-blue, 2%);
+$button-light-slate: lighten($slate-gray, 4%);
+$button-light-green: lighten($dark-green, 5%);
+
+/**
+ *  Applies generic button styles to any class that starts with button--
+ */
+button, .button, [class^="button--"] {
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  height: $button-height;
+  line-height: $button-height;
+  padding: 0 $button-padding;
+  transition: $transition;
+  border-radius: $border-radius;
+  font-weight: $button-font-weight;
+  color: $font-color;
+  border: $border;
+
+  &:hover {
+    transition: $transition;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+/**
+ *   2. Colors
+ *
+ *   - Creates mixins for button colors
+ *   - Applies to class name such as button--{color}
+ */
+@mixin orange-button {
+  background-color: $orange;
+  border-color: $orange;
+  color: white;
+
+  &:hover {
+    background-color: $button-light-orange;
+    border-color: $button-light-orange;
+  }
+}
+
+@mixin light-blue-button {
+  background-color: $light-blue;
+  border-color: $light-blue;
+  color: $dark-green;
+
+  &:hover {
+    background-color: $button-lighter-blue;
+    border-color: $button-lighter-blue;
+  }
+}
+
+@mixin peach-button {
+  background-color: $peach;
+  border-color: $peach;
+  color: white;
+
+  &:hover {
+    background-color: $button-light-peach;
+    border-color: $button-light-peach;
+  }
+}
+
+@mixin slate-gray-button {
+  background-color: $slate-gray;
+  border-color: $slate-gray;
+  color: white;
+
+  &:hover {
+    background-color: $button-light-slate;
+    border-color: $button-light-slate;
+  }
+}
+
+
+@mixin white-button {
+  background-color: white;
+  border: $border;
+  color: $font-color;
+
+  &:hover {
+    background-color: white;
+    border: $border;
+  }
+}
+
+
+
+@mixin dark-green-button {
+  background-color: $dark-green;
+  border-color: $dark-green;
+  color: white;
+
+  &:hover {
+    background-color: $button-light-green;
+    border-color: $button-light-green;
+  }
+}
+
+@mixin midnight-button {
+  transition: $transition;
+  background-color: $midnight-color;
+  border-color: $midnight-color;
+  color: white;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+
+  &:hover {
+    transition: $transition;
+    background-color: lighten($midnight-color, 2%);
+    border-color: lighten($midnight-color, 2%);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  }
+
+  &[class*="inverted"] {
+    border: 2px solid $midnight-color;
+    background-color: transparent;
+    color: $midnight-color;
+
+    &:hover {
+      background-color: $midnight-color;
+      color: white;
+    }
+  }
+}
+
+
+@mixin primary-button {
+  transition: $transition;
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: white;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+
+  &:hover {
+    transition: $transition;
+    background-color: lighten($primary-color, 2%);
+    border-color: lighten($primary-color, 2%);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  }
+
+  &[class*="inverted"] {
+    border: 2px solid $primary-color;
+    background-color: white;
+    color: $primary-color;
+
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+}
+
+@mixin highlight-button {
+  transition: $transition;
+  background-color: $highlight-color;
+  border-color: $highlight-color;
+  color: $font-color;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+
+  &:hover {
+    transition: $transition;
+    background-color: lighten($highlight-color, 2%);
+    border-color: lighten($highlight-color, 2%);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  }
+
+  &[class*="inverted"] {
+    border: 2px solid $highlight-color;
+    background-color: white;
+    color: $highlight-color;
+
+    &:hover {
+      background-color: $highlight-color;
+      color: $font-color;
+    }
+  }
+}
+
+// Matches any classes with color names
+[class^="button--"][class*="--orange"] { @include orange-button(); }
+[class^="button--"][class*="--light-blue"] { @include light-blue-button(); }
+[class^="button--"][class*="--slate-gray"] { @include slate-gray-button(); }
+[class^="button--"][class*="--dark-green"] { @include dark-green-button(); }
+[class^="button--"][class*="--peach"] { @include peach-button(); }
+[class^="button--"][class*="--white"] { @include white-button(); }
+[class^="button--"][class*="--reg"] { min-width: 100px; }
+[class^="button--"][class*="--2x"] { min-width: 200px; }
+[class^="button--"][class*="--3x"] { min-width: 300px; }
+[class^="button--"][class*="--midnight"] { @include midnight-button(); }
+[class^="button--"][class*="--primary"] { @include primary-button(); }
+[class^="button--"][class*="--highlight"] { @include highlight-button(); }
+
+/**
+ *  3. Sizing
+ */
+
+// Creates full width button with class name button--full
+[class^="button--"][class*="--full"] {
+  width: 100%;
+  text-align: center;
+  padding: 0;
+}
+
+// Creates min width button with class name button--min
+[class^="button--"][class*="--min"] {
+  min-width: 250px;
+  text-align: center;
+}
+
+// Creates min width button with class name button--min
+[class^="button--"][class*="--pill"] {
+  border-radius: 50px;
+}
+
+// Creates min width button with class name button--min
+[class^="button--"][class*="--small"] {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+// Creates min width button with class name button--min
+[class^="button--"][class*="--jumbo"] {
+  min-width: 250px;
+  height: $button-jumbo-height;
+  line-height: $button-jumbo-height;
+  font-size: 16px;
+  text-align: center;
+}
+
+// Creates min width button with class name button--min
+[class^="button--"][class*="--large"] {
+  min-width: 200px;
+  height: $button-large-height;
+  line-height: $button-large-height;
+  font-size: 16px;
+  text-align: center;
+
+  &[class*="inverted"] {
+    line-height: calc(#{$button-large-height} - 2px);
+  }
+}
+
+/**
+ *  4. Additionla styles
+ */
+
+[class^="button--"][class*="--bs"] {
+  box-shadow: $btn-box-shadow;
+}
+[class^="button--"][class*="--transparent"] {
+  &:not(:hover) { background-color: transparent !important; }
+}
+
+
+.button-menu {
+  min-width: 150px;
+}

@@ -1,0 +1,31 @@
+@import 'src/styles/universal/responsive';
+
+.product-tile {
+  .product-info-section {
+    background-color: white;
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    width: 55%;
+    @include breakpoint(md) {
+      width: 100%
+    }
+  }
+
+  .product-name-details {
+    padding-bottom: 0;
+    min-height: 70px;
+
+    .product-foodmaker-name {
+      font-size: 15px;
+      line-height: 18px;
+      padding-top: 2px;
+    }
+  }
+
+  .product-purchase-details {
+    padding-top: 10px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    margin-top: 5px;
+  }
+}

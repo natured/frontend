@@ -1,0 +1,137 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+@import 'src/styles/universal/responsive';
+
+.product-page-foodmaker {
+  min-height: 100px; // eyeballed for minimum
+}
+
+.foodmaker-section {
+  padding: 15px;
+  @include breakpoint(md) {
+    padding: 0;
+  }
+}
+
+.foodmaker-content {
+  @include flex(center, center);
+  @include breakpoint(md) {
+    justify-content: space-between;
+  }
+}
+
+.foodmaker-button {
+  font-weight: 400;
+  font-size: 14px;
+  display: none;
+  @include breakpoint(md) {
+    display: block;
+  }
+}
+
+.foodmaker-link {
+  @include flex(center, flex-start);
+  flex-direction: column;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+  }
+
+  .foodmaker-circle-image {
+    margin: 1rem 0;
+    @include breakpoint(md) {
+      margin-right: 2rem;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 69px;
+      height: 69px;
+    }
+  }
+
+  .foodmaker-details {
+    @include flex(center, center);
+    flex-direction: column;
+    text-align: center;
+
+    @include breakpoint(md) {
+      align-items: flex-start;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 0;
+    }
+
+    p.foodmaker-location {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      color: $gray-color;
+
+      svg {
+        font-size: 24px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.foodmaker--description {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  @include breakpoint(md) { padding-top: 6rem; }
+  text-align: center;
+
+  span, p {
+    background-color: transparent !important;
+  }
+}
+
+.quoted {
+  position: relative;
+
+  .left-quote {
+    position: absolute;
+    width: 100px;
+    left: -30px;
+    top: -60px;
+    z-index: -1;
+    @include breakpoint(xs) {
+      width: 25px;
+      left: -10px;
+      top: -10px;
+    }
+  }
+
+  .quote-content {
+    z-index: 5;
+    p, span {
+      z-index: 5;
+      color: #343434 !important;
+      font-size: 14px !important;
+      font-weight: 300 !important;
+      line-height: 1.7 !important;
+      text-align: left !important;
+    }
+
+    @include breakpoint(xs) {
+      max-height: 135px;
+      overflow: hidden;
+    }
+  }
+
+  .read-more {
+    position: absolute;
+    padding: 15px;
+    padding-top: 45px;
+    bottom: -15px;
+    width: calc(100% - 30px);
+    background-image: linear-gradient(rgba($gray-background-color, 0), $gray-background-color 40px);
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+}

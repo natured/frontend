@@ -1,0 +1,192 @@
+// Product tile
+// - for use in browsing with many items
+
+.product-qty-btn {
+  @extend .circular-transparent;
+  padding: 8px !important;
+  font-size: 10px;
+  background-color: white;
+}
+
+
+.item-quantity {
+  align-items: center;
+  display: flex;
+}
+
+.product-tile {
+  display: flex;
+  width: 100%;
+  border-bottom: $border;
+
+
+  // Image takes up 45% of the entire Tile
+  // Image is cropped/stretched to fill
+  // Minimum of 145 px to avoid weird long rectangular images
+  // a
+  .product-square-image {
+    min-height: 140px;
+    width: 45%;
+    margin: -1px; // Goes over border
+    background-size: cover !important;
+    background-position: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+
+    img {
+      @media screen and (max-width: 767px) {
+        height: 140px;
+        min-height: 100%;
+        object-fit: cover;
+      }
+    }
+
+  }
+
+  .product-details {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .product-name {
+    color: $color-black;
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-size: 1.17em;
+    transition: $transition;
+    &:hover {
+      transition: $transition;
+      color: $color-success;
+    }
+  }
+
+  .product-foodmaker-name {
+    color: $color-font-lightest;
+    font-weight: 400;
+    font-size: 15px;
+    transition: $transition;
+    &:hover {
+      transition: $transition;
+      color: $color-success;
+    }
+  }
+
+  .product-purchase-details {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    // flex-direction: row;
+    // align-items: center;
+  }
+
+  .product-actions {
+    margin: 15px 0 5px 0;
+    min-height: 28px; // So that there's not jump when actions
+    display: flex;
+    align-items: center; // Aligns all items for different actions
+  }
+
+
+  .purchase-button {
+    @extend .button;
+    @extend .mini;
+    background-color: transparent;
+    border: 1px solid $color-secondary !important;
+  }
+
+}
+
+.product-pricing {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  .description {
+    padding-left: 15px;
+  }
+  .price {
+    font-size: 1.17em;
+    margin-bottom: 0;
+    sup {
+      padding-left: 1px;
+      font-size: 65%;
+      top: -.48em;
+    }
+  }
+
+  .description {
+    color: $color-font-lightest;
+    font-weight: 500;
+    font-size: 11px;
+  }
+}
+
+
+// On screen mobile, but not super small
+@media screen and (min-width: 375px) {
+  .product-tile:not(.mini-product-tile) {
+    .product-purchase-details {
+      flex-direction: row;
+      align-items: center;
+    }
+    .product-actions {
+      margin: 0;
+    }
+    .product-pricing {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+    }
+  }
+}
+
+// Desktop product tile
+@media screen and (min-width: 768px) {
+
+  // Applied when large screen and not forced to mobile look
+  .product-tile:not(.mobile-product-tile) {
+    // Picture on top of other details
+    flex-direction: column;
+    box-shadow: $box-shadow;
+    border: $border;
+
+    // Image fills width and is larger height
+    .product-square-image {
+      min-height: 150px;
+      width: calc(100% + 2px); // Goes over borde
+    }
+
+    .product-actions {
+      min-height: 35px;
+    }
+
+    // Product details fill width
+    .product-details {
+      width: calc(100% - 20px);
+    }
+
+    .product-qty-btn {
+      padding: 10px !important;
+      font-size: inherit;
+    }
+
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  .product-tile {
+    .product-name-details {
+      .product-name { font-size: 14px; }
+      .product-foodmaker-name { font-size: 12px; }
+    }
+
+    .product-pricing {
+      padding-bottom: 10px;
+    }
+  }
+}

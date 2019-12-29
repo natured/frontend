@@ -1,0 +1,326 @@
+/**
+ * Natured styles
+ *
+ * The styles for web are split into several sections:
+ *
+ * - Universal
+ * These pieces are used across almost all styles, components, etc.
+ * they are the first ones to be populated because other instances make use
+ * of their components
+ *
+ * - Atoms
+ * Small snippets used as the smallest building blocks
+ *
+ */
+
+/* 1. Universal */
+@import "universal/variables";
+@import "universal/normalize";
+@import "universal/responsive";
+
+@import "lib/toastify";
+
+/* 2. Atoms */
+@import "atoms/containers";
+@import "atoms/positioning";
+@import "atoms/grid";
+@import "atoms/text"; // include first so we can use mixins
+@import "atoms/icons";
+@import "atoms/headers";
+@import "atoms/buttons";
+@import "atoms/links";
+@import "atoms/input";
+@import "atoms/tags";
+@import "atoms/toggle"; // the mobile nav toggle
+@import "atoms/sticky";
+@import "atoms/progress";
+@import "atoms/badge";
+
+/* 3. Elements */
+@import "elements/brand";
+@import "elements/navs";
+@import "elements/search";
+
+/* 4. Components */
+@import "components/carousel";
+
+/* 5. Organisms */
+@import "organisms/sections";
+@import "organisms/cart";
+@import "organisms/drawer";
+
+@import "market/categories";
+@import "market/products";
+
+/**
+ * Index
+ *
+ * 01. Libraries
+ * 02. Helpers
+ * 03. Structure
+ * 04. Layoutss
+ */
+
+/** 01. Libraries */
+@import "helpers/variables";
+@import "lib/normalize";
+
+/**  03. Structure */
+@import "helpers/elements";
+@import "helpers/structure";
+@import "helpers/universal";
+@import "helpers/layouts";
+@import "helpers/containers";
+@import "helpers/grid";
+@import "helpers/animations";
+@import "helpers/spacing"; // cleaned
+
+/** 04. Layouts */
+@import "components/layout"; //cleaned
+@import "components/brand";
+@import "components/text";
+@import "components/navigation";
+@import "components/footer";
+@import "components/tab-bar";
+@import "components/search-bar";
+@import "components/products";
+
+@import "components/pricing";
+@import "components/subscriptions";
+
+@import "components/cart";
+@import "components/cart/slideout";
+@import "components/cart/progress";
+@import "components/cart/window";
+@import "components/cart/pricing";
+
+@import "components/catalog";
+@import "components/account";
+@import "components/billing";
+
+@import "elements/increments";
+@import "elements/product";
+
+@import "components/customerOrders/receipt";
+
+// Pieces!
+@import "components/badge";
+@import "components/checkbox";
+@import "components/table";
+@import "components/sections";
+@import "components/list";
+@import "components/form";
+@import "components/buttons";
+@import "components/collapse";
+@import "components/links";
+@import "components/tags";
+@import "components/notifications";
+@import "components/editor";
+@import "components/loader";
+@import "components/images";
+@import "components/modal";
+@import "components/card";
+@import "components/tooltips";
+@import "components/datepicker";
+@import "components/slider";
+
+@import "pages/static";
+@import "pages/market";
+@import "pages/account";
+@import "pages/admin";
+
+// // @import "admin/admin";
+
+@import "apps/fulfillment";
+@import "apps/inventory";
+
+// @import 'node_modules/react-image-crop/dist/ReactCrop';
+//
+// a:has(> img)
+// .page--market {
+//   background-color: red;
+// }
+
+.page-content {
+  padding-top: 70px; // Height of mobile navbar
+  min-height: calc(100% - 90px); //Always pushes footer to at least bottom
+
+  &.market-content {
+    // 70px for nav, 42 px for top bar
+    min-height: calc(100% - 112px);
+
+    @media screen and (max-width: 767px) {
+      min-height: calc(100% - 90px);
+      padding-top: 45px;
+      padding-bottom: 45px;
+    }
+
+    .loading-screen {
+      width: 100%;
+      height: 100%;
+      max-height: calc(100% - 112px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .header {
+        @extend .serif-header;
+        @extend .animated;
+        transition: $transition;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.natured-icon {
+  svg {
+    fill: $color-font;
+  }
+}
+
+.admin-content {
+  padding: 30px;
+  min-height: calc(100% - 136px); //Always pushes footer to at least bottom
+  background-color: lighten($color-subdued, 2%);
+}
+
+.reorder-category-piece {
+  padding: 10px;
+  text-align: left;
+  border: $border;
+  &:not(:last-child) {
+    border-bottom: transparent;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.overflow-hidden {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+//TODO:  clean up this steps stuff
+
+.ant-steps-icon {
+  line-height: 32px !important;
+}
+
+.steps {
+  max-width: 900px;
+  width: 75%;
+  margin: auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.full-screen-modal-bottom {
+  position: fixed;
+  bottom: 30px;
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: white;
+
+  @media screen and (max-width: 767px) {
+    width: -webkit-fill-available;
+    text-align: center;
+  }
+
+  .back {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    a {
+      color: $color-font-lightest;
+    }
+  }
+
+  .forward {
+    @extend .button;
+    @extend .button-secondary;
+    @extend .large;
+
+    :last-child {
+      padding-right: 0px;
+    }
+  }
+}
+
+.react-code-input {
+  input[type="number"] {
+    -moz-appearance: textfield;
+    box-shadow: none !important;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+// TODO: these need mobile
+.mid-step-content {
+  display: flex;
+  align-items: center;
+  height: calc(100% - 250px);
+  max-width: 500px;
+  margin: auto;
+  overflow-y: scroll;
+
+  .content {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 767px) {
+    // Provides spacing awayy from header
+    height: calc(100% - 150px);
+    align-items: flex-start;
+    overflow-y: scroll;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: 45px;
+  }
+}
+
+// .anticon {
+//   svg {
+//     display: none;
+//   }
+// }
+
+@mixin tag($color) {
+  padding: 5px 10px 3px 10px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 13px;
+  background-color: $color;
+}
+
+.tag {
+  @include tag(#f7f7f7);
+}
+
+.tag-green {
+  @include tag($primary-emph);
+  color: white;
+}
+
+// UPDATED ISH
+@import "clean/input/stripe";
+@import "clean/buttons/colors";
+@import "clean/grid";
+
+.bg-gray {
+  background-color: $gray-background-color;
+}
+.bg-white {
+  background-color: white;
+}
+.bg-yellow {
+  background-color: $yellow;
+}

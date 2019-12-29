@@ -1,0 +1,11 @@
+.ant-scroll-number {
+  background-color: $peach !important;
+  left: 38px;
+  p, .p {
+    font-size: 13px;
+  }
+
+  @include breakpoint(md) {
+    background-color: $dark-green !important;
+  }
+}

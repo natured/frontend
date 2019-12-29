@@ -1,0 +1,63 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+@import 'src/styles/universal/responsive';
+
+.cards-list {
+  margin-bottom: 20px;
+
+  .no-cards {
+    font-style: italic;
+  }
+
+  // matches width in header
+  .default {
+    width: 40px;
+    font-size: 14px;
+  }
+
+  .icon { width: 33px; }
+
+  .card-header {
+    font-size: 13px;
+    color: $font-lighter;
+    border-bottom: $border;
+  }
+
+  .credit-card {
+    @include flex(center, space-between);
+    padding: 10px 0;
+    border-bottom: $border;
+    &.alone { border-bottom: none;}
+
+    .card-details {
+      @include flex(center, flex-start);
+      span {
+        padding-left: 10px;
+      }
+    }
+
+    .card-actions {
+      .remove {
+        @include breakpoint(md) { display: none; }
+        padding: 0 10px;
+        color: $font-lightest;
+
+        &:hover {
+          color: $red;
+          cursor: pointer;
+        }
+      }
+
+      .removing {
+        padding: 0 10px;
+        color: $font-lightest;
+      }
+    }
+
+    .loading { color: $font-lightest; }
+
+    &:hover .card-actions .remove {
+      display: block;
+    }
+  }
+}

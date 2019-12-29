@@ -1,0 +1,99 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+@import 'src/styles/universal/responsive';
+
+$button-width: 150px;
+
+.referral-invite {
+  display: block;
+  position: relative;
+  padding: 0px 10px;
+  font-weight: 300;
+  border: $border;
+  border-radius: $border-radius;
+  width: calc(100% - 20px);
+  margin: 0;
+  margin-bottom: 15px;
+
+  @include breakpoint(md) {
+    width: calc(100% - #{$button-width} - 15px);
+  }
+
+  input, .referral-email {
+    display: inline-block;
+  }
+
+  input {
+    color: $font-color;
+    vertical-align: middle;
+    line-height: 26px;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 5px;
+    width: -webkit-fill-available;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+
+
+    &.show-border {
+      border-top: $border;
+    }
+  }
+
+  .referral-email {
+    border-radius: $border-radius;
+    margin-right: 5px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding: 5px;
+    border: 1px solid transparent;
+
+    &.selected {
+      border-color: $font-color;
+    }
+
+    &.valid {
+      background-color: $bg-gray;
+    }
+
+    &.invalid {
+      border-radius: 0;
+      .email {
+        border-bottom: 2px dotted $orange;
+      }
+    }
+
+    .referral-close {
+      padding: 5px;
+      font-size: 10px;
+      color: $font-lighter;
+    }
+
+    &:hover .referral-close {
+      cursor: pointer;
+      color: $font-color;
+    }
+  }
+}
+
+.referral-invite-form {
+  margin-top: 30px;
+
+  [class^="button--"] {
+    margin-left: 0;
+    width: 100%;
+
+    &.disabled {
+      opacity: .5;
+    }
+  }
+
+  @include breakpoint(md) {
+    @include flex(flex-start, space-between);
+    [class^="button--"] {
+      margin-left: 15px;
+      width: $button-width;
+    }
+  }
+}

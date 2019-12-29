@@ -1,0 +1,115 @@
+$header-height: 70px;
+.header__new {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0;
+  height: $header-height;
+  background-color: white;
+  border-bottom: $border-set;
+
+  @media screen and (max-width: 767px) {
+    position: fixed;
+  }
+
+  .natured-brand-logo {
+    @media screen and (max-width: 767px) {
+      max-width: 75px !important;
+    }
+  }
+
+  .header-row {
+    @extend .content-container;
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .header-link {
+
+      &:last-child {
+        a {
+          &:not(.button) { padding-right: 0; }
+          &.button { margin-right: 0; }
+        }
+      }
+
+      // Spacing for regular link
+      a:not(.button) {
+        color: $color-font;
+        font-size: 14px;
+        font-weight: 400;
+
+        height: 20px;
+        line-height: 20px;
+        padding: 25px 15px 26px 15px;
+        border-bottom: 2px solid transparent;
+        transition: $transition;
+
+        &:hover, &.active {
+          color: $color-black;
+          transition: $transition;
+          border-color: $color-highlight;
+        }
+      }
+
+      // Spacing for button
+      a.button {
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0 15px;
+      }
+    }
+  }
+
+  .show-mobile {
+    display: none;
+    @media screen and (max-width: 767px) {
+      display: block;
+    }
+  }
+
+  .hide-mobile {
+    display: flex;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+
+.header__new.transparent {
+  background-color: transparent;
+  border-bottom: none;
+
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    .natured-icon {
+      svg { fill: white; }
+    }
+  }
+
+  .header-right {
+    .header-link {
+      a:not(.button) {
+        color: white;
+      }
+      a.button {
+        background-color: transparent;
+        border: 1px solid white;
+        &:hover {
+          background-color: white;
+          color: $color-font;
+        }
+      }
+    }
+  }
+}
+
+@import './overlay';

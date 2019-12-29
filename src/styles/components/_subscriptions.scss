@@ -1,0 +1,144 @@
+
+.subscriptions-table {
+  background-color: white;
+  width: 100%;
+
+  .header-row {
+    padding: 5px 15px;
+
+    tr > th {
+      padding: 5px 15px;
+      color: $color-font-lightest;
+      font-weight: 400;
+      font-size: 13px;
+    }
+  }
+
+  .body-row {
+    border-top: $border;
+    td {
+      padding: 15px;
+    }
+  }
+}
+
+.product-subscriptions {
+  width: 100%;
+
+  .subscription {
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+
+    padding: 15px 0;
+    border-bottom: $border;
+
+    .product-grid-display {
+      min-width: 250px;
+    }
+
+    .subscription-settings {
+      display: flex;
+      justify-content: space-around;
+      width: -webkit-fill-available;
+
+      .subscription-form {
+        display: flex;
+      }
+
+      @media screen and (max-width: 1000px) {
+        flex-direction: column;
+        align-items: flex-end;
+
+        .subscription-form {
+          padding-bottom: 15px;
+        }
+      }
+    }
+
+    &:last-child { border-bottom: none; }
+  }
+
+  @media screen and (max-width: 767px) {
+    .subscription {
+      flex-direction: column;
+      padding: 10px 0 0 0;
+      .product-grid-display {
+        width: 100%;
+      }
+      .subscription-settings {
+        align-items: flex-start;
+        padding-top: 15px;
+      }
+      .next-delivery {
+        display: none;
+      }
+      .subscription-form {
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+
+.frequency-form {
+  .ant-form-item {
+    margin-bottom: 0 !important;
+  }
+
+  .ant-select-sm {
+    width: 150px !important;
+    .ant-select-selection {
+      height: 27px !important;
+      margin-top: -1px !important;
+      &:hover {
+        border: 1px solid rgba(0,0,0,0.1);
+      }
+    }
+
+    .ant-select-selection__rendered {
+      font-size: 13px !important;
+      height: 25px !important;
+      line-height: 27px !important;
+    }
+  }
+}
+
+.subscribe {
+  font-size: 12px;
+  padding-top: 15px;
+
+  .ant-checkbox-wrapper {
+    display: inherit;
+  }
+
+  .ant-checkbox-inner {
+    width: 12px;
+    height: 12px;
+
+    &:after {
+      border: 1px solid #fff;
+      border-top: 0;
+      border-left: 0;
+      left: 3px;
+      top: 1px;
+      width: 4.5px;
+      height: 6px;
+    }
+  }
+
+  .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+  .ant-checkbox:hover .ant-checkbox-inner,
+  .ant-checkbox-input:focus + .ant-checkbox-inner {
+    border-color: $color-bright;
+  }
+
+  .ant-checkbox-checked .ant-checkbox-inner,
+  .ant-checkbox-indeterminate .ant-checkbox-inner {
+    background-color: $color-bright;
+    border-color: $color-bright;
+  }
+
+  .ant-checkbox-checked:after {
+    border: 1px solid $color-bright;
+  }
+}

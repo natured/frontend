@@ -1,0 +1,13 @@
+@import 'src/styles/universal/variables';
+
+
+.toggle {
+  color: $green;
+  &.off {
+    color: $font-lighter;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

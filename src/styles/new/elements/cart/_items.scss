@@ -1,0 +1,65 @@
+$cart-image-size: 65px;
+$cart-standard-padding: 15px;
+
+.cart-item__list {
+  padding: $cart-standard-padding;
+}
+
+.cart-item {
+  background-color: $white;
+  display: flex;
+  padding: $cart-standard-padding;
+  border-bottom: $border;
+  border-radius: 0;
+
+  &:first-child {
+    border-top: $border;
+    border-radius: $border-radius $border-radius 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+}
+
+.cart-item__image {
+  width: $cart-image-size !important;
+  height: $cart-image-size !important;
+  border-radius: $border-radius;
+}
+
+.cart-item__details {
+  width: 100%;
+  max-width: auto;
+  font-size: 12px;
+  padding: 0 $cart-standard-padding;
+  > * {
+    min-height: $cart-image-size;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+.cart-item__product-name {
+  @include ellipsis-overflow(2);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.cart-item__foodmaker-name {
+  @include ellipsis-overflow(1);
+}
+
+.cart-item__description {
+  font-size: 12px;
+  color: $lightest-gray;
+  sup { top: -.35em; }
+}
+
+.cart-item__price {
+  text-align: center;
+  padding-top: $cart-standard-padding;
+  font-size: 15px;
+  font-weight: 600;
+}

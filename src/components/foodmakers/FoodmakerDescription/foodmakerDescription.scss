@@ -1,0 +1,13 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+
+.foodmaker-description {
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint(md) {
+    line-height: 2rem;
+  }
+
+}

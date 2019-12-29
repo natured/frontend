@@ -1,0 +1,139 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+
+/* 1. Variables */
+$input-height: 40px;
+$input-padding: 5px 16px;
+$input-spacing: 7.5px;
+$input-placeholder-color: #BBBBBB;
+$input-error-height: 16px;
+$input-error-padding: 2.5px;
+$input-error-border-width: 1px;
+$input-error-color: $error-color;
+
+$input-height-small: 24px;
+
+/* 2. Mixins for inputs */
+@mixin placeholder($color) {
+  &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $color;
+    opacity: 1;
+    padding-top: 2.5px;
+  }
+
+  &:-ms-input-placeholder { color: $color; }
+  &::-ms-input-placeholder { color: $color; }
+}
+
+// Removes outside glow
+input, textarea, select {
+  border-radius: $border-radius;
+  box-shadow: none;
+  border: $border;
+  font-size: 13px;
+  height: $input-height;
+  &:focus {
+    outline: 0;
+  }
+
+  @include placeholder($input-placeholder-color);
+
+}
+
+/* Standard inputs */
+[class^="field"]  {
+  padding-bottom: $input-spacing;
+
+  label {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 15px;
+    height: 15px;
+    padding-left: 3px;
+  }
+
+  input, select, textarea {
+    -webkit-appearance: none;
+    width: 100%;
+    background-color: #fff;
+    color: $font-color;
+    height: $input-height;
+    line-height: calc(#{$input-height} - 2px);
+    padding: $input-padding;
+    border-radius: $border-radius;
+    border: $border;
+    transition: $transition;
+    @include placeholder($input-placeholder-color);
+
+
+    &:hover {
+      transition: $transition;
+      border: $border-darkened;
+      box-shadow: $box-shadow;
+    }
+  }
+
+  textarea {
+    resize: none;
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+    height: auto;
+  }
+}
+
+input, select, textarea {
+  @include breakpoint(xs) {
+    font-size: 16px !important;
+  }
+}
+
+select {
+  // Allows spacing for icon
+  padding-right: 46px;
+  width: calc(100% - 30px);
+
+  & + .anticon {
+    position: absolute;
+    right: 30px;
+    top: calc(50% - 6px);
+  }
+}
+
+/* 4. Input with errors */
+[class^="field"] {
+  margin-bottom: calc(#{$input-error-height} + #{$input-error-padding});
+  &.has-error {
+    margin-bottom: 0;
+    input {
+      border: $input-error-border-width solid $input-error-color;
+      &:focus, &:hover {
+        border-color: darken($input-error-color, 5%);
+      }
+    }
+    .error {
+      padding-top: $input-error-padding;
+      height: $input-error-height;
+      color: $input-error-color;
+      font-weight: 400;
+      font-size: 12px;
+      padding-bottom: 15px;
+    }
+  }
+}
+
+
+/* 5. Disabled input */
+input:disabled, textarea:disabled {
+  background-color: rgba(0,0,0,0.05);
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 6. Sizes */
+[class^="field--small"] {
+  input, select, textarea {
+    height: $input-height-small;
+    // line-height: $input-height-small;
+  }
+}

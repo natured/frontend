@@ -1,0 +1,116 @@
+$standard-padding: 32px;
+$standard-nav-height: 70px;
+$standard-hide-height: 32px;
+
+.sticky__nav {
+  position: -webkit-sticky;
+  position: sticky;
+  transition: all 0.2s ease-in-out;
+  top: calc(#{$standard-padding} + #{$standard-nav-height});
+
+  &.is-pinned {
+    top: calc(#{$standard-padding} + #{$standard-nav-height} + #{$standard-hide-height});
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.mobile__nav {
+  @include flex-center();
+  position: sticky;
+  top: 50px;
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+  z-index: 50;
+  height: 50px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 0 20px;
+  border-bottom: $border;
+
+  form {
+    margin-bottom: 0;
+  }
+
+  &.is-pinned {
+    top: calc(50px + 32px);
+    transition: all 0.2s ease-in-out;
+  }
+
+  & + .category-page__container {
+    padding-top: 30px;
+  }
+}
+
+.side__nav {
+  display: flex;
+  flex-direction: column;
+
+  .parent__link {
+    line-height: 1.8;
+    font-size: 16px;
+    padding: 3px 0;
+    display: block;
+    font-weight: 500;
+    span { position: relative; }
+
+    &.is-active + .children {
+      display: block;
+    }
+
+    &.is-active {
+      span {
+        @include tag($primary-bg);
+        margin-left: -10px;
+      }
+    }
+
+    &:hover {
+      color: $black;
+    }
+
+    // &:hover, &.is-active {
+    //   font-weight: bold;
+    // }
+  }
+
+  .children {
+    display: none;
+  }
+
+  .child__link {
+    display: block;
+    transition: 0.3s ease;
+    color: $black;
+    font-weight: 500;
+    line-height: 1.6;
+    opacity: 0.5;
+    margin: 5px 0;
+    padding-left: 10px;
+    letter-spacing: $letter-spacing;
+
+    &.is-active, &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.category__title {
+  @include serif();
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 32px;
+
+  // position: sticky;
+  // top: 50px;
+  // margin-left: -20px;
+  // margin-right: -20px;
+  // padding-top: 15px;
+  // text-align: center;
+  // background-color: white;
+  // z-index: 100;
+
+  @media (min-width: 767px) {
+    font-size: 42px;
+  }
+}

@@ -1,0 +1,201 @@
+.input-group {
+  padding-bottom: 30px;
+
+  label {
+    display: block;
+    font-size: 12px;
+    color: #787878;
+    width: 100%;
+  }
+}
+
+[class^=field] {
+  padding-bottom: 2.5px;
+}
+
+input.ant-input {
+  border-radius: $border-radius;
+  &:focus, &:hover { // Same box shadow as stripe
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(50, 50, 93, 0.109804) 0px 4px 6px, rgba(0, 0, 0, 0.0784314) 0px 1px 3px !important;
+  }
+}
+
+.no-min-height {
+  input.ant-input {
+    min-height: 0;
+  }
+}
+
+.ant-form-item {
+  margin-bottom: 15px;
+}
+
+// Handle errors
+.has-error {
+   .ant-input, .ant-input:hover {
+     border-color: $color-highlight;
+   }
+   .ant-form-explain {
+     @extend .error-message;
+     padding-top: 5px;
+   }
+}
+
+
+
+// Quick styles for labels
+.ant-form-item-label {
+  line-height: 1.2;
+  label {
+    display: block;
+    font-size: 12px;
+    font-family: $font-family-sans-serif;
+    color: #787878;
+    width: 100%;
+    margin: 0px 0 3px 1px;
+    &::after { content: ''; }
+  }
+}
+
+.ant-list-item.remove-bottom-margin {
+  .ant-form-item {
+    margin-bottom: 0px;
+  }
+}
+
+// Two next to each other on desktop, above on mobile
+.split-input {
+  display: flex;
+
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+
+  div.split {
+    width: 50%;
+    &:first-child { padding-right: 7.5px; }
+    &:last-child { padding-left: 7.5px; }
+
+    @media only screen and (max-width: 767px) {
+      width: 100% !important;
+      padding: 0 0 0 0;
+      &:first-child { padding-right: 0px; margin-bottom: -20px; }
+      &:last-child { padding-left: 0px; }
+    }
+  }
+}
+.ant-calendar-picker {
+  width: 100%;
+}
+
+.ant-select {
+  min-width: inherit !important;
+}
+
+
+.has-error .ant-input-group-addon {
+  color: $color-highlight;
+  border-color: $color-highlight;
+}
+
+.ant-select-sm {
+  font-size: 12px;
+  .ant-select-selection__placeholder, .ant-select-search__field__placeholder {
+    font-size: 12px;
+  }
+}
+
+@import './form/auth';
+@import './form/account';
+
+
+.ant-select-sm {
+  height: 25px;
+  .ant-select-selection {
+    border: $border;
+    border-radius: $border-radius;
+  }
+}
+
+.ant-select-open .ant-select-selection {
+  box-shadow: none !important;
+  border-color: $color-bright !important;
+}
+
+.ant-select-focused .ant-select-selection,
+.ant-select-selection:focus,
+.ant-select-selection:focus {
+  box-shadow: none !important;
+}
+
+::-webkit-input-placeholder {
+font-size: 13px !important;
+}
+
+:-moz-placeholder {
+font-size: 13px !important;
+}
+
+/*--for IE10 support--*/
+:-ms-input-placeholder {
+font-size: 13px !important;
+}
+
+
+.inline-form {
+  // @include breakpoint(sm) {
+    display: flex;
+    justify-content: space-between;
+    .field {
+      width: -webkit-fill-available;
+      margin-right: 15px;
+    }
+    button {
+      max-width: 250px;
+      margin-top: 22px;
+    }
+
+    &.input-and-button {
+      .field {
+        margin-right: 0;
+      }
+
+      input {
+        border-radius: $border-radius 0 0 $border-radius;
+        border-right: none;
+      }
+
+      button {
+        border-radius: 0 $border-radius $border-radius 0;
+      }
+    }
+  // }
+}
+
+
+
+.delivery-form {
+  padding: 30px;
+
+  width: 100%;
+  border-radius: $border-radius;
+  background-color: rgba(white, .9);
+  box-shadow: $box-shadow;
+
+  @media screen and (max-width: 560px) {
+    width: calc(100vw - 60px);
+    margin-left: -8vw;
+  }
+
+  @include breakpoint(sm) {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include breakpoint(md) {
+    margin-left: 0;
+  }
+
+}

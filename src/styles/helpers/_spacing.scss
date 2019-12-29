@@ -1,0 +1,13 @@
+.content-container {
+  margin: 0 auto;
+  padding: 0 8vw;
+
+  @media screen and (min-width: 84.875rem) {
+    padding: 0;
+    max-width: 76.875rem;
+  }
+
+  @media screen and (min-width: 48rem) {
+    padding: 0 4vw;
+  }
+}

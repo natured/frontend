@@ -1,0 +1,24 @@
+/* Styles for the layout of pricing, size description, susbcribe, etc.
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.product-pieces {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-bottom: $border;
+
+  .piece {
+    padding: 15px;
+    border-right: $border;
+    width: 50%;
+
+    .price {
+      margin-bottom: 0;
+      font-weight: bold;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}

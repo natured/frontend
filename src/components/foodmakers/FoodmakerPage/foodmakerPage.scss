@@ -1,0 +1,80 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+@import 'src/styles/atoms/headers';
+@import 'src/styles/pages/market-content';
+
+.foodmaker-page {
+  @include isMarketContent();
+}
+
+.foodmaker-top-section {
+  @include isMarketContentSection();
+  @include flex(center, space-between, column-reverse);
+
+  .section-left {
+    padding: $padding;
+    @include flex(center, center);
+    border-bottom: $border;
+    width: calc(100% - (2 * #{$padding}));
+  }
+
+  .section-right {
+    background-color: $bg-gray;
+    border-bottom: $border;
+    img {
+      max-height: 500px;
+      max-width: 100%;
+      @include breakpoint(md) {
+        border-radius: 0 $border-radius $border-radius 0;
+      }
+    }
+  }
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    .section-left {
+      width: 40%;
+      border-bottom: none;
+    }
+    .section-right {
+      width: 60%;
+      border-bottom: none;
+    }
+  }
+
+  .foodmaker-name {
+    @include standard-header(5);
+  }
+
+  .foodmaker-location {
+    font-size: 16px;
+    svg {
+      padding-right: 20px;
+    }
+  }
+}
+
+.foodmaker-bottom-section {
+  > div {
+    padding: 30px $padding;
+    max-width: 700px;
+    margin: auto;
+    padding-bottom: 0;
+  }
+
+  @include breakpoint(md) {
+    border-bottom: $border;
+    > div {
+      padding: 40px $padding;
+    }
+  }
+}
+
+.foodmaker-products-section {
+  padding: 40px 15px 0px 15px;
+  min-height: 200px;
+
+  @include breakpoint(md) {
+    padding-bottom: 40px;
+  }
+}

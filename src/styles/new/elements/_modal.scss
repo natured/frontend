@@ -1,0 +1,101 @@
+$modal-max-width: 500px;
+$modal-mobile-padding: 20px;
+
+.modal {
+  &.hide {
+    visibility: hidden;
+    transition: visibility 0s ease 1s;
+
+    .modal__overlay, .modal__container {
+      @extend .fadeOut;
+    }
+  }
+
+  &.show {
+    visibility: visible;
+
+    .modal__overlay, .modal__container {
+      @extend .fadeIn;
+    }
+  }
+}
+
+.modal {
+  &.bg-light-green {
+    .modal__container {
+      @extend .bg-light-green;
+    }
+  }
+}
+
+.modal__overlay {
+  @extend .animated;
+  @include positioned(0, 0, 0, 0);
+  position: fixed;
+  z-index: 1000;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  // background-color: rgba(255, 255, 255, 0.85);
+}
+
+.modal__wrap {
+  @include positioned(0, 0, 0, 0);
+  @include flex-center();
+  position: fixed;
+  overflow: auto;
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+
+.modal__container {
+  @extend .animated;
+  position: relative; // so absolute close button is inside
+  margin: auto;
+  background-color: white;
+  max-width: $modal-max-width;
+  width: 100%;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+}
+
+.modal__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.modal__content {
+  padding: 20px;
+}
+
+@media (max-width: 767px) {
+  .modal__container {
+    width: calc(100% - (2 * #{$modal-mobile-padding}));
+    margin: $modal-mobile-padding;
+    max-height: calc(100% - (2 * #{$modal-mobile-padding}));
+  }
+}
+
+.modal__links {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 2em 0;
+
+  a {
+    position: relative;
+    margin: 0 1rem;
+    transition: $transition;
+    &:first-child { margin-left: 0; }
+    &:last-child { margin-right: 0; }
+
+    &:hover {
+      transition: $transition;
+      &::after {
+        @include underline(2px, $font-color);
+      }
+    }
+  }
+}
+
+@import "modal/auth";

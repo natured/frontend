@@ -1,0 +1,18 @@
+.category__page {
+  @media (min-width: 767px) {
+    @include grid-container();
+    @include vertical-space();
+  }
+}
+
+.category-page__side-nav {
+  @media (min-width: 767px) {
+    @include grid-left();
+  }
+}
+
+.category-page__container {
+  @media (min-width: 767px) {
+    @include grid-right();
+  }
+}

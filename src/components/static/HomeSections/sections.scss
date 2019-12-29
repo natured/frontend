@@ -1,0 +1,57 @@
+@import 'src/styles/universal/mixins';
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+
+.ravioli-bg {
+  background-image: url('https://natured.s3.amazonaws.com/imgix/static_ravioli.jpg?auto=compress&q=1&ch=Width,DPR,Save-Data');
+
+  @include breakpoint(sm) {
+    background-image: url('https://natured.s3.amazonaws.com/imgix/static_ravioli.jpg?auto=compress&q=5&ch=Width,DPR,Save-Data');
+  }
+
+  @include breakpoint(md) {
+    background-image: url('https://natured.s3.amazonaws.com/imgix/static_ravioli.jpg?auto=compress');
+  }
+}
+
+
+
+.groceries-bg {
+  background: none;
+
+  @include breakpoint(md) {
+    background-image: url('https://natured.s3.amazonaws.com/imgix/static/groceries-overhead.jpg?auto=compress');
+  }
+}
+
+
+.docks-bg {
+  background-image: url('https://natured.s3.amazonaws.com/imgix/natured_why_natured.jpg?auto=compress&q=1&ch=Width,DPR,Save-Data');
+
+  @include breakpoint(sm) {
+    background-image: url('https://natured.s3.amazonaws.com/imgix/natured_why_natured.jpg?auto=compress&q=5&ch=Width,DPR,Save-Data');
+  }
+
+  @include breakpoint(md) {
+    background-image: url('https://natured.s3.amazonaws.com/imgix/natured_why_natured.jpg?auto=compress');
+  }
+}
+
+.quick-intro {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  padding-top: 6%;
+  padding-bottom: 6%;
+  .para {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+.top-section {
+  background-size: cover;
+  >div {
+    background-color: rgba(white, .5);
+  }
+}

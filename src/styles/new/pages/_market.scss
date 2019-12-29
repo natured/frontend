@@ -1,0 +1,7 @@
+.market__page {
+  @include full-height();
+  @include outer-padding();
+  @extend .bg-white;
+}
+
+@import "categories";

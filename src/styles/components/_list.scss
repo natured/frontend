@@ -1,0 +1,102 @@
+// Show on hover list item
+// Way to hide and then show an element in a list
+.ant-list-item  {
+  .show-on-hover {
+    opacity: 0;
+  }
+  &:hover {
+    .show-on-hover {
+      opacity: 1;
+    }
+  }
+}
+
+// The list of orders on the admin dashboard
+.orders-list {
+  .loading {
+    text-align: center;
+    padding: 30px;
+  }
+
+  .orders-list-item.ant-list-item {
+    @extend .animated;
+    @extend .fadeIn;
+    padding: 15px;
+    border-bottom: $border !important;
+    transition: $transition;
+
+    // Style when order is currently being viewed
+    &.selected, &.selected:hover {
+      transition: $transition;
+      background-color: $color-black;
+
+      .order-by-time, .order-foodmaker, .order-arrival, .order-by {
+        color: white;
+        transition: $transition;
+      }
+      .order-foodmaker {
+        font-weight: 400;
+      }
+    }
+
+    // Style when mousing over the list item
+    // &:hover {
+    //   background-color: lighten($color-secondary, 30%);
+    // }
+
+    .order-foodmaker {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .order-arrival {
+      font-size: 11px;
+    }
+
+    .order-by {
+      font-size: 11px;
+      margin-bottom: -12px;
+    }
+
+    .order-by-time {
+      @extend .big-number;
+      transition: $transition;
+      color: rgba(0,0,0,0.25);
+    }
+
+  }
+}
+
+.settings-list {
+    .am-list-body {
+        background-color: transparent;
+    }
+
+    .am-list-item {
+        padding: .5rem 15px;
+        background-color: transparent;
+        border: none;
+
+        .am-list-line {
+          .am-list-content {
+            color: $color-font;
+            .anticon {
+              font-weight: bold;
+              padding-right: 15px;
+              color: $color-highlight;
+            }
+          }
+        }
+
+    }
+
+
+    // Removes separators from everywhere except title
+    .am-list-body:after {
+      height: 0 !important;
+    }
+
+    .am-list-line:after {
+      height: 0 !important;
+    }
+}

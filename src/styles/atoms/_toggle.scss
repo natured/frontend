@@ -1,0 +1,42 @@
+$navbar-width: 50px; // what is this?
+$bar-width: 20px;
+$bar-height: 1px;
+
+@mixin bar() {
+  @include fixedAt(0, 0, 0, 0);
+  margin: auto;
+  margin-left: 0;
+  position: absolute;
+  transition: 0.3s ease;
+  height: $bar-height;
+  width: $bar-width;
+  background-color: $dark-green;
+  border-radius: $border-radius;
+}
+
+[class^="toggle--"] {
+  display: block;
+  position: relative;
+  width: 35px;
+  height: $navbar-width;
+
+  span, span::before, span::after {
+    @include bar();
+  }
+
+  span::before {
+    transform: translateY(-7px);
+    content: " ";
+  }
+
+  span::after {
+    transform: translateY(7px);
+    content: " ";
+  }
+
+  &[class*="--x"]{
+    span::before { opacity: 0; }
+    span::after { transform: translateY(0) rotate(90deg); }
+    span { transform: rotate(-45deg); }
+  }
+}

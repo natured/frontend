@@ -1,0 +1,16 @@
+.brand-header {
+  font-size: 20px;
+  padding-right: 30px;
+  font-weight: bold;
+  letter-spacing: -1;
+
+  &.on-full-modal {
+    position: fixed;
+  }
+}
+
+
+// Updated for new
+.header__new, .footer__new {
+  .natured-brand-logo { max-width: 100px; }
+}

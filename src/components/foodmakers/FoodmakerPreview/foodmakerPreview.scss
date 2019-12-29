@@ -1,0 +1,30 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+@import 'src/styles/atoms/links';
+@import 'src/styles/atoms/headers';
+
+.foodmaker-preview {
+  @include flex(center, flex-start);
+  padding-top: 10px;
+
+  .foodmaker-circle-image, .foodmaker-circle-image img {
+    box-shadow: $box-shadow;
+    border-radius: 50px;
+    height: 75px;
+    width: 75px;
+    background-color: $bg-gray;
+  }
+
+  .foodmaker-details {
+    @include flex(flex-start, space-between, column);
+    padding-left: 20px;
+    height: 48px;
+  }
+
+  .foodmaker-link {
+    @include underline-link();
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 600;
+  }
+}

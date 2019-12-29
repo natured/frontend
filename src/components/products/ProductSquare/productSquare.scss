@@ -1,0 +1,34 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+
+$product-square-img-height: 65px;
+
+.product-grid-display {
+  min-width: 300px;
+  @include flex(center, flex-start);
+
+  .product-image {
+    height: $product-square-img-height;
+    width: $product-square-img-height;
+    margin-right: 15px;
+
+    img {
+      height: $product-square-img-height;
+      width: $product-square-img-height;
+      border-radius: $border-radius;
+    }
+  }
+
+  .product-name {
+    margin-bottom: 2px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .product-foodmaker-name {
+    color: $dark-green;
+    font-weight: 500;
+    margin-bottom: 2px;
+    font-size: 13px;
+  }
+}

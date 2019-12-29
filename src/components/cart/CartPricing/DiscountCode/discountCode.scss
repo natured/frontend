@@ -1,0 +1,49 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+@import 'src/styles/atoms/links';
+
+.add-code {
+  @include underline-link();
+  font-size: 14px;
+}
+
+.applied-discount-code {
+  color: $dark-green;
+  font-size: 13px;
+  font-weight: 600;
+
+  .icon {
+    padding-left: 10px;
+    a {
+      color: $font-lightest;
+      &:hover { color: $font-lighter; }
+    }
+  }
+}
+
+.discount-code-form {
+  border-top: $border;
+  border-bottom: $border;
+  padding: 15px 5px;
+
+  // removes spacing from input
+  .field {
+    label { display: none; }
+
+    input {
+      height: 32px !important;
+      line-height: 32px !important;
+    }
+  }
+
+  @include breakpoint(md) {
+    .field {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    &.show {
+      padding: 9.5px;
+    }
+  }
+}

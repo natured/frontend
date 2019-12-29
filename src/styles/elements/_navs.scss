@@ -1,0 +1,332 @@
+// Table of contents:
+//
+//  1. variables
+//  2. Universal headers
+//   FIXED nav
+//  3. Skinny header
+//  4. main header
+//
+//  5. generals
+//  6. headroom
+
+
+// Skinny nav
+$skinny-nav-bg: $pastel-color;
+$skinny-nav-color: $font-color;
+$skinny-nav-special-bg: $font-color;
+$skinny-nav-special-bg-mobile: $font-color;
+
+// Main nav
+$main-nav-bg: white;
+$main-nav-color: $font-color;
+$main-link-active-color: $font-color;
+
+// 2. applies to all navss
+[class^="nav--"] {
+  position: relative;
+
+  &[class*="--mobile"] {
+    display: flex;
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+
+  &[class*="--desktop"] {
+    display: none;
+    @include breakpoint(md) {
+      display: flex;
+    }
+  }
+}
+
+// Nav split is used to push sets of links to either side
+[class^="nav--split"], .nav--left, .nav--right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav--fixed {
+  position: fixed !important;
+  z-index: 100;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  top: calc(-1 * #{$skinny-nav-height});
+
+  &.show { top: 0; }
+
+  @include breakpoint(xs) {
+    z-index: 200;
+  }
+}
+
+// 3. Skinny nav!
+.nav--skinny {
+  background-color: $skinny-nav-bg;
+  color: $skinny-nav-color;
+  height: $skinny-nav-height;
+  line-height: $skinny-nav-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  // Makes the special link fill entire width on mobile
+  .container--outer, .nav--right, .nav--link--special { width: 100%; }
+
+  // Hides all other links
+  .nav--link {
+    display: none;
+    border-bottom: 0;
+    font-size: 14px;
+
+    &.special {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    &.register {
+      span {
+        background-color: $highlight-color;
+        height: calc(#{$skinny-nav-height} - 10px);
+        line-height: calc(#{$skinny-nav-height} - 10px);
+        padding: 0 10px;
+        border-radius: 2px;
+        box-shadow: $box-shadow-reg;
+      }
+
+      &:hover {
+        color: $font-color;
+        box-shadow: $box-shadow-hov;
+      }
+    }
+  }
+
+
+  @include breakpoint(md) {
+    .nav--link.special {
+      width: auto;
+      // background-color: $skinny-nav-special-bg;
+      // color: white;
+      // border-radius: $border-radius;
+      // height: 25px;
+      // // line-height: 25px;
+      // // padding: 0 15px;
+    }
+
+    // Display other links on medium + bigger
+    .nav--link {
+      display: flex;
+      align-items: center;
+
+      &.with--dropdown {
+        display: block;
+      }
+    }
+
+    .nav--right, .nav--link--special { width: auto; }
+  }
+
+}
+
+// 4. Main nav (the one w/categories)
+.nav--main {
+  height: $main-nav-height-mobile;
+  background-color: $main-nav-bg;
+  color: $main-nav-color;
+  border-bottom: $border;
+  box-shadow: $box-shadow;
+
+  .nav--logo {
+    padding-right: 2rem;
+  }
+
+  [class^="nav--split"], .nav--left, .nav--right {
+    height: $main-nav-height-mobile;
+  }
+
+  @include breakpoint(md) {
+    height: $main-nav-height;
+    [class^="nav--split"], .nav--left, .nav--right {
+      height: $main-nav-height;
+    }
+  }
+
+}
+
+.nav--spacer {
+  height: calc(#{$main-nav-height} + #{$skinny-nav-height});
+  @include breakpoint(xs) {
+    height: calc(#{$main-nav-height-mobile} + #{$skinny-nav-height});
+  }
+}
+
+
+// Nav-links generals
+.nav--link {
+  color: $font-color;
+  font-weight: 400;
+  margin: 0 1rem;
+  border-bottom: 2px solid transparent;
+  letter-spacing: -.25px;
+
+  font-size: 14px;
+  @include above(1000px) {
+    font-size: 15px;
+  }
+
+  @include above(1200px) {
+    font-size: 16px;
+  }
+
+  &.active {
+    color: $main-link-active-color;
+    border-color: $main-link-active-color;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+// TODO: is this the best place for this?
+.cart--icon {
+  fill: $dark-green;
+  height: 30px;
+
+  @include breakpoint(xs) {
+    height: 25px;
+  }
+}
+
+
+// The drawer nav
+.nav--container {
+  max-height: calc(100vh - 50px);
+  // overflow-y: scroll;
+  padding-top: 50px;
+}
+
+.nav--drawer-content {
+  padding: 15px 15px 50px 15px;
+  width: 100%;
+  font-size: 16px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+  [class^="button--"] {
+    margin-bottom: 15px;
+  }
+}
+
+.nav--drawer-link {
+  border-top: $border;
+  width: 100%;
+  margin: 0 -15px;
+  padding: 10px 15px;
+  display: flex;
+  font-weight: 600;
+  justify-content: space-between;
+  align-items: center;
+  color: $dark-green;
+
+  &:last-child {
+    border-bottom: $border;
+    margin-bottom: 3rem;
+  }
+}
+
+.nav--drawer-header {
+  margin-top: 1em;
+  margin-bottom: .5em;
+  font-weight: 600;
+  color: $orange;
+}
+
+.nav--drawer--buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  :first-child {
+    margin-right: 7.5px;
+  }
+
+  :last-child {
+    margin-left: 7.5px;
+  }
+}
+
+.nav--dropdown {
+  position: absolute;
+  z-index: 200;
+  display: flex;
+  position: absolute;
+  z-index: 200;
+  display: flex ;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: $btn-box-shadow;
+  border-radius: $border-radius;
+  min-width: 200px;
+
+  .dropdown--link {
+    padding: 10px 15px;
+    border-bottom: $border;
+    width: calc(100% - 30px);
+    font-weight: 400;
+    color: $font-color;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &:last-child { border: none; }
+  }
+}
+
+.nav--link.with--dropdown {
+  .nav--dropdown { display: none; }
+  &:hover .nav--dropdown { display: flex; }
+}
+
+
+
+// Needed to prevent links from spilling
+@media screen and (max-width: 1131px) {
+  .nav--split {
+    .nav--logo svg { width: 70px; }
+    .nav--link { margin: 0 .75rem; }
+  }
+}
+
+// Needed to prevent links from spilling
+@media screen and (max-width: 1069px) {
+  .nav--split {
+    .nav--link { margin: 0 .5rem; }
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .nav--split {
+    .nav--logo { padding-right: 1rem; }
+  }
+}
+
+@media screen and (max-width: 805px) {
+  .nav--split {
+    .nav--logo { padding-right: .5rem; }
+    .nav--link { margin: 0 .4rem; }
+  }
+}

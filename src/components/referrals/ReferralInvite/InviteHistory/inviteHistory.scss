@@ -1,0 +1,45 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+
+.invite-history-box {
+  border: $border;
+  border-radius: $border-radius;
+  padding: 30px;
+
+  .invite-history-title {
+    @include flex(center, space-between);
+
+    .piggy-bank {
+      font-size: 20px;
+      color: $orange;
+    }
+
+    h3 {
+      font-weight: 600;
+      font-size: 24px;
+      margin: 0;
+    }
+  }
+}
+
+.invite-history-button {
+  padding-top: 30px;
+  button {
+    font-weight: 400;
+  }
+}
+
+.invite-history-stat {
+  @include flex(center, space-between);
+  font-weight: 300;
+  padding-top: 30px;
+  font-size: 16px;
+  border-bottom: 1px solid rgba($black, .6);
+
+  .stat-name {
+    &:hover {
+      cursor: pointer;
+      font-weight: 400;
+    }
+  }
+}

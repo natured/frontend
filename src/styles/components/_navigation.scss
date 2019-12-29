@@ -1,0 +1,420 @@
+$navigation-height: 50px;
+.am-navbar {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.03);
+  color: $color-font;
+}
+
+@import './overlay-menu';
+
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 1.5rem);
+    height: $navigation-height;
+    line-height: $navigation-height;
+    padding: 0 .75rem;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.transparent-nav {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(white, .2);
+    color: white;
+}
+
+.navigation {
+    .logo {
+        font-size: 26px;
+        color: $color-black;
+    }
+}
+
+.app-content {
+    padding-top: $navigation-height;
+}
+
+
+.am-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: $color-black;
+
+  &.am-navbar-light {
+    background-color: white;
+  }
+
+  .header-brand {
+    @extend .brand;
+    font-size: 16px;
+    z-index: 1;
+  }
+
+  .header-icon {
+    z-index: 1;
+  }
+}
+
+.am-tabs-tab-bar-wrap {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+
+@import "toggle";
+
+
+$admin-nav-height: 45px;
+$admin-nav-space: 15px;
+.admin-navigation {
+  height: $admin-nav-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: $border;
+  box-shadow: $box-shadow;
+  padding: $admin-nav-space;
+
+  .nav-left, .nav-center, .nav-right {
+    display: flex;
+    align-items: center;
+
+    .section {
+      padding: 0 $admin-nav-space;
+      display: flex;
+      align-items: center;
+    }
+
+    .section.menu {
+      padding: 15px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .split {
+      background-color: rgba(0,0,0,0.05);
+      width: 1px;
+      height: 100%;
+      margin: -15px 15px;
+    }
+
+    .button:hover {
+      box-shadow:
+        rgba(50, 50, 93, 0.109804) 0px 4px 6px,
+        rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
+    }
+
+    .ant-input-affix-wrapper {
+      height: 40px; // Fix form in nav height
+
+      &:hover {
+        input { border-color: $color-secondary; }
+      }
+    }
+
+    .header-brand {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .profile-picture {
+      border: $border;
+      border-radius: 3px;
+      margin-right: 15px;
+      height: 40px;
+      width: 40px;
+    }
+
+    .noties {
+      height: 42px;
+      width: 42px;
+      border: $border;
+      border-radius: $border-radius;
+      display: flex;
+      .anticon {
+        padding: 12px 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+
+.button-nav-link {
+  @extend .button;
+  padding: 0 1rem;
+  margin: 0 1rem;
+  line-height: 32px;
+  height: 32px;
+}
+
+.nav-button {
+  margin: 0 .5rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.nav-link {
+  padding: 0 1rem;
+  margin: .5rem 0;
+  line-height: 32px;
+  height: 32px;
+  position: relative;
+  color: $dark-green;
+
+  &:hover {
+    color: lighten($dark-green, 10%);
+  }
+}
+
+.static-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  box-shadow: $box-shadow;
+}
+
+
+.desktop-header {
+  display: flex;
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.mobile-header {
+  display: none;
+  @media only screen and (max-width: 767px) {
+    display: flex;
+  }
+}
+
+.transparent-header {
+  width: calc(100% - 30px);
+  position: absolute;
+  background-color: rgba(255, 255, 255, .5);
+
+  a.button-default {
+    background-color: transparent;
+    color: $color-font;
+    border-color: $color-font;
+    &:hover {
+      background-color: rgba(255, 255, 255, .5);
+      color: $color-font;
+    }
+  }
+}
+
+
+.market-mobile-nav {
+  position: fixed;
+  z-index: 51; // above the tabs
+  display: none;
+  box-shadow: none;
+  border-bottom: $border;
+
+  @media only screen and (max-width: 767px) {
+    display: flex;
+  }
+}
+
+//
+// .nav-link {
+//
+//     padding: 0 1rem;
+//     margin: .5rem 0;
+//     font-weight: 600;
+//     color: white;
+//     line-height: 32px;
+//     height: 32px;
+//     position: relative;
+//
+//     &:before {
+//         content: "";
+//         position: absolute;
+//         width: 80%;
+//         margin-left: 10%;
+//         margin-right: 10%;
+//         height: 1px;
+//         bottom: 0;
+//         left: 0;
+//         background-color: white;
+//         visibility: hidden;
+//         transform: scaleX(0);
+//         transition: all 0.3s ease-in-out 0s;
+//     }
+//
+//     &:hover:before {
+//         visibility: visible;
+//         transform: scaleX(1);
+//     }
+//
+//     .down-arrow {
+//         font-size: 8px;
+//         vertical-align: middle;
+//         padding-left: 5px;
+//     }
+// }
+//
+//
+// .nav-button {
+//     padding: 0 1rem;
+//     font-weight: 600;
+//     margin: .5rem 1rem;
+//     line-height: 32px;
+//     height: 32px;
+//     border-radius: 3px;
+// }
+//
+// .nav-button-transparent {
+//     @extend .button-transparent;
+//     @extend .nav-button;
+//     line-height: 32px;
+//     height: 32px;
+// }
+//
+// .nav-button-primary {
+//     @extend .button-primary;
+//     @extend .nav-button;
+//     @extend .inverse;
+//     line-height: 32px;
+//     height: 32px;
+// }
+//
+// .nav-button-secondary {
+//     @extend .button-secondary;
+//     @extend .hover-inverse;
+//     @extend .nav-button;
+//     line-height: 32px;
+//     height: 32px;
+// }
+//
+// .against-white {
+//     .nav-button-transparent {
+//         color: $color-black;
+//         border-color: $color-black;
+//
+//         &:hover {
+//             background-color: $color-black;
+//             color: white;
+//         }
+//     }
+//
+//     .nav-link {
+//         color: $color-black;
+//
+//         &:before {
+//             background-color: $color-highlight;
+//         }
+//     }
+// }
+//
+// .navigation {
+//     width: 100%;
+//     display: flex;
+//     z-index: 1;
+//     position: fixed;
+//     justify-content: space-between;
+//     box-shadow: 0 1px 5px 0 rgba(31, 31, 31,.1);
+//     background-color: white;
+//
+//     .navigation-left {
+//         display: flex;
+//         justify-content: space-around;
+//         align-items: center;
+//     }
+//
+//     .navigation-right {
+//         display: flex;
+//         justify-content: space-around;
+//     }
+//
+// }
+//
+// .top-bar {
+//     display: flex;
+//     position: relative;
+//     align-items: center;
+//     height: 50px;
+//     width: 100%;
+//     background-color: $color-black;
+//     color: white;
+//
+//     .top-bar-left {
+//         width: 50%;
+//         text-align: left;
+//         padding: 0 .5rem;
+//         padding-left: 0; // let logo handle the padding!
+//     }
+//
+//     .top-bar-right {
+//         display: flex;
+//         justify-content: flex-end;
+//         width: 50%;
+//         text-align: right;
+//         padding: 0;
+//     }
+// }
+// //
+// .nav-link.dropdown {
+//     margin: 0;
+//     padding: .5rem 1rem;
+//
+//     .dropdown-content {
+//         width: -webkit-fill-available;
+//         opacity: 0;
+//         visibility: hidden;
+//         z-index: 4;
+//         color: $color-font;
+//         position: absolute;
+//         text-align: left;
+//         background-color: white;
+//         margin-top: calc(.5rem + 2px);
+//         left: 0;
+//         box-shadow: 0 20px 40px 0 rgba(74, 74, 74, 0.21);
+//         padding: 1rem;
+//     }
+//
+//     .down-arrow:before {
+//         transform: rotate(0deg);
+//         transition: 0.3s ease;
+//     }
+//
+//     &:hover {
+//
+//         &:before {
+//             visibility: hidden;
+//         }
+//
+//         .dropdown-content {
+//             visibility: visible;
+//             opacity: 1;
+//         }
+//
+//         .down-arrow:before {
+//             transform: rotate(180deg);
+//             transition: 0.3s ease;
+//         }
+//         .down-arrow.no-spin:before {
+//             transform: rotate(0deg);
+//         }
+//     }
+// }
+//
+//
+
+//
+//
+
+@import "navigation/market_desktop";

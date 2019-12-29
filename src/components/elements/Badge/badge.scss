@@ -1,0 +1,26 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+
+$badge-color: $red;
+$size: 19px;
+
+.badge-wrapper {
+  position:relative;
+  float:left;
+
+  .badge {
+    position:absolute;
+    top: 2px;
+    right: -11px;
+    background-color: $badge-color;
+    color: white;
+    font-size: 10px;
+    line-height: $size;
+    height: $size;
+    width: $size;
+    border-radius: 50%;
+    font-weight: 600;
+
+    @include flex(center, center);
+  }
+}

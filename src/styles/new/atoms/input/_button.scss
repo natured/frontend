@@ -1,0 +1,58 @@
+$button-transition: all .25s ease-in-out;
+
+form .button, .button.form-button {
+  height: 40px;
+  padding: 0 1.5rem;
+  border: 1px solid white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+  // .with-hidden-icon {
+  //   @include space-between();
+  //   .anticon-arrow-right {
+  //     opacity: 0;
+  //     transition: $transition;
+  //   }
+  //
+  //   &:hover, &:focus {
+  //     .anticon-arrow-right {
+  //       opacity: 1;
+  //       transition: $transition;
+  //     }
+  //   }
+  // }
+
+// position: relative;
+//
+// span, .anticon {
+//   position: absolute;
+//   transition: $button-transition;
+//   line-height: 39px;
+//   top: 0;
+// }
+//
+// span {
+//   left: 50%;
+//   transform: translateX(-50%);
+// }
+//
+// .anticon {
+//   right: 50%;
+//   transform: translateX(50%);
+//   opacity: 0;
+// }
+
+
+// &.is-loading, &.is-success {
+//   span, .anticon { transition: $button-transition; }
+//   span {
+//     left: 1.5rem;
+//     transform: translateX(0);
+//   }
+//   .anticon {
+//     right: 1.5rem;
+//     transform: translateX(0%);
+//     opacity: 1;
+//   }
+// }

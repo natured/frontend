@@ -1,0 +1,63 @@
+@import 'src/styles/universal/responsive';
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+
+.category-outer {
+  width: 50%;
+  @include breakpoint(md) { width: 20%; }
+  padding-bottom: 30px;
+
+  .category-inner {
+    position: relative;
+    padding: 15px;
+  }
+
+  .category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    opacity: 0;
+    transition: $transition;
+  }
+
+  .category-name {
+    transition: $transition;
+    position: absolute;
+    bottom: -10px;
+    left: 25px;
+    text-align: center;
+    padding: 5px 15px;
+    background-color: white;
+    font-weight: 100;
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .angle {
+    font-size: 12px;
+    display: none;
+  }
+
+  img { width: 100%; }
+
+  &:hover {
+    cursor: pointer;
+    .category-overlay {
+      transition: $transition;
+      opacity: .5;
+    }
+
+    .category-name {
+      bottom: 15px;
+      transition: $transition;
+      background-color: rgba(white, 0);
+    }
+
+    .angle {
+      display: inline;
+    }
+  }
+}

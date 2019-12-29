@@ -1,0 +1,67 @@
+/**
+ * Table of Contents
+ * -----------------
+ *   1. Colors
+ *   2. Border + Radius
+ *   3. Fonts
+ *   4. Transition
+ *   5. Shadow
+ *   6. Breakpoints
+ *   7. Widths
+ */
+
+
+// 1. Colors
+// leixs choices
+$primary: #3E886B;
+$secondary: #FF5827;
+$accent: #EEB450;
+
+$primary-bg: #EDF4F1;
+$secondary-bg: #FFFDFB;
+$gray-bg: #F7F7F7;
+$primary-emph: #2E634E;
+
+// $primary: #3E886B;
+// $secondary: #E94B02;
+$black: #313131;
+$gray: #4a4a4a;
+$light-gray: #787878;
+$lightest-gray: #BABABA;
+
+
+$white: #fff;
+
+$font-color: $gray;
+$font-color-light: $light-gray;
+
+// 2. Border + Radius
+$border-color: rgba(0,0,0,0.05);
+$border: 1px solid $border-color;
+$border-radius: 3px;
+
+// 3. Fonts
+$font-family-sans-serif: 'soleil', 'proxima-nova', BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+$font-family-serif: 'kepler-std', serif;
+$font-family: $font-family-sans-serif;
+$font-size: .88rem;
+$letter-spacing: .04em;
+
+// 4. Transition
+$transition: 0.3s ease;
+
+// 5. Shadow
+$shadow-color: rgba(0,0,0,0.1);
+$box-shadow: 0 5px 14px 0 $shadow-color;
+$light-shadow-color: rgba(255, 255, 255, 0.05);
+$light-box-shadow: 0 5px 14px 0 $light-shadow-color;
+
+// 6. Breakpoints
+$breakpoint-0: 75em;
+$breakpoint-1: 65.63em;
+$breakpoint-2: 45em;
+$breakpoint-3: 25em;
+$breakpoint-4: 37.5em;
+
+// 7. Widths
+$copy-max-width: 600px;

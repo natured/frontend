@@ -1,0 +1,15 @@
+.nutritional-label {
+  .header--orange--upper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}

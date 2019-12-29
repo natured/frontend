@@ -1,0 +1,11 @@
+@import 'src/styles/universal/variables';
+
+.top-section {
+  .product-image {
+    border-right: $border-light;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

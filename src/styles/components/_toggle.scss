@@ -1,0 +1,100 @@
+$bar-height: 2px;
+
+.menu-toggle {
+    width: 26px;
+    height: 26px;
+    padding: 12px 0;
+    position: relative;
+    cursor: pointer;
+
+    span {
+        transition: .25s ease-in-out;
+        display: block;
+        border-radius: 2px;
+        background-color: $color-black;
+    }
+
+    .hamburger {
+        position: absolute;
+        padding-left: 8px;
+
+        span {
+            width: 22px;
+            height: $bar-height;
+            position: relative;
+            margin: 5px 0;
+
+            &:nth-child(1) {
+                transition-delay: .5s;
+            }
+
+            &:nth-child(2) {
+                transition-delay: .625s;
+            }
+
+            &:nth-child(3) {
+                transition-delay: .75s;
+            }
+        }
+    }
+
+    .cross {
+        margin-top: -3px;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transform: rotate(45deg);
+
+        span {
+            &:nth-child(1){
+                height: 0%;
+                width: $bar-height;
+                position: absolute;
+                top: 0;
+                left: 12px;
+                transition-delay: 0s;
+            }
+            &:nth-child(2){
+                width: 0%;
+                height: $bar-height;
+                position: absolute;
+                left: 0;
+                top: 12px;
+                transition-delay: .25s;
+            }
+        }
+    }
+
+    &.open {
+        .hamburger {
+            span {
+                width: 0%;
+
+                &:nth-child(1) {
+                    transition-delay: 0s;
+                }
+
+                &:nth-child(2) {
+                    transition-delay: .125s;
+                }
+
+                &:nth-child(3) {
+                    transition-delay: .25s;
+                }
+            }
+        }
+
+        .cross {
+            span {
+                &:nth-child(1){
+                  height: 26px;
+                  transition-delay: .625s;
+                }
+                &:nth-child(2){
+                  width: 26px;
+                  transition-delay: .375s;
+                }
+            }
+        }
+    }
+}

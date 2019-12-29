@@ -1,0 +1,45 @@
+$cart-pricing-border-color: rgba(0,0,0,0.05);
+$light-color: rgba($black, 0.25);
+
+.increments {
+  width: 82px;
+  height: 27px;
+  text-align: center;
+  border-radius: $border-radius;
+  border: $border;
+  transition: $transition;
+
+  &.is-carted {
+    @include space-between();
+  }
+
+  &.is-ready, &.is-unavailable, &.is-loading {
+    @include flex-center();
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &.is-adding {
+    color: $light-color;
+  }
+
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.1);
+    transition: $transition;
+  }
+
+  .mid {
+    width: 20px;
+  }
+
+  .icon {
+    padding: 7.5px 10px;
+    font-weight: bold;
+    font-size: 10px;
+
+    &.inactive {
+      color: $cart-pricing-border-color;
+    }
+  }
+}

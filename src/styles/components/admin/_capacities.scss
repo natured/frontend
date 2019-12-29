@@ -1,0 +1,7 @@
+.generate-capacity-button {
+  @extend .button;
+  @extend .button-outline-success;
+  @extend .small;
+  @extend .filled;
+  margin: 10px 0 5px 0;
+}

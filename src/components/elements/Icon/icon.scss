@@ -1,0 +1,52 @@
+@import 'src/styles/universal/variables';
+
+
+$icon-padding: 30px;
+$icon-padding-sm: 10px;
+
+[class^="icon--"]{ font-weight: 100; }
+
+.fa-spin {
+  animation: fa-spin 1s infinite linear;
+}
+
+.error { color: $red; }
+
+.success {
+  color: $bright-green !important; 
+}
+
+.angle {
+  padding-left: 3px;
+}
+
+.icon--right {
+  padding-left: $icon-padding;
+}
+
+.icon--left {
+  padding-right: $icon-padding;
+}
+
+.icon--left-small {
+  padding-right: $icon-padding-sm;
+}
+
+.icon--right-small {
+  padding-left: $icon-padding-sm;
+}
+
+.icon--arrow {
+  font-size: 12px;
+  margin-bottom: -5px;
+}
+
+.icon--circle {
+  border: 1px solid white;
+  border-radius: 50px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

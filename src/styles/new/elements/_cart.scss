@@ -1,0 +1,37 @@
+@import "cart/slideout";
+@import "cart/content";
+@import "cart/items";
+
+
+.cart__available-later {
+  .line-through {
+    padding: 0 15px;
+    font-size: 13px;
+
+    &::before, &::after {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  .cart-item__list {
+    opacity: .65;
+  }
+}
+
+.cart__checkout-button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: $primary;
+
+  > div {
+    padding: 15px;
+    text-align: center;
+  }
+
+  h3 {
+    text-align: center;
+    margin: 0;
+    color: $white;
+  }
+}

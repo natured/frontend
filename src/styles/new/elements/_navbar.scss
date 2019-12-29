@@ -1,0 +1,217 @@
+$navbar-height: 80px;
+$navbar-small-height: 50px;
+$navbar-logo-holder-width: 150px;
+
+$navbar-menu-max-width: 500px;
+$navbar-hover-color: $primary;
+$navbar-breakpoint: 50em;
+$navbar-breakpoint: 767px;
+
+@import "nav/logo";
+@import "nav/toggle";
+@import "nav/drawer";
+@import "nav/market";
+@import "nav/side";
+
+.nav {
+  height: $navbar-small-height;
+  @media (min-width: $navbar-breakpoint) {
+    height: $navbar-height;
+  }
+
+  box-shadow: $box-shadow;
+  position: fixed;
+  width: 100%;
+  z-index: 200;
+
+  .nav__bg {
+    z-index: 200;
+    position: relative;
+    background: $white;
+  }
+
+  .nav__toggle {
+    display: block;
+
+    @media (min-width: $navbar-breakpoint) {
+      display: none;
+    }
+  }
+
+  .nav__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: $navbar-breakpoint) {
+      position: relative;
+      left: 0;
+      transform: translateX(0);
+    }
+
+    svg {
+      transition: $transition;
+      fill: $black;
+    }
+
+    &:hover svg {
+      fill: $navbar-hover-color !important;
+      transition: $transition;
+    }
+  }
+
+  .nav__menu {
+    @include horizontal-margin(auto);
+    @include space-between();
+    display: none;
+    padding: 0;
+    max-width: $navbar-menu-max-width;
+    width: 100%;
+    height: 100%;
+
+    @media (min-width: $navbar-breakpoint) {
+      display: flex;
+    }
+  }
+
+  .nav__actions {
+    @include space-between();
+    margin: 0;
+    height: 100%;
+    .nav__item, .nav__button {
+      @include horizontal-margin(15px);
+      &:first-child { margin-left: 0; }
+      &:last-child { margin-right: 0; }
+    }
+  }
+
+
+  .nav__button, .nav__item { font-weight: 500; }
+
+  .nav__button {
+    border-radius: $border-radius;
+    padding: 7.5px 15px;
+
+    &.secondary {
+      @include transition();
+      .nav__anchor { color: white; }
+      background-color: $secondary;
+      &:hover {
+        cursor: pointer;
+        background-color: darken($secondary, 3%);
+      }
+    }
+  }
+
+  .nav__item {
+    .nav__anchor {
+      @include transition();
+
+      height: 80px;
+      line-height: 80px;
+      position: relative;
+      line-height: 1.6;
+
+      &.active {
+        color: $navbar-hover-color;
+        &::after { @include underline(2px, $navbar-hover-color); }
+      }
+    }
+
+    &:hover .nav__anchor {
+      &::after { @include underline(2px, $font-color); }
+    }
+  }
+  @media(min-width: 767px) {
+    &.is-transparent:not(.is-scrolled) {
+
+      box-shadow: none;
+
+      .nav__toggle {
+        .toggle {
+          span, span::before, span::after {
+            background-color: white;
+          }
+        }
+      }
+
+      .nav__bg { background: none; }
+      .nav__shadow { opacity: 0; }
+      .nav__logo { svg { fill: $white; } }
+
+      .nav__item {
+        .nav__anchor {
+          color: $white;
+          &.active {
+            color: $white;
+            &::after {
+              @include underline(2px, $white);
+            }
+          }
+        }
+
+        &:hover .nav__anchor:not(.active)  {
+          color: $white;
+          &::after {
+            @include underline(2px, $white);
+          }
+        }
+      }
+
+      .transparent-hidden {
+        display: none;
+      }
+    }
+  }
+
+  &:not(.is-transparent) {
+    .nav__shadow {
+      opacity: 1;
+    }
+  }
+}
+
+// Nav background
+.nav__inner {
+  @include space-between();
+
+  height: $navbar-small-height;
+  @media (min-width: $navbar-breakpoint) {
+    height: $navbar-height;
+  }
+}
+
+.nav__spacer {
+  positon: relative;
+
+  height: $navbar-small-height;
+  @media (min-width: $navbar-breakpoint) {
+    height: $navbar-height;
+  }
+}
+
+
+// Nav toggle of login vs join buttons
+.nav {
+  // Always show both buttons on large screens
+  @media (max-width: $navbar-breakpoint) {
+    .nav__login {
+      display: block;
+      margin-right: 0 !important;
+    }
+
+    .nav__join { display: none; }
+
+    &.is-scrolled {
+      .nav__login { display: none; }
+      .nav__join { display: block; }
+    }
+  }
+}
+
+
+
+.match-navbar {
+  width: $navbar-menu-max-width;
+  margin: auto;
+}

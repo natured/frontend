@@ -1,0 +1,21 @@
+.bg-light-orange {
+  background-color: $secondary-bg;
+}
+
+.bg-light-green {
+  background-color: $primary-bg;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-gray {
+  background-color: $gray-bg;
+}
+
+.bg-white-on-mobile {
+  @media (max-width: 767px) {
+    background-color: $white;
+  }
+}

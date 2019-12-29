@@ -1,0 +1,82 @@
+.bottom-bar__categories {
+  display: none;
+  padding: 0 1rem;
+}
+
+.bottom-bar__link {
+  position: relative;
+  height: 100%;
+  padding: 0 2rem;
+  @include flex-center();
+
+  &:hover  {
+    cursor: pointer;
+    &:not(.active) {
+      color: $primary;
+    }
+  }
+
+  &.active {
+    .bottom-bar__anchor {
+      font-weight: 600;
+      &::after {
+        @include underline (2px, $font-color);
+      }
+    }
+  }
+}
+
+
+.bottom-bar__anchor {
+  font-weight: 500;
+  position: relative;
+}
+
+// Spacing of categories
+.bottom-bar__link {
+  padding: 0 .5rem;
+  font-size: 13px;
+}
+
+@media (min-width: 850px) {
+  .bottom-bar__link {
+    padding: 0 .5rem;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 900px) {
+  .bottom-bar__link {
+    padding: 0 .8rem;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .bottom-bar__link {
+    padding: 0 1rem;
+    font-size: 16px;
+  }
+
+  .bottom-bar__categories {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bottom-bar__link {
+    padding: 0 1.2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bottom-bar__link {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .bottom-bar__link {
+    padding: 0 2rem;
+  }
+}

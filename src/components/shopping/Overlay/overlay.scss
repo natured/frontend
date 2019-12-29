@@ -1,0 +1,30 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+
+.product-carted-overlay {
+  position: absolute;
+  background-color: rgba($font-color, .6);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: $transition;
+  opacity: 0;
+  @include flex(center, center);
+  flex-direction: column;
+
+  .num {
+    font-size: 3.5rem;
+    font-weight: 800;
+  }
+
+  &.carted {
+    opacity: 1;
+    transition: $transition;
+  }
+}

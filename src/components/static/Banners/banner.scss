@@ -1,0 +1,51 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/responsive';
+
+.banner {
+  background-color: white;
+  border-top: $border;
+  font-size: 16px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .para {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: .02em;
+  }
+
+  display: block;
+  .banner-col {
+    width: 100%;
+  }
+
+  .banner-cols {
+    display: flex;
+    flex-direction: column;
+
+    > div:first-child {
+      padding-bottom: 50px;
+    }
+  }
+
+  @include breakpoint(md) {
+    .banner-cols {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      .banner-col {
+        width: 50%;
+
+        &:first-child {
+          text-align: left;
+          padding-bottom: 0;
+        }
+
+        &:last-child {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

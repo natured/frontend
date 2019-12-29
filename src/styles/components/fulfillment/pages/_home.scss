@@ -1,0 +1,23 @@
+.main-btn {
+  @extend .button;
+  @extend .button-outline-success;
+  @extend .filled;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fulfillment-overview {
+  margin: 2em 0;
+}
+
+.v-spaced {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-header {
+  @extend .bold-header;
+  text-align: center;
+}

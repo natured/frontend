@@ -1,0 +1,90 @@
+
+/**
+ * Variables are used throughout the styles base.
+ * They are segmented by their use case below.
+ *
+ *
+ * Table of Contents
+ * -----------------
+ *   1. Colors
+ *   2. Border + Radius
+ *   3. Fonts
+ *   4. Transition
+ *   5. Shadow
+ *   6. Breakpoints
+ *   7. Widths
+ */
+
+
+$primary-color: #48997B; // robust green
+$midnight-color: #034752;
+$blue-background-color: #eff0f5; // blueish gray
+$gray-background-color: #F2F2F2; // for
+$font-color: #343434; // off black
+$gray-color: #777; // used for subtler text
+// #848484 another piece of gray??
+$pastel-color: #cfdadd; //blueish teal
+$highlight-color: #FBDA88; // yellow
+$error-color: #D95941;
+$bright-green: #3ECF8E;
+
+/** 1. Colors */
+
+// Primary colors
+$light-blue: #DCF0F0;
+$slate-gray: #8DBAC4;
+$dark-slate: #598392;
+$peach: #F0B67F;
+$orange: #EEB259;
+$dark-green: #334E4C;
+$red: #EE6352;
+$yellow: #F7F5EA;
+$green: #6EAEA1;
+$black: #313131;
+
+// DD614A
+
+// #
+// Background colors
+$light-blue-bg: #FBFDFD;
+$gray-bg: #F7F7F7;
+$light-brown-bg: #F7F5F2;
+$bg-gray: #F6F6F6;
+$bg-yellow: #FBFAF5;
+$bg-market: #FCFBFA;
+
+// Grays
+// $font-color: #4A4A4A;
+$font-lighter: #787878;
+$font-lightest: #BABABA;
+
+// font familys
+$serif-font: 'p22-mackinac-pro', serif !important;
+
+
+/** 2. Borders */
+$border-radius: 4px;
+$border: 1px solid rgba(0,0,0,0.1);
+$border-darkened: 1px solid rgba(0,0,0,0.2);
+$border-light: 1px solid rgba(0,0,0,0.05);
+
+/** 4. Transition */
+$transition: all .15s ease;
+
+/** 5. Shadows */
+$box-shadow: 0 5px 10px rgba(0, 0, 0, 0.03);
+$btn-box-shadow:  0 4px 6px rgba($dark-green, .1), 0 1px 3px rgba(0,0,0,.1);
+$box-shadow-aggressive: 0 5px 10px rgba(0, 0, 0, 0.06);
+
+// new ones
+$box-shadow-reg: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+$box-shadow-hov: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+
+/** 6. Nav heights */
+$skinny-nav-height: 37px;
+$main-nav-height: 60px;
+$main-nav-height-mobile: 50px;
+
+
+
+$padding: 20px;

@@ -1,0 +1,41 @@
+.market__loader {
+  @include full-height();
+  width: 100%;
+  margin-left: -72px; // needs to be responsive...
+  margin-right: 72px;
+  position: absolute;
+  z-index: 999;
+  background-color: $white;
+  margin-top: 2px;
+  opacity: 1;
+  @include flex-center();
+
+  &.is-loaded {
+    opacity: 0;
+    z-index: -5;
+    transition: opacity .3s ease-in-out, z-index 0s ease .3s;
+  }
+}
+
+// Styles for transitioniting between pages
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  position: absolute;
+  width: calc(100% - 144px);
+  transition: opacity 5s ease-in 5s;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0.01;
+  position: absolute;
+  width: calc(100% - 144px);
+  transition: opacity 5s ease-in;
+}

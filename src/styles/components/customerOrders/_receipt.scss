@@ -1,0 +1,45 @@
+$receipt-max-width: 969px;
+$receipt-outer-padding: 30px;
+
+.natured-receipt {
+  max-width: $receipt-max-width;
+  margin: auto;
+  padding: 3rem;
+  border-radius: $border-radius;
+  border: $border;
+  background-color: white;
+
+  .order-item {
+    text-align: left;
+    padding: 15px;
+    border-bottom: $border;
+  }
+
+  .product-image {
+    border-radius: $border-radius;
+    height: 65px;
+  }
+
+  .item-product-name {
+    @include ellipsis-overflow(2);
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .item-foodmaker-name {
+    @include ellipsis-overflow(1);
+    font-size: 13px;
+  }
+
+}
+
+.item-product-name {
+  @include ellipsis-overflow(2);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.item-foodmaker-name {
+  @include ellipsis-overflow(1);
+  font-size: 13px;
+}

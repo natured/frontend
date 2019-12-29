@@ -1,0 +1,308 @@
+// Cart Variables
+$cart-image-size: 65px;
+
+
+.timeslot-header {
+  background-color: $color-subdued;
+
+  * {
+    padding: 7.5px 15px;
+    text-align: center;
+  }
+}
+
+
+.delivery-option {
+  padding: 15px;
+  border-bottom: $border;
+
+  .day {
+    color: $color-highlight;
+  }
+  .date {
+    color: $color-font-light;
+  }
+}
+
+.ant-scroll-number {
+  top: -5px;
+  background-color: $color-highlight;
+  // transform: translate(60%, 25%) !important;
+}
+
+
+.cart-content {
+  width: 100%;
+  max-width: auto;
+  font-size: 12px;
+  padding: 0 15px;
+
+  .cart-split-content {
+    min-height: $cart-image-size;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+.cart-image {
+  border-radius: $border-radius;
+  height: $cart-image-size;
+}
+
+.cart-item-name {
+  @include ellipsis-overflow(2);
+  font-size: 14px;
+  font-weight: bold;
+  a { color: $dark-green; }
+}
+
+.cart-item-foodmaker {
+  @include ellipsis-overflow(1);
+  a { color: $font-lightest; }
+}
+
+.cart-item-description {
+  font-size: 12px;
+  color: $color-font-lightest;
+  sup { top: -.35em; }
+}
+
+.cart-computed {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cart-price {
+
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
+
+    .bottle-icon {
+      fill: $color-font;
+    }
+
+    .guess {
+      font-weight: 100;
+      font-size: 8px;
+      color: $color-font-lightest;
+    }
+  }
+
+.cart {
+  .product-qty-btn {
+    padding: 5px !important;
+    border-color: rgba(0,0,0,0.1);
+  }
+}
+
+.quantity {
+  font-size: 16px;
+}
+
+
+/* Handles the empty cart
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.empty-cart {
+  height: calc(100% - 95px);
+  text-align: center;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  img { width: 150px; }
+
+  h2 {
+    font-weight: bold;
+    padding: 30px 0;
+  }
+
+  .descriptor {
+    color: $color-font-light;
+  }
+
+  .empty-button {
+    @extend .button;
+    @extend .button-default;
+  }
+}
+.cart-dropdown .empty-cart  {
+  padding: 30px;
+
+  img { width: 100px; }
+
+  .empty-button {
+    display: none;
+  }
+}
+
+/* Cart header
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.cart-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 15px;
+  border-bottom: $border;
+
+  h3 {
+    margin: 0;
+    display: none;
+  }
+
+  .cart-timing {
+    font-size: 10px;
+    text-align: center;
+    &.success {
+      color: $color-success;
+    }
+  }
+}
+.cart-dropdown .cart-header {
+  justify-content: space-between;
+  padding: 0 0 10px 0;
+
+  .bold-header { display: block; }
+  .cart-timing { text-align: right; }
+}
+
+/* Cart items and making them scrollable
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.cart-dropdown .cart-items {
+  max-height: calc(100vh - 400px);
+  overflow-y: scroll;
+  border-bottom: $border;
+}
+
+// .cart-scroll {
+//   overflow-y: scroll;
+//   @include breakpoint(xs) {
+//     -webkit-overflow-scrolling: touch;
+//   }
+// }
+
+/* Single cart item
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.cart-item {
+  display: flex;
+  padding: 15px;
+  border-radius: $border-radius;
+  border-bottom: $border-set;
+
+  &:first-child {
+    border-top: $border-set;
+  }
+}
+// .cart-dropdown .cart-item {
+//   padding: 7.5px 0;
+// }
+
+/* Cart totals
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.totals {
+  position: fixed;
+  bottom: 50px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding: 10px;
+  background-color: white;
+}
+.cart-dropdown .totals {
+  position: initial;
+  padding: 10px 0 0 0;
+  border-top: none;
+}
+
+/* Special styles for the cart dropdown
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.cart-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 15px;
+  background-color: white;
+  padding: 15px;
+  border: $border;
+  border-radius: $border-radius;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+  width: 385px;
+  max-height: calc(100vh - 169px);
+
+  &.show {
+    display: block;
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+
+$cart-pricing-border-color: rgba(0,0,0,0.05);
+
+.cart-pricing {
+  display: flex;
+  flex-direction: column;
+
+  .cart-increments {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $cart-pricing-border-color;
+    border-radius: 3px;
+
+    &.loading {
+      color: $color-font-lightest;
+    }
+
+    .icon {
+      padding: 7.5px 10px;
+      font-weight: bold;
+      font-size: 10px;
+
+      &.inactive {
+        color: $cart-pricing-border-color;
+      }
+    }
+  }
+}
+
+.cart-price-addon {
+  font-weight: 200;
+  font-size: 9px;
+  color: $color-font-lightest;
+  margin-bottom: -3px;
+}
+
+.bottle-icon {
+  fill: $color-font-lightest;
+  margin-bottom: -2px;
+}
+
+
+.cart-login-button {
+  @extend .filled;
+  @extend .button;
+  @extend .button-success;
+  box-shadow: $box-shadow;
+  font-weight: 500;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.cart-signup-button {
+  @extend .filled;
+  @extend .button;
+  @extend .button-white;
+
+  &:hover {
+    background-color: #f9f9f9;
+  }
+}

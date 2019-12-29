@@ -1,0 +1,125 @@
+ .account-grid {
+  @extend .grid-with-columns;
+
+  .account-nav {
+    @extend .left-column;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+
+    .account-page-link {
+      @extend .main-link;
+    }
+
+    .sub-account-links {
+      @extend .dropdown;
+    }
+
+    .account-sublink {
+      @extend .dropdown-link;
+    }
+  }
+
+  .account-info {
+    @extend .right-column;
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .account-section {
+      @extend .main-section;
+
+      .cancel-button {
+        @extend .button;
+        @extend .button-default;
+        margin-left: 30px;
+      }
+    }
+
+    .account-title {
+      @extend h1;
+      @extend .main-title;
+    }
+  }
+
+  .list-header {
+    margin-bottom: 0;
+    color: $color-font;
+    font-weight: bold;
+  }
+
+  .account-link-holder {
+    margin-top: 15px;
+    padding-top: 30px;
+    border-top: $border;
+    .spacer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .account-link {
+    padding-bottom: 3px;
+    transition: $transition;
+    border-bottom: 1px solid transparent;
+    color: $slate-gray;
+    .anticon {
+      transition: $transition;
+      font-size: 12px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $color-font;
+      transition: $transition;
+      .anticon {
+        transition: $transition;
+        font-weight: bold;
+      }
+    }
+
+    &.next .anticon {
+      padding-left: 15px;
+    }
+
+    &.back .anticon {
+      padding-right: 15px;
+    }
+  }
+}
+
+
+.mobile-account-nav {
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  .link-to-account {
+    border-bottom: $border;
+    height: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    justify-content: space-between;
+  }
+}
+
+.user-deets {
+  padding: 30px;
+  border-bottom: $border;
+  text-align: center;
+
+  .name {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .email {
+    font-size: 13px;
+    font-weight: 400;
+  }
+}

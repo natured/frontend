@@ -1,0 +1,13 @@
+@mixin grid-container() {
+  display: flex;
+}
+
+@mixin grid-left() {
+  width: 16.666666%;
+  min-width: 225px;
+}
+
+@mixin grid-right() {
+  width: 83.3333333333%;
+  max-width: calc(100% - 225px);
+}

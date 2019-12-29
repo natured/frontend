@@ -1,0 +1,15 @@
+@import "src/styles/universal/variables";
+
+.cart-promo {
+  padding: 10px;
+  text-align: center;
+  background-color: $orange;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px;
+  border-radius: $border-radius;
+  span {
+    padding-left: 10px;
+  }
+}

@@ -1,0 +1,78 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+
+.walkthrough {
+  .walkthrough-item {
+    @include flex(center, flex-start);
+    padding: 15px 0;
+    .subdescription {
+      padding-left: 30px;
+    }
+  }
+
+  .got-it {
+    text-align: center;
+    @include flex(center, center);
+    padding-top: 30px;
+  }
+
+  .number {
+    $number-height: 35px;
+    @include flex(center, center);
+    > div {
+      line-height: $number-height;
+      vertical-align: middle;
+    }
+    width: $number-height;
+    height: $number-height;
+    line-height: $number-height;
+    min-height: $number-height;
+    max-height: $number-height;
+    min-width: $number-height;
+    max-width: $number-height;
+    background-color: $dark-green;
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    border-radius: 50px;
+  }
+
+
+  [class^="header--"] {
+    margin-bottom: 25px;
+  }
+
+  .main-description {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .subdescription {
+    font-size: 15px;
+    color: $font-lighter;
+  }
+
+  .descriptions {
+    margin-bottom: 20px;
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+  }
+
+  .next-button, .finish-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    span { padding-right: 10px; }
+  }
+
+  .finish-button {
+    margin-top: 40px;
+    .icon { margin-left: 10px; }
+  }
+
+  .walkthrough-steps {
+    padding-top: 30px;
+    @include flex(center, space-between);
+  }
+}

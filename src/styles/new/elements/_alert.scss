@@ -1,0 +1,12 @@
+.alert {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: $border-radius;
+  border: $border;
+
+  &.green {
+    background-color: $primary;
+    color: white;
+  }
+}

@@ -1,0 +1,59 @@
+@import 'src/styles/universal/variables';
+@import 'src/styles/universal/mixins';
+
+.orders-table .orders-table-results {
+  padding-bottom: 15px;
+
+  .orders-table-row {
+    @include flex(center, space-between);
+    padding: 10px 0;
+    border-bottom: $border;
+    color: $font-color;
+
+    > div {
+      @include flex(center, flex-start);
+    }
+
+    &:hover {
+      background-color: rgba($gray-background-color, .5);
+      .order-reference {
+        box-shadow: $box-shadow-aggressive;
+      }
+    }
+
+    .order-reference {
+      margin: 0 15px;
+      width: 55px;
+      text-align: center;
+    }
+
+    .order-date, .order-status, .order-amount {
+      color: $font-color;
+      font-weight: 300;
+    }
+
+    .order-status, .order-amount {
+      width: 75px;
+    }
+
+    .order-date-label, .order-status-label, .order-amount-label {
+      font-size: 11px;
+      padding-bottom: 2px;
+    }
+
+    .order-amount, .order-amount-label,
+    .order-date, .order-date-label,
+    .order-status, .order-status-label {
+      margin: 0 15px;
+    }
+
+    .order-status {
+      width: 65px;
+    }
+  }
+}
+
+.orders-table .pagination {
+  @include flex(center, space-between);
+  padding-top: 15px;
+}
