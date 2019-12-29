@@ -6,7 +6,7 @@ import TenOffFirstOrder from '../Notifications/TenOffFirstOrder';
 
 export default (ChildComponent, code) => {
   class ActivatesPromo extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
       this.storePromo();
     }
 

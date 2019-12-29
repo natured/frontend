@@ -5,13 +5,13 @@ import { cartSelectors } from '../../../ducks/cart';
 
 export default (ChildComponent) => {
   class HandleSubscription extends Component {
-    componentWillMount() {
+    componentDidMount() {
       if (!this.props.foundSubscriptions) {
         this.props.getSubscriptions();
       }
     }
 
-    componentWillUpdate() {
+    componentDidUpdate() {
       if (!this.props.foundSubscriptions) {
         this.props.getSubscriptions();
       }

@@ -7,7 +7,7 @@ import RegisterContainer from '../../components/auth/Register/RegisterContainer'
 class RegisterPage extends Component {
   static head = () => ({ title: 'Create Account' });
 
-  componentWillMount() {
+  componentDidMount() {
     // PageView.track('Auth', 'Register');
   }
 

@@ -15,20 +15,18 @@ class ProductPage extends Component {
     img: product ? `https://natured.s3.amazonaws.com/imgix/${product.img}.jpg` : null,
   });
 
-  componentWillMount() {
+  componentDidMount() {
     this.checkForProduct(this.props);
   }
 
-  componentWillUpdate(nextProps) {
+  componentDidUpdate(nextProps) {
     this.checkForProduct(nextProps);
   }
 
   checkForProduct = ({ product, match }) => {
-    product ? this.track(product) : this.getProduct(match.params); // eslint-disable-line
-  }
-
-  track = (product) => {
-    // PageView.track('Product', product);
+    if (!product) {
+      this.getProduct(match.params);
+    }
   }
 
   getProduct = ({ product, foodmaker }) => {
@@ -51,17 +49,14 @@ class ProductPage extends Component {
   }
 }
 
-const mapState = ({ productsNew }, { match }) => ({
-  product: productsSelectors.lookupByMatch(productsNew, match.params),
+const mapStateToProps = ({ products }, { match }) => ({
+  product: productsSelectors.lookupByMatch(products, match.params),
 });
 
-const mapDispatch = {
+const mapDispatchToProps = {
   getProductBySlugs: productsOperations.getProductBySlugs,
 };
 
 export default {
-  component: connect(mapState, mapDispatch)(page(ProductPage)),
-  loadDataWithMatch: (store, { params: { foodmaker, product } }) => (
-    store.dispatch(productsOperations.getProductBySlugs(product, foodmaker))
-  ),
+  component: connect(mapStateToProps, mapDispatchToProps)(page(ProductPage)),
 };

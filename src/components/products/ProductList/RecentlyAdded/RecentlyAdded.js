@@ -7,20 +7,25 @@ import { productsOperations } from '../../../../ducks/products';
 class RecentlyAdded extends React.Component {
   state = { page: 1, products: [], loading: false };
 
-  componentWillMount() {
-    this.getProducts();
+  componentDidMount() {
+    this.getProducts(1);
   }
 
-  getProducts = async () => {
-    const products = await this.props.getRecentlyAdded(this.state.page);
-    this.setState({ products });
+  getProducts = async (page) => {
+    const products = await this.props.getRecentlyAdded(page);
+
+    if (products.success) {
+      this.setState({
+        loading: false,
+        products: this.state.products.concat(products.data),
+      });
+    }
   }
 
   more = async () => {
     const page = this.state.page + 1;
     this.setState({ loading: true, page });
-    const products = await this.props.getRecentlyAdded(page);
-    this.setState({ products: this.state.products.concat(products), loading: false });
+    this.getProducts(page);
   }
 
   renderButton = () => {
@@ -47,6 +52,12 @@ class RecentlyAdded extends React.Component {
   }
 }
 
-const mapState = ({ productsNew }) => ({ products: productsNew.recentlyAdded });
-const mapDispatch = { getRecentlyAdded: productsOperations.getRecentlyAdded };
-export default connect(mapState, mapDispatch)(RecentlyAdded);
+const mapStateToProps = ({ products }) => ({
+  products: products.recentlyAdded,
+});
+
+const mapDispatchToProps = {
+  getRecentlyAdded: productsOperations.getRecentlyAdded,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RecentlyAdded);

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { toggleDrawer } from '../../../../client/actions';
+import { uiOperations } from '../../../../ducks/ui';
 
 class Drawer extends Component {
-  componentWillUpdate({ show }) {
+  componentDidUpdate({ show }) {
     // Whenever show changes, let's make sure to set body overflows
     if (show !== this.props.show) {
-      this.toggleOverflow(show);
+      this.toggleOverflow(this.props.show);
     }
   }
 
@@ -15,7 +15,7 @@ class Drawer extends Component {
   }
 
   close = () => {
-    // this.props.toggleDrawer(this.props.name, false);
+    this.props.toggleDrawer(this.props.name, false);
   }
 
   render() {
@@ -34,5 +34,6 @@ const mapStateToProps = ({ ui }, { name }) => ({
   show: ui.drawers[name] || false,
 });
 
+const mapDispatchToProps = { toggleDrawer: uiOperations.toggleDrawer };
 
-export default connect(mapStateToProps)(Drawer);
+export default connect(mapStateToProps, mapDispatchToProps)(Drawer);

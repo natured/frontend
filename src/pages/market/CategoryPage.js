@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { PageView } from '../../../services/Analytics';
 import page from '../page';
-// import ParentCategory from '../../components/categories/ParentCategory';
-// import { fetchCategoryBySlug } from '../../actions';
+import { categoriesSelectors, categoriesOperations } from '../../ducks/categories';
 import CategoryContainer from '../../components/categories/CategoryContainer/CategoryContainer';
 
 class CategoryPage extends Component {
@@ -12,14 +10,8 @@ class CategoryPage extends Component {
     img: category ? `https://natured.s3.amazonaws.com/imgix/category-${category.img}.jpg` : null,
   });
 
-  componentWillMount() {
+  componentDidMount() {
     this.fetch(this.props.slug);
-  }
-
-  componentWillUpdate({ category }) {
-    // if (category && category !== this.props.category) {
-    //   PageView.track('Category', category);
-    // }
   }
 
   componentDidUpdate({ slug }) {
@@ -29,7 +21,7 @@ class CategoryPage extends Component {
   }
 
   fetch = async (slug) => {
-    // this.props.fetchCategoryBySlug({ slug });
+    this.props.getCategoryBySlug({ slug });
   }
 
   render() {
@@ -42,12 +34,16 @@ class CategoryPage extends Component {
   }
 }
 
-function mapState({ categories }, { match }) {
-  const slug = match.params.category;
-  return { category: categories.bySlug[slug] || null, slug };
-}
+
+const mapStateToProps = ({ categories }, { match }) => ({
+  slug: match.params.category,
+  category: categoriesSelectors.getCategoryBySlug(categories, match.params.category),
+});
+
+const mapDispatchToProps = {
+  getCategoryBySlug: categoriesOperations.getCategoryBySlug,
+};
 
 export default {
-  component: connect(mapState)(page(CategoryPage)),
-  // component: connect(mapState, { fetchCategoryBySlug })(page(CategoryPage)),
+  component: connect(mapStateToProps, mapDispatchToProps)(page(CategoryPage)),
 };

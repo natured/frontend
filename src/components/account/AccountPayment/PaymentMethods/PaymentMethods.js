@@ -12,7 +12,7 @@ class PaymentMethods extends React.Component {
     this.state = { show: false };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (!this.props.billing) {
       this.props.getBilling();
     }

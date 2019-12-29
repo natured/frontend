@@ -11,7 +11,7 @@ class CartDrawer extends Component {
     this.state = { loaded: false };
   }
 
-  componentWillUpdate(props) {
+  componentDidUpdate(props) {
     if (!this.state.loaded && props.show) {
       this.setState({ loaded: true });
     }

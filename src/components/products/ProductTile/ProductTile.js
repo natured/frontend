@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import AddToCart from '../../shopping/AddToCart/AddToCart';
 import ProductAndFoodmakerNames from '../ProductAndFoodmakerNames/ProductAndFoodmakerNames';
 import ProductTilePricing from '../ProductPricing/ProductTilePricing';
 import ProductTileImage from '../ProductImages/ProductTileImage';
 import ProductSubscription from '../../subscriptions/ProductSubscription';
+import AddToCart from '../../shopping/AddToCart/AddToCart';
 import './productTile.scss';
 
 class ProductTile extends Component {
@@ -13,13 +13,7 @@ class ProductTile extends Component {
     return (
       <div className="product-purchase-details">
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <AddToCart
-            key={this.props.product.id}
-            showRemove
-            productId={this.props.product.id}
-            productName={this.props.product.name}
-            product={this.props.product}
-          />
+          <AddToCart />
         </div>
         <ProductTilePricing product={this.props.product} />
       </div>

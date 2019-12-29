@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 // sets default api url
-let API_URL = 'https://api.natured.co';
+let API_URL = 'https://sheltered-caverns-36881.herokuapp.com';
 
 // if not in production, just use the 3030 port of wherever we're at
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'prod') {
   API_URL = window.location.origin.replace(window.location.port, '3030');
 }
 

@@ -7,12 +7,9 @@ import types from './types';
  *   - If fetched but not logged in, state is false
  *   - If logged in, state is the user object
  */
-const userReducer = (state = null, action) => {
+const userReducer = (state = false, action) => {
   switch (action.type) {
-    case types.GET_USER: return action.payload;
-    case types.LOGIN_USER: return action.payload;
-    case types.LOGOUT_USER: return false;
-    default: return state;
+    default: return false;
   }
 };
 

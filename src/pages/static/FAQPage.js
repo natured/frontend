@@ -8,7 +8,7 @@ import FAQItem from '../../components/static/FAQ/FAQItem';
 class FAQPage extends Component {
   static head = () => ({ title: 'FAQs' });
 
-  // componentWillMount() {
+  // componentDidMount() {
   //   PageView.track('Content', 'FAQ');
   // }
 

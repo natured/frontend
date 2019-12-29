@@ -4,8 +4,7 @@ import { Dimmer } from '../../elements';
 import ProductLink from '../../products/ProductLink';
 import FoodmakerLink from '../../foodmakers/FoodmakerLink';
 import CartItemImage from './CartItemImage';
-import AddToCartOptions from '../../shopping/AddToCart/AddToCartOptions/AddToCartOptions';
-import RemoveFromCart from '../../shopping/AddToCart/RemoveFromCart';
+import AddToCart from '../../shopping/AddToCart/AddToCart';
 
 class CartItem extends React.Component {
   state = { loading: false };
@@ -48,12 +47,7 @@ class CartItem extends React.Component {
           <div className="cart--item--price">
             ${(pricing.totalPrice / 100).toFixed(2)}
           </div>
-          <AddToCartOptions product={product} />
-          <RemoveFromCart
-            productId={product.id}
-            updating={this.updating}
-            done={this.done}
-          />
+          <AddToCart product={product} />
         </div>
       </Segment>
     );

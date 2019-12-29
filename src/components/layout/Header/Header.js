@@ -5,10 +5,11 @@ import MainHeader from './MainHeader/MainHeader';
 import ScrollHeader from './ScrollHeader/ScrollHeader';
 import { authOperations, authSelectors } from '../../../ducks/auth';
 import { categoriesOperations } from '../../../ducks/categories';
+import { uiOperations } from '../../../ducks/ui';
 import { shoppingOperations } from '../../../ducks/shopping';
 
 class MarketHeader extends Component {
-  componentWillMount() {
+  componentDidMount() {
     if (!this.props.checkedForUser) {
       this.props.getUser();
     }
@@ -55,7 +56,7 @@ const mapState = ({ ui, categories, auth, shopping }) => ({
 const mapDispatch = {
   getUser: authOperations.getUser,
   getTimeslot: shoppingOperations.getTimeslot,
-  // toggleSkinnyNav,
+  toggleSkinnyNav: uiOperations.toggleSkinnyNav,
   getParentCategories: categoriesOperations.getParentCategories,
 };
 

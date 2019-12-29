@@ -12,7 +12,7 @@ class PaymentField extends Component {
    * If there is an error passed down from the form,
    *   update the state to reflect that error.
    */
-  componentWillUpdate(props) {
+  componentDidUpdate(props) {
     if (props.error && props.error !== this.state.error) {
       this.setState({ error: props.error });
     }

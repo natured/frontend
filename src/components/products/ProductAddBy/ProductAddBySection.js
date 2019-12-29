@@ -7,7 +7,7 @@ import ProductDetailsSection from '../ProductDetails/ProductDetailsSection/Produ
 import './productAddBy.scss';
 
 class ProductAddBySection extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     this.getGuaranteedDelivery();
   }
 

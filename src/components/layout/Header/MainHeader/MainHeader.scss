@@ -1,0 +1,23 @@
+.nav--main {
+  .nav--toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav--categories {
+    display: none;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .nav--main {
+    .nav--toggle {
+      display: none;
+    }
+
+    .nav--categories {
+      display: block;
+    }
+  }
+}

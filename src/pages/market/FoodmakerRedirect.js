@@ -6,7 +6,7 @@ import { foodmakersSelectors, foodmakersOperations } from '../../ducks/foodmaker
 import NotFound from '../../components/static/NotFound/NotFound';
 
 class FoodmakerRedirect extends Component {
-  componentWillMount() {
+  componentDidMount() {
     if (this.props.foodmaker === 'loading') {
       this.getFoodmaker(this.props.match.params.foodmakerId);
     }

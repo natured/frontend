@@ -13,7 +13,7 @@ class FoodmakerProducts extends React.Component {
     this.state = { products: null };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getProducts();
   }
 

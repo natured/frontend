@@ -11,7 +11,13 @@ const getAddBy = ({ addBy }, product) => (
   product && product.id in addBy ? addBy[product.id] : null
 );
 
+const getProductsForCategory = ({ byCategory }, slug) => (
+  byCategory[slug] || null
+);
+
+
 export default {
+  getProductsForCategory,
   lookupByMatch,
   lookupById,
   getAddBy,

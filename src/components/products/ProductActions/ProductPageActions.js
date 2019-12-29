@@ -8,7 +8,7 @@ export default ({ product }) => {
   const props = { productId: product.id, productName: product.name, product };
   return (
     <div className="product-actions product-page-actions">
-      <AddToCart {...props} showBasket showRemove>Add to Basket</AddToCart>
+      <AddToCart showBasket showRemove />
     </div>
   );
 };

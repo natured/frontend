@@ -11,14 +11,14 @@ import { Loader, Notification } from '../../elements';
 
 export default (ChildComponent) => {
   class CheckReferralToken extends Component {
-    componentWillMount() {
+    componentDidMount() {
       if (!this.props.referral) {
         const { token } = query.parse(this.props.location.search);
         this.props.getReferralByToken(token);
       }
     }
 
-    componentWillUpdate({ referral, isLoggedIn }) {
+    componentDidUpdate({ referral, isLoggedIn }) {
       // when updating the referral (so we only call notification once)
       if (this.props.referral === null && referral !== null) {
         if (isLoggedIn) { toast(this.login()); }
