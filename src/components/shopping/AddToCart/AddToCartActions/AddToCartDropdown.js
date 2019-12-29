@@ -4,7 +4,7 @@ import { Icon } from '../../../elements';
 const WAIT_INTERVAL = 1000;
 
 class AddToCartDropdown extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     this.setState({ value: this.props.carted, loading: false, updated: false });
   }
 

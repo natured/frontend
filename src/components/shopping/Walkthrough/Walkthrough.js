@@ -14,7 +14,7 @@ class Walkthrough extends React.Component {
     this.state = { step: 1 };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (!this.props.account) {
       this.props.getAccount();
     }

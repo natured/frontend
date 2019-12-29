@@ -12,7 +12,7 @@ export default (ChildComponent) => {
       this.state = { validated: false };
     }
 
-    componentWillMount() {
+    componentDidMount() {
       this.checkToken(this.props.match.params.token);
     }
 

@@ -12,7 +12,7 @@ class CategoryPage extends Component {
     img: category ? `https://natured.s3.amazonaws.com/imgix/category-${category.img}.jpg` : null,
   });
 
-  componentWillMount() {
+  componentDidMount() {
     this.fetch(this.props.slug);
   }
 

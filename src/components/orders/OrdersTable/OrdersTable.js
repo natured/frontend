@@ -8,7 +8,7 @@ import './ordersTable.scss';
 class OrdersTable extends React.Component {
   state = { loading: true };
 
-  componentWillMount() {
+  componentDidMount() {
     this.getOrders(this.props.page || 1);
   }
 

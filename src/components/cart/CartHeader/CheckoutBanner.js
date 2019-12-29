@@ -11,7 +11,7 @@ class CheckoutBanner extends React.Component {
     this.interval = setInterval(() => this.update(this.props.expiration), 60000);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.update(this.props.expiration);
   }
 

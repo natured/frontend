@@ -3,7 +3,7 @@ import AddToCartButton from './AddToCartButton';
 import AddToCartDropdown from './AddToCartDropdown';
 
 class AddToCartActions extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     this.setState({ max: this.props.available + this.props.carted });
   }
 

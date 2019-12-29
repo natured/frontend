@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { shoppingOperations, shoppingSelectors } from '../../../ducks/shopping';
 
 class ShoppingFor extends Component {
-  componentWillMount() {
+  componentDidMount() {
     if (!this.props.deliveryDay) {
       this.props.getTimeslot();
     }

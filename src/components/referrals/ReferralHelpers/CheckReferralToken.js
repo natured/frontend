@@ -11,7 +11,7 @@ import { Loader, Notification } from '../../elements';
 
 export default (ChildComponent) => {
   class CheckReferralToken extends Component {
-    componentWillMount() {
+    componentDidMount() {
       if (!this.props.referral) {
         const { token } = query.parse(this.props.location.search);
         this.props.getReferralByToken(token);

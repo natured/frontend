@@ -7,7 +7,7 @@ import { shoppingOperations, shoppingSelectors } from '../../../../ducks/shoppin
 import { cartOperations, cartSelectors } from '../../../../ducks/cart';
 
 class CartToggle extends Component {
-  componentWillMount() {
+  componentDidMount() {
     if (this.props.isLoggedIn && this.props.timeslotId) {
       this.props.fetchCart(this.props.userId, this.props.timeslotId);
     }

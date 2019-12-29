@@ -5,7 +5,7 @@ import page from '../page';
 class PrivacyPage extends React.Component {
   static head = () => ({ title: 'Privacy', robots: 'noindex, nofollow' });
 
-  componentWillMount() {
+  componentDidMount() {
     // PageView.track('Content', 'Privacy Policy');
   }
 

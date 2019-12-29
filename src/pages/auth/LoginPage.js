@@ -9,7 +9,7 @@
 // class LoginPage extends Component {
 //   static head = () => ({ title: 'Login', robots: 'noindex, nofollow' });
 //
-//   componentWillMount() {
+//   componentDidMount() {
 //     PageView.track('Auth', 'Login');
 //   }
 //

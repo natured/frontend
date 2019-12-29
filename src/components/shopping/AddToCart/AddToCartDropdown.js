@@ -8,7 +8,7 @@ import './addToCart.scss';
 class AddToCartDropdown extends React.Component {
   state = { value: 1 };
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({ value: this.props.quantity });
   }
 

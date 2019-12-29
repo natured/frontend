@@ -8,7 +8,7 @@ import { categoriesOperations } from '../../../ducks/categories';
 import { shoppingOperations } from '../../../ducks/shopping';
 
 class MarketHeader extends Component {
-  componentWillMount() {
+  componentDidMount() {
     if (!this.props.checkedForUser) {
       this.props.getUser();
     }

@@ -6,7 +6,7 @@ import { productsSelectors, productsOperations } from '../../ducks/products';
 import NotFound from '../../components/static/NotFound/NotFound';
 
 class ProductRedirect extends Component {
-  componentWillMount() {
+  componentDidMount() {
     if (this.props.product === 'loading') {
       this.getProduct(this.props.match.params.productId);
     }

@@ -15,7 +15,7 @@ class ProductPage extends Component {
     img: product ? `https://natured.s3.amazonaws.com/imgix/${product.img}.jpg` : null,
   });
 
-  componentWillMount() {
+  componentDidMount() {
     this.checkForProduct(this.props);
   }
 

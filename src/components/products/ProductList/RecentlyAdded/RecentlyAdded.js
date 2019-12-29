@@ -13,7 +13,7 @@ class RecentlyAdded extends React.Component {
 
   getProducts = async (page) => {
     const products = await this.props.getRecentlyAdded(page);
-    
+
     if (products.success) {
       this.setState({
         loading: false,

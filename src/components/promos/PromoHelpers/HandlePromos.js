@@ -4,7 +4,7 @@ import { promosOperations } from '../../../ducks/promos';
 
 export default (ChildComponent) => {
   class HandlePromos extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
       this.props.checkForPromoCode();
     }
 

@@ -9,7 +9,7 @@ import WalkthroughButton from './WalkthroughButton';
 import AddToCartActions from '../AddToCartActions/AddToCartActions';
 
 class AddToCartOptions extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     if (this.props.available === 'invalid') {
       this.props.getProductAvailability(this.props.product.id);
     }

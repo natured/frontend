@@ -25,7 +25,7 @@ const FailureNotification = () => (
 
 export default (ChildComponent) => {
   class handleEmailConfirmation extends Component {
-    componentWillMount() {
+    componentDidMount() {
       const { search } = this.props.location;
       if (search) {
         // Checks for both old and new formats of tokens

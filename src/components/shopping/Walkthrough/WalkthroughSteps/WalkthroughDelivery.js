@@ -11,7 +11,7 @@ class WalkthroughDelivery extends React.Component {
     this.state = { showForm: true };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (this.props.delivery.formatted) {
       this.setState({ showForm: false });
     }
