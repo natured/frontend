@@ -22,7 +22,7 @@
   // Only the largest screens
   @media screen and (min-width: $universal-max-width) {
     top: calc(#{$one-height} + #{$universal-page-padding});
-    &.has--skinny { top: calc(#{both-height} + #{$universal-page-padding}); }
+    &.has--skinny { top: calc(#{$both-height} + #{$universal-page-padding}); }
   }
 }
 
