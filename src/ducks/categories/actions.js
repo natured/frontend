@@ -3,7 +3,7 @@ import types from './types';
 
 const getParentCategories = () => async (dispatch, getState, api) => {
   const res = await api.get('/catalog/categories/parents');
-  dispatch({ type: types.GET_PARENT_CATEGORIES, payload: { parents: res.data } });
+  dispatch({ type: types.GET_PARENT_CATEGORIES, payload: res.data });
 };
 
 const getTimeslot = () => async (dispatch, getState, api) => {

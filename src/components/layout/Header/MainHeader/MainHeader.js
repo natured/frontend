@@ -21,7 +21,7 @@ export default ({ route, loaded }) => (
         <div className="nav--left">
           <NavToggle />
           <BrandLink className="nav--logo" fill="#343434" />
-          {loaded ? <ParentCategories renderCategory={renderCategory} route={route} /> : null}
+          <ParentCategories renderCategory={renderCategory} route={route} />
         </div>
         <div className="nav--right animated fadeIn">
           {loaded ? <CartToggle /> : null}
