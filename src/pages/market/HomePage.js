@@ -10,22 +10,15 @@ import RecentlyAddedSection from '../../components/static/HomeSections/RecentlyA
 import FoodmakerSection from '../../components/static/HomeSections/FoodmakerSection';
 import ShopCategoriesSection from '../../components/static/HomeSections/ShopCategoriesSection';
 
-class HomePage extends Component {
-  static head = () => ({ title: '' });
-
-
-  render() {
-    return [
-      <IntroSection />,
-      <HowToSection />,
-      <ProductSections key="products" />,
-      <RecentlyAddedSection key="recently-added" />,
-      <ShopCategoriesSection key="category-section" />,
-      <FoodmakerSection />
-    ];
-  }
-}
-
 export default {
-  component: page(HomePage),
+  component: page(() => (
+    <React.Fragment>
+      <IntroSection />
+      <HowToSection />
+      <ProductSections />
+      <RecentlyAddedSection />
+      <ShopCategoriesSection />
+      <FoodmakerSection />
+    </React.Fragment>
+  )),
 };

@@ -13,13 +13,13 @@ class RecentlyAdded extends React.Component {
 
   getProducts = async (page) => {
     const products = await this.props.getRecentlyAdded(page);
-
-    if (products.success) {
-      this.setState({
-        loading: false,
-        products: this.state.products.concat(products.data),
-      });
-    }
+    console.log('got products', products);
+    // if (products.success) {
+    //   this.setState({
+    //     loading: false,
+    //     products: this.state.products.concat(products.data),
+    //   });
+    // }
   }
 
   more = async () => {

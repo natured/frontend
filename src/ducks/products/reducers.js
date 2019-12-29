@@ -21,6 +21,8 @@ const recentlyAddedReducer = (state = {
       const { page, products } = action.payload;
       const productsByPage = { ...state.productsByPage, [page]: products };
 
+      console.log('hey');
+
       // Updates state with new products by page and the current page
       return { ...state, productsByPage, page };
     }
