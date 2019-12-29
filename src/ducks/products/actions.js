@@ -3,14 +3,18 @@ import types from './types';
 
 // Handles fetching of recently added products
 const getRecentlyAdded = page => async (dispatch, getState, api) => {
-  const res = await api.get(`/catalog/products/recently-added?page=${page}`);
+  try {
+    const res = await api.get(`/catalog/products/recently-added?page=${page}`);
 
-  dispatch({
-    type: types.GET_RECENTLY_ADDED_PRODUCTS,
-    payload: { products: res.data, page },
-  });
+    dispatch({
+      type: types.GET_RECENTLY_ADDED_PRODUCTS,
+      payload: { products: res.data, page },
+    });
 
-  return { success: true, data: res.data };
+    return { success: true, data: res.data };
+  } catch (err) {
+    return { success: false };
+  }
 };
 
 
