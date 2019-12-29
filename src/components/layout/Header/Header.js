@@ -24,7 +24,7 @@ class MarketHeader extends Component {
 
   update = ({ show }) => {
     if (show !== this.props.show) {
-      this.props.toggleSkinnyNav(show);
+      // this.props.toggleSkinnyNav(show);
     }
   }
 

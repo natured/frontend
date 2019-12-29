@@ -7,7 +7,7 @@ class AddToCartActions extends React.Component {
     this.setState({ max: this.props.available + this.props.carted });
   }
 
-  componentWillUpdate({ available }) {
+  componentDidUpdate({ available }) {
     // when availability changes, update the max
     if (this.props.available !== available) {
       this.setState({ max: this.props.carted + available });

@@ -8,7 +8,7 @@ class AddToCartDropdown extends React.Component {
     this.setState({ value: this.props.carted, loading: false, updated: false });
   }
 
-  componentWillUpdate({ carted }) {
+  componentDidUpdate({ carted }) {
     // when cart is updated to reflect the number we're showing
     if (this.props.carted !== carted) {
       if (parseInt(carted, 10) === parseInt(this.state.value, 10)) {

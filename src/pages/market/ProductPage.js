@@ -19,7 +19,7 @@ class ProductPage extends Component {
     this.checkForProduct(this.props);
   }
 
-  componentWillUpdate(nextProps) {
+  componentDidUpdate(nextProps) {
     this.checkForProduct(nextProps);
   }
 

@@ -63,7 +63,7 @@ class InputList extends React.Component {
     /\S+@\S+\.\S+/.test(email) ? 'valid' : 'invalid'
   )
 
-  componentWillUpdate(nextProps) {
+  componentDidUpdate(nextProps) {
     if (nextProps.reset && !this.props.reset) {
       this.reset();
       this.resetValues();

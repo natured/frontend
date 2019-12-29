@@ -10,7 +10,7 @@ class Modal extends React.Component {
   }
 
   // tracks whether this is the first time opening the modal
-  componentWillUpdate(nextProps) {
+  componentDidUpdate(nextProps) {
     if (!this.state.everOpened && nextProps.show) {
       this.setState({ everOpened: true });
     }

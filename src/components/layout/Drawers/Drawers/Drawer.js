@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // import { toggleDrawer } from '../../../../client/actions';
 
 class Drawer extends Component {
-  componentWillUpdate({ show }) {
+  componentDidUpdate({ show }) {
     // Whenever show changes, let's make sure to set body overflows
     if (show !== this.props.show) {
       this.toggleOverflow(show);

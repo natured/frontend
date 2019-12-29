@@ -16,7 +16,7 @@ class CategoryPage extends Component {
     this.fetch(this.props.slug);
   }
 
-  componentWillUpdate({ category }) {
+  componentDidUpdate({ category }) {
     // if (category && category !== this.props.category) {
     //   PageView.track('Category', category);
     // }

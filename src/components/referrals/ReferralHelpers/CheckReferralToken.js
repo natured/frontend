@@ -18,7 +18,7 @@ export default (ChildComponent) => {
       }
     }
 
-    componentWillUpdate({ referral, isLoggedIn }) {
+    componentDidUpdate({ referral, isLoggedIn }) {
       // when updating the referral (so we only call notification once)
       if (this.props.referral === null && referral !== null) {
         if (isLoggedIn) { toast(this.login()); }

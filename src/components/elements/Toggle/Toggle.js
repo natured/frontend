@@ -8,7 +8,7 @@ class Toggle extends React.Component {
     this.state = { toggled: props.value };
   }
 
-  componentWillUpdate(nextProps) {
+  componentDidUpdate(nextProps) {
     if (nextProps.value !== this.props.value) {
       this.setState({ toggled: nextProps.value });
     }

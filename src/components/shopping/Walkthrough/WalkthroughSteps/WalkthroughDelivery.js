@@ -17,7 +17,7 @@ class WalkthroughDelivery extends React.Component {
     }
   }
 
-  componentWillUpdate(nextProps) {
+  componentDidUpdate(nextProps) {
     if (this.props.delivery.formatted !== nextProps.delivery.formatted) {
       this.setState({ showForm: false });
     }

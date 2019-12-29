@@ -18,7 +18,7 @@ class ScrollHeader extends React.Component {
    * When the nav drawer is toggled, adjust the skinny
    *   - Hide when open, show prior status when closed
    */
-  componentWillUpdate({ open }) {
+  componentDidUpdate({ open }) {
     if (open !== this.props.open) {
       if (open) {
         // Stores the setting of the skinny before updating

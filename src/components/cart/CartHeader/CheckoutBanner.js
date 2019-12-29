@@ -15,7 +15,7 @@ class CheckoutBanner extends React.Component {
     this.update(this.props.expiration);
   }
 
-  componentWillUpdate({ expiration }) {
+  componentDidUpdate({ expiration }) {
     if (this.props.expiration !== expiration) {
       this.update(expiration);
     }

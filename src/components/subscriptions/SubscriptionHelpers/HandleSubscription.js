@@ -11,7 +11,7 @@ export default (ChildComponent) => {
       }
     }
 
-    componentWillUpdate() {
+    componentDidUpdate() {
       if (!this.props.foundSubscriptions) {
         this.props.getSubscriptions();
       }
