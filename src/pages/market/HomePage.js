@@ -16,18 +16,12 @@ class HomePage extends Component {
 
   render() {
     return [
-      <WhenLoggedOut key="intro">
-        <IntroSection />
-      </WhenLoggedOut>,
-      <WhenLoggedOut key="how-to">
-        <HowToSection />
-      </WhenLoggedOut>,
+      <IntroSection />,
+      <HowToSection />,
       <ProductSections key="products" />,
       <RecentlyAddedSection key="recently-added" />,
       <ShopCategoriesSection key="category-section" />,
-      <WhenLoggedOut key="foodmakers">
-        <FoodmakerSection />
-      </WhenLoggedOut>,
+      <FoodmakerSection />
     ];
   }
 }

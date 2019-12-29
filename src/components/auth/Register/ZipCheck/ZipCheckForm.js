@@ -43,6 +43,6 @@ const form = {
   },
 };
 
-const mapState = ({ user }) => ({ initialValues: { zip: user.zip } });
+// const mapState = ({ auth }) => ({ initialValues: { zip: auth .zip } });
 const mapDispatch = { zipCheck: appOperations.zipCheck };
-export default connect(mapState, mapDispatch)(formBuilder(ZipCheckForm, form));
+export default connect(null, mapDispatch)(formBuilder(ZipCheckForm, form));

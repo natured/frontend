@@ -1,6 +1,6 @@
 import types from './types';
 
-
+// fetches parent categories
 const getParentCategories = () => async (dispatch, getState, api) => {
   const res = await api.get('/catalog/categories/parents');
   dispatch({ type: types.GET_PARENT_CATEGORIES, payload: res.data });
