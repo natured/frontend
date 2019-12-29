@@ -8,9 +8,23 @@ import utils from './utils';
  *   - Anytime we fetch products or get updated availability
  *   - We update it and store it here
  */
-const recentlyAddedReducer = (state = null, action) => {
+
+
+const recentlyAddedReducer = (state = {
+  productsByPage: {},
+  page: 1,
+}, action) => {
   switch (action.type) {
-    case types.GET_RECENTLY_ADDED_PRODUCTS: return action.payload;
+
+    case types.GET_RECENTLY_ADDED_PRODUCTS: {
+      // Creates new products by page object
+      const { page, products } = action.payload;
+      const productsByPage = { ...state.productsByPage, [page]: products };
+
+      // Updates state with new products by page and the current page
+      return { ...state, productsByPage, page };
+    }
+
     default: return state;
   }
 };

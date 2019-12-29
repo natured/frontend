@@ -1,14 +1,23 @@
 import types from './types';
 
+
+// Handles fetching of recently added products
 const getRecentlyAdded = page => async (dispatch, getState, api) => {
-  const res = await api.get(`/v2/catalog/products/recently-added?page=${page}`);
-  return res.data;
+  try {
+    const res = await api.get(`/catalog/products/recently-added?page=${page}`);
+
+    dispatch({
+      type: types.GET_RECENTLY_ADDED_PRODUCTS,
+      payload: { products: res.data, page },
+    });
+
+    return { success: true, data: res.data };
+  } catch (err) {
+    return { success: false };
+  }
 };
 
-const getProductSections = () => async (dispatch, getState, api) => {
-  const res = await api.get('/v2/catalog/sections');
-  return res.data;
-};
+
 
 const getProductBySlugs = (product, foodmaker) => async (dispatch, getState, api) => {
   const res = await api.get(`/v2/catalog/products/${foodmaker}/${product}`);
@@ -40,7 +49,6 @@ const trackProductView = productId => async (dispatch, getState, api) => {
 
 export default {
   getRecentlyAdded,
-  getProductSections,
   getProductBySlugs,
   getProductById,
   getProductsForFoodmaker,

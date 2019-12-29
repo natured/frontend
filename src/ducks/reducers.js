@@ -25,6 +25,7 @@ export default combineReducers({
   foodmakers,
   orders,
   productsNew: products,
+  products,
   promos,
   referrals,
   search,

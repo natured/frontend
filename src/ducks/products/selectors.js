@@ -11,6 +11,7 @@ const getAddBy = ({ addBy }, product) => (
   product && product.id in addBy ? addBy[product.id] : null
 );
 
+
 export default {
   lookupByMatch,
   lookupById,
