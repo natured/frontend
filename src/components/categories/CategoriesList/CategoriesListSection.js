@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Waypoint } from 'react-waypoint';
-// todo: move products list into products
 import ProductList from '../../products/ProductList/ProductList';
-// import { fetchProductsByCategory } from '../../../client/actions';
+import { productsOperations, productsSelectors } from '../../../ducks/products';
 
 class CategorySection extends Component {
 
+  componentDidMount() {
+    this.loadProducts();
+  }
+
   loadProducts = () => {
-    // if (!this.props.products) {
-    //   const { id, slug } = this.props.category;
-    //   this.props.fetchProductsByCategory({ id, slug });
-    // }
+    if (!this.props.products) {
+      this.props.getProductsForCategory(this.props.category.slug);
+    }
   }
 
   render() {
@@ -27,9 +29,13 @@ class CategorySection extends Component {
   }
 }
 
-function mapStateToProps({ products }, { category }) {
-  return { products: products.byCategory[category.slug] || null };
-}
+const mapStateToProps = ({ products }, { category }) => ({
+  products: productsSelectors.getProductsForCategory(products, category.slug),
+})
+
+const mapDispatchToProps = {
+  getProductsForCategory: productsOperations.getProductsForCategory,
+};
 
 // export default connect(mapStateToProps, { fetchProductsByCategory })(CategorySection);
-export default connect(mapStateToProps)(CategorySection);
+export default connect(mapStateToProps, mapDispatchToProps)(CategorySection);

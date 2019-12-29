@@ -13,6 +13,15 @@ const getRecentlyAdded = page => async (dispatch, getState, api) => {
   return { success: true, data: res.data };
 };
 
+// Gets products by category
+const getProductsForCategory = categorySlug => async (dispatch, getState, api) => {
+  const res = await api.get(`/catalog/products/byCategory/${categorySlug}`);
+
+  dispatch({
+    type: types.GET_CATEGORY_PRODUCTS,
+    payload: { categorySlug, products: res.data },
+  });
+};
 
 
 const getProductBySlugs = (product, foodmaker) => async (dispatch, getState, api) => {
@@ -45,6 +54,8 @@ const trackProductView = productId => async (dispatch, getState, api) => {
 
 export default {
   getRecentlyAdded,
+  getProductsForCategory,
+
   getProductBySlugs,
   getProductById,
   getProductsForFoodmaker,

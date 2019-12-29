@@ -15,10 +15,7 @@ import subscriptions from './subscriptions';
 import ui from './ui';
 
 export default combineReducers({
-  account,
-  app,
   auth,
-  cart,
   categories,
   foodmakers,
   orders,

@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Image } from '../../../elements';
 import Link from '../../../../client/elements/Link';
-// import source from '../../images/Image/source';
 
 class ProductTileImage extends React.Component {
   toProduct = (product) => {

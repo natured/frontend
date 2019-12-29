@@ -3,13 +3,6 @@ import { categoriesTypes } from '../categories';
 import types from './types';
 import utils from './utils';
 
-/**
- * Stores availability by product id
- *   - Anytime we fetch products or get updated availability
- *   - We update it and store it here
- */
-
-
 const recentlyAddedReducer = (state = {
   productsByPage: {},
   page: 1,
@@ -28,6 +21,15 @@ const recentlyAddedReducer = (state = {
     default: return state;
   }
 };
+
+const byCategoryReducer = (state = {}, action) => {
+  switch (action.type) {
+    case types.GET_CATEGORY_PRODUCTS:
+      return { ...state, [action.payload.categorySlug]: action.payload.products };
+
+    default: return state;
+  }
+}
 
 const byIdReducer = (state = {}, action) => {
   switch (action.type) {
@@ -76,11 +78,7 @@ const addByReducer = (state = {}, action) => {
   }
 };
 
-const reducer = combineReducers({
-  bySlugs: bySlugsReducer,
-  byId: byIdReducer,
+export default combineReducers({
   recentlyAdded: recentlyAddedReducer,
-  addBy: addByReducer,
+  byCategory: byCategoryReducer,
 });
-
-export default reducer;
