@@ -1,4 +1,9 @@
-http://natured.co/* https://foodstack.io/* 301!
-https://natured.co/* https://foodstack.io/* 301!
-http://www.natured.co/* https://foodstack.io/* 301!
-https://www.natured.co/* https://foodstack.io/* 301!
+http://natured.co/* https://foodstack.io/:splat 301!
+https://natured.co/* https://foodstack.io/:splat 301!
+http://www.natured.co/* https://foodstack.io/:splat 301!
+https://www.natured.co/* https://foodstack.io/:splat 301!
+
+# These rules will change if you change your site’s custom domains or HTTPS settings
+
+# Redirect domain aliases to primary domain
+http://archived.natured.co/* https://archived.natured.co/:splat 301!
