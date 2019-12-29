@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = ({ categories }) => ({ parents: categories.parents });
 
 export default connect(mapStateToProps)(({ parents, route, renderCategory }) => {
-  console.log({ parents });
+
   // if no parents exist, don't render anything
   if (!parents) { return null };
 

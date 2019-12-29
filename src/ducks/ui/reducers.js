@@ -10,7 +10,6 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case types.TOGGLE_SKINNY_NAV: {
-      console.log('toggle', action.payload);
       return { ...state, showSkinnyNav: action.payload };
     }
 

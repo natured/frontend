@@ -40,13 +40,13 @@ const byIdReducer = (state = {}, action) => {
 
 const bySlugsReducer = (state = {}, action) => {
   switch (action.type) {
-    case types.GET_RECENTLY_ADDED_PRODUCTS: {
-      const data = {};
-      action.payload.forEach((product) => {
-        utils.storeProductBySlugs(data, product);
-      });
-      return { ...state, ...data };
-    }
+    // case types.GET_RECENTLY_ADDED_PRODUCTS: {
+    //   const data = {};
+    //   action.payload.forEach((product) => {
+    //     utils.storeProductBySlugs(data, product);
+    //   });
+    //   return { ...state, ...data };
+    // }
 
     case types.GET_PRODUCT: {
       const data = utils.storeProductBySlugs({}, action.payload);

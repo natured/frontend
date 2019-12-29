@@ -31,14 +31,14 @@ const endTime = ({ timeslot }) => (
  *   - Moment docs: https://momentjs.com/docs/#/displaying/calendar-time/
  */
 const getDeliveryDay = ({ timeslot }) => (
-  !timeslot ? null : (moment(timeslot.deliveryStart).calendar(null, {
+  moment().add(1, 'days').calendar(null, {
     lastDay: '[Yesterday]',
     sameDay: '[Today]',
     nextDay: '[Tomorrow]',
     lastWeek: '[last] dddd',
     nextWeek: 'dddd, MMM D',
     sameElse: '[next] dddd, MMM D',
-  }))
+  })
 );
 
 const getCutoffTime = ({ timeslot }) => {
