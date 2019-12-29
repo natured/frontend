@@ -1,10 +1,12 @@
+@import '../universal/variables.scss';
+
 @mixin setStickyTop () {
   // Transition to match the skinny nav
   transition: all 0.2s ease-in-out;
 
-  $mobile-both-height: $main-nav-height-mobile + $skinny-nav-height;
+  $mobile-both-height: calc(#{$main-nav-height-mobile} + #{$skinny-nav-height});
   $mobile-one-height: $main-nav-height-mobile;
-  $both-height: $main-nav-height + $skinny-nav-height;
+  $both-height: calc(#{$main-nav-height} + #{$skinny-nav-height});
   $one-height: $main-nav-height;
 
   // Distance from top on mobile

@@ -6,10 +6,8 @@ import { renderRoutes } from 'react-router-config';
 import routes from './pages/routes';
 import configureStore from './ducks/store';
 
-const initialState = window.INITIAL_STATE || {};
-
 const App = () => (
-  <Provider store={configureStore(initialState)}>
+  <Provider store={configureStore()}>
     <BrowserRouter>
       <div>{renderRoutes(routes)}</div>
     </BrowserRouter>

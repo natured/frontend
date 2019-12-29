@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import api from '../api';
 import reducers from './reducers';
 
-export default initialState =>  (
+export default (initialState = {}) =>  (
   createStore(
     reducers,
     initialState,

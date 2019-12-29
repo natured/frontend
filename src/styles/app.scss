@@ -32,7 +32,7 @@
 @import "atoms/input";
 @import "atoms/tags";
 @import "atoms/toggle"; // the mobile nav toggle
-@import "atoms/sticky";
+// @import "atoms/sticky"; TODO
 @import "atoms/progress";
 @import "atoms/badge";
 
@@ -129,17 +129,10 @@
 @import "pages/account";
 @import "pages/admin";
 
-// // @import "admin/admin";
 
 @import "apps/fulfillment";
 @import "apps/inventory";
 
-// @import 'node_modules/react-image-crop/dist/ReactCrop';
-//
-// a:has(> img)
-// .page--market {
-//   background-color: red;
-// }
 
 .page-content {
   padding-top: 70px; // Height of mobile navbar
