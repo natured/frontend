@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { toggleDrawer } from '../../../../client/actions';
+import { uiOperations } from '../../../../ducks/ui';
 
 class Toggle extends Component {
   toggle = () => {
-    // this.props.toggleDrawer('nav', !this.props.show);
+    this.props.toggleDrawer('nav', !this.props.show);
   }
 
   render() {
@@ -22,4 +22,6 @@ const mapStateToProps = ({ ui }) => ({
   show: ui.drawers.nav,
 })
 
-export default connect(mapStateToProps)(Toggle);
+const mapDispatchToProps = { toggleDrawer: uiOperations.toggleDrawer };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Toggle);

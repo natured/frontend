@@ -4,6 +4,7 @@ import NavToggle from '../../Drawers/Toggles/NavToggle';
 import CartToggle from '../../Drawers/Toggles/CartToggle';
 import BrandLink from '../../Brand/BrandLink';
 import ParentCategories from '../../../categories/ParentCategories/ParentCategories';
+import './MainHeader.scss';
 
 const renderCategory = ({ slug, name }, route) => {
   const props = { nav: true, key: slug, className: 'nav--link', route };
@@ -21,7 +22,9 @@ export default ({ route, loaded }) => (
         <div className="nav--left">
           <NavToggle />
           <BrandLink className="nav--logo" fill="#343434" />
-          <ParentCategories renderCategory={renderCategory} route={route} />
+          <div className="nav--categories">
+            <ParentCategories renderCategory={renderCategory} route={route} />
+          </div>
         </div>
         <div className="nav--right animated fadeIn">
           {loaded ? <CartToggle /> : null}
