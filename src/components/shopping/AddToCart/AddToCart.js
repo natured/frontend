@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from '../../elements';
+import './addToCart.scss';
 
 class AddToCartButton extends React.Component {
   state = { loading: false };

@@ -10,7 +10,7 @@ const getRecentlyAdded = page => async (dispatch, getState, api) => {
     payload: { products: res.data, page },
   });
 
-  return res.data;
+  return { success: true, data: res.data };
 };
 
 
