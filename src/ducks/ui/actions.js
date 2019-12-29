@@ -5,7 +5,13 @@ const toggleDrawer = (name, value) => ({
   payload: { name, value },
 });
 
+const toggleSkinnyNav = value => ({
+  type: types.TOGGLE_SKINNY_NAV,
+  payload: value,
+});
+
 
 export default {
   toggleDrawer,
+  toggleSkinnyNav,
 };

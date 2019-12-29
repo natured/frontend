@@ -20,7 +20,7 @@ class ScrollHeader extends React.Component {
    */
   componentDidUpdate({ open }) {
     if (open !== this.props.open) {
-      if (open) {
+      if (this.props.open) {
         // Stores the setting of the skinny before updating
         // Hides the skinny when the nav drawer is open
         this.setState({ priorStatus: this.state.show });
@@ -69,7 +69,7 @@ class ScrollHeader extends React.Component {
 }
 
 const mapStateToProps = ({ ui }) => ({
-  open: ui.drawers.nav
+  open: ui.drawers.nav || false,
 });
 
 export default connect(mapStateToProps)(ScrollHeader);

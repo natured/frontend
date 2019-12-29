@@ -9,8 +9,10 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case types.TOGGLE_SKINNY_NAV:
+    case types.TOGGLE_SKINNY_NAV: {
+      console.log('toggle', action.payload);
       return { ...state, showSkinnyNav: action.payload };
+    }
 
     case types.TOGGLE_DRAWER: {
       const { name, value } = action.payload;

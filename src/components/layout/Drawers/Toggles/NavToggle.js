@@ -4,6 +4,7 @@ import { uiOperations } from '../../../../ducks/ui';
 
 class Toggle extends Component {
   toggle = () => {
+    // this.props.toggleSkinnyNav(false);
     this.props.toggleDrawer('nav', !this.props.show);
   }
 
@@ -22,6 +23,9 @@ const mapStateToProps = ({ ui }) => ({
   show: ui.drawers.nav,
 })
 
-const mapDispatchToProps = { toggleDrawer: uiOperations.toggleDrawer };
+const mapDispatchToProps = {
+  toggleDrawer: uiOperations.toggleDrawer,
+  toggleSkinnyNav: uiOperations.toggleSkinnyNav,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Toggle);

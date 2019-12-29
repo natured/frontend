@@ -1,8 +1,6 @@
 import actions from './actions';
 
 export default {
+  toggleSkinnyNav: actions.toggleSkinnyNav,
   toggleDrawer: actions.toggleDrawer,
-  // getSubscriptions: actions.getSubscriptions,
-  // subscribe: actions.subscribe,
-  // updateSubscription: actions.updateSubscription,
 };
