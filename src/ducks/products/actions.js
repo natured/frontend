@@ -25,7 +25,7 @@ const getProductsForCategory = categorySlug => async (dispatch, getState, api) =
 
 
 const getProductBySlugs = (product, foodmaker) => async (dispatch, getState, api) => {
-  const res = await api.get(`/v2/catalog/products/${foodmaker}/${product}`);
+  const res = await api.get(`/catalog/products/${foodmaker}/${product}`);
   dispatch({ type: types.GET_PRODUCT, payload: res.data });
 };
 
@@ -39,7 +39,7 @@ const getProductById = productId => async (dispatch, getState, api) => {
 };
 
 const getProductsForFoodmaker = foodmakerId => async (dispatch, getState, api) => {
-  const res = await api.get(`/v2/catalog/products/byFoodmaker/${foodmakerId}?show=true`);
+  const res = await api.get(`/catalog/products/byFoodmaker/${foodmakerId}?show=true`);
   return res.data; // send results straight back
 };
 

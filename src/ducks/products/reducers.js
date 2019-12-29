@@ -42,20 +42,13 @@ const byIdReducer = (state = {}, action) => {
 
 const bySlugsReducer = (state = {}, action) => {
   switch (action.type) {
-    // case types.GET_RECENTLY_ADDED_PRODUCTS: {
-    //   const data = {};
-    //   action.payload.forEach((product) => {
-    //     utils.storeProductBySlugs(data, product);
-    //   });
-    //   return { ...state, ...data };
-    // }
 
     case types.GET_PRODUCT: {
       const data = utils.storeProductBySlugs({}, action.payload);
       return { ...state, ...data };
     }
 
-    case categoriesTypes.GET_PRODUCTS_BY_CATEGORY: {
+    case categoriesTypes.GET_CATEGORY_PRODUCTS: {
       const data = {};
       action.payload.products.forEach((product) => {
         utils.storeProductBySlugs(data, product);
@@ -81,4 +74,5 @@ const addByReducer = (state = {}, action) => {
 export default combineReducers({
   recentlyAdded: recentlyAddedReducer,
   byCategory: byCategoryReducer,
+  bySlugs: bySlugsReducer,
 });
